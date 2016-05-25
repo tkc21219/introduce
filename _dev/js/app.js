@@ -412,7 +412,7 @@ var App = App || {};
             // console.log(imgBox[j]);
             console.log(j);
             _this.$gImgs.eq(j).attr({
-                src: '../../img/gallery/photo'+imgBox[j]+'.jpg'
+                src: '../img/gallery/photo'+imgBox[j]+'.jpg'
             })
             j++;
         });
