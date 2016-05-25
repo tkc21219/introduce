@@ -115,7 +115,6 @@ $cmngreen: #a9e6a4;
 
 // headerのスタイル
 .hdrWrapper {
-    display: none;
     position: fixed;
     width: 20%;
     background-color: $cmngreen;
@@ -191,6 +190,9 @@ $cmngreen: #a9e6a4;
 }
 
 // list.htmlのスタイル
+#detail {
+  display: none;
+}
 .listBody {
     overflow: hidden;
 }

@@ -134,6 +134,7 @@ var App = App || {};
         this.$height = $(window).height();
         this.$listHeight = (this.$height / 3);
         this.$listWidth = (this.$width / 3);
+        this.$detail = $('#detail');
 
         this.setSize();
         this.hoverAction();
@@ -150,7 +151,8 @@ var App = App || {};
             _this.$list.css('height', _this.$listHeight + 'px');
         });
         $(window).on('load', function(){
-            _this.$hdrWrapper.fadeIn(700);
+            // _this.$hdrWrapper.fadeIn(700);
+            _this.$detail.fadeIn(700);
             for(var i = 0; i < _this.$list.length; i++){
                 _this.$list.delay(100).fadeIn();
                 _this.$list.eq(i).animate({

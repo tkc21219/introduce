@@ -108,7 +108,6 @@
     background-color: #a9e6a4; }
 
 .hdrWrapper {
-  display: none;
   position: fixed;
   width: 20%;
   background-color: #a9e6a4; }
@@ -172,6 +171,9 @@
   width: 100%; }
   .footer > p {
     text-align: center; }
+
+#detail {
+  display: none; }
 
 .listBody {
   overflow: hidden; }
