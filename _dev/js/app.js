@@ -505,20 +505,10 @@ $(function(){
         location.href = '#background';
     }
 
-    if(!file[4]){
-        console.log('This is leagle');
-        new App.Leagle;
-    }else if(url.match('top.html')){
-        console.log('This is top');
-        new App.Top;
-    }else if(url.match('gallery.html')){
-        console.log('This is gallery');
-        new App.Gallery;
-        new App.list;
-        new App.Detail;
-    }else{
-        console.log('This is contents');
-        new App.list;
-        new App.Detail;
+      new App.Leagle;
+      new App.Top;
+      new App.Gallery;
+      new App.list;
+      new App.Detail;
     }
 });
