@@ -294,6 +294,7 @@
 .d-contMore__slideList {
   position: absolute; }
   .d-contMore__slideList > li {
+    display: block;
     width: 100%; }
     .d-contMore__slideList > li > a {
       display: block;

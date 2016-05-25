@@ -328,19 +328,20 @@ $cmngreen: #a9e6a4;
     }
 }
 .d-contMore__slideList {
-    position: absolute;
-    // padding-top: 36px;
-    > li {
-        width: 100%;
-        > a {
-            display: block;
-            position: relative;
-            > img {
-                width: 100%;
-                vertical-align: bottom;
-                filter: grayscale(100%);
-            }
+  position: absolute;
+  // padding-top: 36px;
+  > li {
+    display: block;
+    width: 100%;
+    > a {
+        display: block;
+        position: relative;
+        > img {
+            width: 100%;
+            vertical-align: bottom;
+            filter: grayscale(100%);
         }
+      }
     }
 }
 .d-contMore__slideBtn {
