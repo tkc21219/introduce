@@ -499,16 +499,15 @@ var App = App || {};
 }());
 
 $(function(){
-    var url = window.location.href;
-    var file = url.split('/');
-    if(file[4] === 'detail.html'){
-        location.href = '#background';
-    }
+  var url = window.location.href;
+  var file = url.split('/');
+  if(file[4] === 'detail.html'){
+      location.href = '#background';
+  }
 
-      new App.Leagle;
-      new App.Top;
-      new App.Gallery;
-      new App.list;
-      new App.Detail;
-    }
+  new App.Leagle;
+  new App.Top;
+  new App.Gallery;
+  new App.list;
+  new App.Detail;
 });

@@ -20,7 +20,7 @@ gulp.task('ejs', function(){
     var json = JSON.parse(fs.readFileSync("./package.json"));
     gulp.src(['_dev/ejs/*.ejs', '!' + '_dev/ejs/common/_*.ejs'])
         .pipe(ejs(json, {"ext": ".html"}))
-        .pipe(gulp.dest('_pre/myprofile/'))
+        .pipe(gulp.dest('docs/myprofile/'))
 });
 
 gulp.task('sass', function(){
@@ -36,7 +36,7 @@ gulp.task('minify', function(){
     gulp.src('_dev/css/*.css')
         .pipe(pleeease())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('_pre/css/'))
+        .pipe(gulp.dest('docs/css/'))
 });
 
 gulp.task('uglify', function(){
@@ -45,24 +45,24 @@ gulp.task('uglify', function(){
             errorHandler: notify.onError("Error: <%= error.message %>")
         }))
         .pipe(uglify())
-        .pipe(gulp.dest('_pre/js/'))
+        .pipe(gulp.dest('docs/js/'))
 });
 
 gulp.task('imgCopy', function(){
     gulp.src('_dev/img/**/*')
-        .pipe(gulp.dest('_pre/img/'))
+        .pipe(gulp.dest('docs/img/'))
 });
 
 gulp.task('jsonCopy', function(){
     gulp.src('_dev/json/data.json')
-        .pipe(gulp.dest('_pre/json/'))
+        .pipe(gulp.dest('docs/json/'))
 });
 
 gulp.task('browser-sync', function(){
     browserSync({
         browser: 'Google Chrome',
         server: {
-            baseDir: '_pre/',
+            baseDir: 'docs/',
             index: 'myprofile/index.html'
         }
     });
@@ -79,11 +79,11 @@ gulp.task('watch', function(){
     gulp.watch('_dev/js/*.js', ['uglify']);
     gulp.watch('_dev/img/**/*', ['imgCopy']);
     gulp.watch('_dev/json/data.json', ['jsonCopy']);
-    gulp.watch('_pre/myprofile/**/*.html', ['reload']);
-    gulp.watch('_pre/css/*.css', ['reload']);
-    gulp.watch('_pre/js/*.js', ['reload']);
-    gulp.watch('_pre/img/*', ['reload']);
-    gulp.watch('_pre/json/data.json', ['reload']);
+    gulp.watch('docs/myprofile/**/*.html', ['reload']);
+    gulp.watch('docs/css/*.css', ['reload']);
+    gulp.watch('docs/js/*.js', ['reload']);
+    gulp.watch('docs/img/*', ['reload']);
+    gulp.watch('docs/json/data.json', ['reload']);
 });
 
 gulp.task('default', ['ejs', 'sass', 'minify', 'uglify', 'imgCopy', 'jsonCopy', 'browser-sync', 'watch']);
