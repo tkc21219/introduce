@@ -17,7 +17,7 @@ var App = App || {};
         _this.$leagleForm.submit(function(){
             _this.val = _this.$leagleTxt.val();
             // alert(_this.val);
-            // console.log(_this.val);
+            console.log(_this.val);
             switch(_this.val){
                 case 'yoshinari takashi':
                 case 'Yoshinari Takashi':
