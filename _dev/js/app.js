@@ -40,7 +40,7 @@ var App = App || {};
                 case '吉成　敬':
                 case 'よしなり　たかし':
                 case 'ヨシナリ　タカシ':
-                    location.href = '/myprofile/top.html';
+                    location.href = '/introduce/docs/myprofile/top.html';
                     break;
                 case '':
                     break;
