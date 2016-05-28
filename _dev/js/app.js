@@ -501,15 +501,12 @@ var App = App || {};
 $(function(){
   var url = window.location.href;
   var file = url.split('/');
-  console.log(file);
   if(file[4] === 'detail.html'){
       location.href = '#background';
   }
 
-  if(!file[3] || url.match('index.html')){
-    console.log('This is leagle');
-    new App.Leagle;
-  }else if(url.match('top.html')){
+  new App.Leagle;
+if(url.match('top.html')){
     console.log('This is top');
     new App.Top;
   }else if(url.match('gallery.html')){
