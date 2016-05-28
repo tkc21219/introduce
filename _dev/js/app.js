@@ -17,7 +17,7 @@ var App = App || {};
         _this.$leagleForm.submit(function(){
             _this.val = _this.$leagleTxt.val();
             // alert(_this.val);
-            console.log(_this.val);
+            // console.log(_this.val);
             switch(_this.val){
                 case 'yoshinari takashi':
                 case 'Yoshinari Takashi':
@@ -433,7 +433,7 @@ var App = App || {};
             crntScrollTop = $(window).scrollTop();
             focusPicIndex = _this.$gImgs.index(this);
             focusPic = _this.$gImgs.eq(focusPicIndex).attr('src');
-            console.log(focusPic);
+            // console.log(focusPic);
             _this.$gWrap.css({
                 position:'fixed',
                 top: -1 * crntScrollTop
