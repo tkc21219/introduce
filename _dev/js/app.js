@@ -3,121 +3,120 @@
 var App = App || {};
 
 (function(){
-    // index.htmlでのjs
-    function Leagle(){
-        this.$leagleForm = $('.l-form');
-        this.$leagleTxt = $('.l-text__area');
-        this.init();
-    };
-    Leagle.prototype.init = function(){
-        this.changePage();
-    };
-    Leagle.prototype.changePage = function(){
-        var _this = this;
-        _this.$leagleForm.submit(function(){
-            _this.val = _this.$leagleTxt.val();
-            // alert(_this.val);
-            // console.log(_this.val);
-            switch(_this.val){
-                case 'yoshinari takashi':
-                case 'Yoshinari Takashi':
-                case 'YOSHINARI TAKASHI':
-                case 'yoshinaritakashi':
-                case 'YoshinariTakashi':
-                case 'YOSHINARITAKASHI':
-                case 'takashi yoshinari':
-                case 'Takashi Yoshinari':
-                case 'TAKASHI YOSHINARI':
-                case 'takashiyoshinari':
-                case 'TakashiYoshinari':
-                case 'TAKASHIYOSHINARI':
-                case '吉成敬':
-                case 'よしなりたかし':
-                case 'ヨシナリタカシ':
-                case '吉成 敬':
-                case 'よしなり たかし':
-                case 'ヨシナリ タカシ':
-                case '吉成　敬':
-                case 'よしなり　たかし':
-                case 'ヨシナリ　タカシ':
-                    location.href = '../myprofile/top.html';
-                    break;
-                case '':
-                    break;
-                default:
-                    window.location.href = 'https://www.google.co.jp/#q=' + _this.val;
-                    break;
-            }
-            return false;
-        });
-    };
+  // index.htmlでのjs
+  function Leagle(){
+    this.$leagleForm = $('.l-form');
+    this.$leagleTxt = $('.l-text__area');
+    this.init();
+  };
+  Leagle.prototype = {
+    init: function() {
+      this.bindEvent();
+    },
+    bindEvent: function () {
+      this.$leagleForm.on('submit', this.changePage.bind(this));
+    },
+    changePage: function(){
+      this.val = this.$leagleTxt.val();
+      // alert(_this.val);
+      // console.log(_this.val);
+      switch(this.val){
+      case 'yoshinari takashi':
+      case 'Yoshinari Takashi':
+      case 'YOSHINARI TAKASHI':
+      case 'yoshinaritakashi':
+      case 'YoshinariTakashi':
+      case 'YOSHINARITAKASHI':
+      case 'takashi yoshinari':
+      case 'Takashi Yoshinari':
+      case 'TAKASHI YOSHINARI':
+      case 'takashiyoshinari':
+      case 'TakashiYoshinari':
+      case 'TAKASHIYOSHINARI':
+      case '吉成敬':
+      case 'よしなりたかし':
+      case 'ヨシナリタカシ':
+      case '吉成 敬':
+      case 'よしなり たかし':
+      case 'ヨシナリ タカシ':
+      case '吉成　敬':
+      case 'よしなり　たかし':
+      case 'ヨシナリ　タカシ':
+        location.href = '../myprofile/top.html';
+        break;
+      case '':
+        break;
+      default:
+        window.location.href = 'https://www.google.co.jp/#q=' + _this.val;
+        break;
+      }
+      return false;
+    }
+  };
 
 // top.htmlでのjs
-    function Top(){
-        this.$p1 = $('.p1');
-        this.$p2 = $('.p2');
-        this.$p3 = $('.p3');
-        this.$pro = $('.prologue');
-        this.$link = $('.topLink');
+  function Top(){
+    this.init();
+  };
+  Top.prototype = {
+    init: function() {
+      this.getParameter();
+      this.bindEvent();
+    },
+    getParameter: function() {
+      this.$p1 = $('.p1');
+      this.$p2 = $('.p2');
+      this.$p3 = $('.p3');
+      this.$pro = $('.prologue');
+      this.$link = $('.topLink');
+    },
+    bindEvent: function() {
+      this.wrapWord();
+      setTimeout( this.showNum01.bind(this), 2000 );
+      setTimeout( this.showNum02.bind(this), 4500 );
+      setTimeout( this.hidePro.bind(this), 8000 );
+    },
+    wrapWord: function() {
+      this.$pro.contents().each(function() {
+        if (this.nodeType == 3) {
+          $(this).replaceWith($(this).text().replace(/(\S)/g, '<span>$1</span>'));
+        }
+      });
+    },
+    showNum01: function() {
+      this.$p1.css({'opacity':1});
+      for (var i = 0; i <= this.$p1.children().size() - 1; i++) {
+        this.$p1.children('span:eq('+i+')').delay(100*i).fadeIn(300);
+      };
+    },
+    showNum02: function() {
+      this.$p2.css({'opacity':1});
+      for (var i = 0; i <= this.$p2.children().size() - 1; i++) {
+        this.$p2.children('span:eq('+i+')').delay(100*i).fadeIn(300);
+      };
+    },
+    hidePro: function() {
+      this.$pro.fadeOut(1000);
+      this.showLink(this.animateLink);
+    },
+    showLink: function(callback) {
+      this.$p3.css({
+        display: 'block'
+      }).animate({
+        opacity:1
+      },1500);
+      setInterval( callback.bind(this), 800);
+    },
+    animateLink: function() {
+      this.$p3.animate({
+        marginTop: '-3px'
+      }, 700, 'swing').animate({
+        marginTop: '3px'
+      }, 700, 'swing');
+    }
+  };
 
-        this.init();
-    };
 
-    Top.prototype.init = function(){
-        var _this = this;
-        this.prologue();
-    };
-
-    Top.prototype.prologue = function(){
-        var _this = this;
-        this.$pro.contents().each(function() {
-            if (this.nodeType == 3) {
-                $(this).replaceWith($(this).text().replace(/(\S)/g, '<span>$1</span>'));
-            }
-        });
-
-        setTimeout(function(){
-            _this.$p1.css({'opacity':1});
-            for (var i = 0; i <= _this.$p1.children().size() - 1; i++) {
-                _this.$p1.children('span:eq('+i+')').delay(100*i).fadeIn(300);
-            };
-        }, 2000);
-
-        setTimeout(function(){
-            _this.$p2.css({'opacity':1});
-            for (var i = 0; i <= _this.$p2.children().size() - 1; i++) {
-                _this.$p2.children('span:eq('+i+')').delay(100*i).fadeIn(300);
-            };
-        }, 4500);
-
-        var hidePro = function(){
-            _this.$pro.fadeOut(1000);
-        };
-
-        var showLink = function(fn){
-            _this.$p3.css({
-                display: 'block'
-            }).animate({
-                opacity:1
-            },1500);
-            fn();
-        };
-
-        var animeLink = function(){
-            setInterval(function(){
-                _this.$p3.animate({
-                    marginTop: '-3px'
-                }, 700, 'swing').animate({
-                    marginTop: '3px'
-                }, 700, 'swing');
-            }, 800);
-        };
-
-        setTimeout(function(){
-            hidePro();
-            showLink(animeLink);
-        }, 8000);
-    };
 
 // list.htmlでのjs
     function list(){
