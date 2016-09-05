@@ -118,68 +118,76 @@ var App = App || {};
 
 
 
-// list.htmlでのjs
-    function list(){
-        this.init();
-    };
+  // list.htmlでのjs
+  function List(){
+    this.init();
+  };
+  List.prototype = {
+    init: function(){
+      this.getParameter();
+      this.bindEvent();
+    },
+    getParameter: function() {
+      this.$window = $(window);
+      this.$hdrWrapper = $('.hdrWrapper');
+      this.$contWrapper = $('.d-cont__innerWrap');
+      this.$list = $('.d-cont__list li');
+      this.$listImg = $('.d-cont__list li').find('img');
+      this.$listHover = $('d-contList__hover');
+      this.$height = this.$window.height();
+      this.$listHeight = (this.$height / 3);
+    },
+    bindEvent: function() {
+      this.setList();
+      this.showList();
+      this.$window.on('resize', this.resizeList.bind(this));
+      this.$list.on('mouseenter', this.hoverAction.bind(this));
+      this.$list.on('mouseleave', this.leaveAction.bind(this));
+    },
+    setList: function() {
+      this.$hdrWrapper.css('height', this.$height + 'px');
+      this.$list.css('height', this.$listHeight + 'px');
+    },
+    showList: function() {
+      this.$hdrWrapper.fadeIn(700);
+      for(var i = 0; i < this.$list.length; i++){
+        this.$list.delay(100).fadeIn();
+        this.$list.eq(i).animate({
+          'opacity': 1,
+          'top': 0
+        },1000);
+      }
+    },
+    resizeList: function() {
+      this.$hdrWrapper.css('height', this.$height + 'px');
+      this.$height = this.$window.height();
+      this.$listHeight = (this.$height / 3);
+      this.$hdrWrapper.css('height', this.$height + 'px');
+      this.$list.css('height', this.$listHeight + 'px');
+    },
+    hoverAction: function(e) {
+      var $target = $(e.currentTarget);
+      var index = $target.index();
+      $target.find('img').css("-webkit-filter", "grayscale(0)");
+      if(index == 7){
+        $target.find('img').attr('src', $target.find('img').attr('src').replace('_off', '_on'));
+      }
+      $target.find('div').children('.d-hoverTtl__en').stop().fadeOut(600);
+      $target.find('div').children('.d-hoverTtl__ja').stop().fadeIn(600);
+    },
+    leaveAction: function(e) {
+      var $target = $(e.currentTarget);
+      var index = $target.index();
+      $target.find('img').css("-webkit-filter", "grayscale(100%)");
+      if(index == 7){
+        $target.find('img').attr('src', $target.find('img').attr('src').replace('_on', '_off'));
+      }
+      $target.find('div').children('.d-hoverTtl__en').stop().fadeIn(600);
+      $target.find('div').children('.d-hoverTtl__ja').stop().fadeOut(600);
+    }
+  };
 
-    list.prototype.init = function(){
-        this.$hdrWrapper = $('.hdrWrapper');
-        this.$contWrapper = $('.d-cont__innerWrap');
-        this.$list = $('.d-cont__list li');
-        this.$listImg = $('.d-cont__list li').find('img');
-        this.$listHover = $('d-contList__hover');
-        this.$width = $(window).width();
-        this.$height = $(window).height();
-        this.$listHeight = (this.$height / 3);
-        this.$listWidth = (this.$width / 3);
 
-        this.setSize();
-        this.hoverAction();
-    };
-
-    list.prototype.setSize = function(){
-        var _this = this;
-        this.$hdrWrapper.css('height', _this.$height + 'px');
-        this.$list.css('height', _this.$listHeight + 'px');
-        $(window).on('resize', function(){
-            _this.$height = $(window).height();
-            _this.$listHeight = (this.$height / 3);
-            _this.$hdrWrapper.css('height', _this.$height + 'px');
-            _this.$list.css('height', _this.$listHeight + 'px');
-        });
-        $(window).on('load', function(){
-            _this.$hdrWrapper.fadeIn(700);
-            for(var i = 0; i < _this.$list.length; i++){
-                _this.$list.delay(100).fadeIn();
-                _this.$list.eq(i).animate({
-                    'opacity': 1,
-                    'top': 0
-                },1000);
-            }
-        });
-    };
-
-    list.prototype.hoverAction = function(){
-        var _this = this;
-        this.$list.on('mouseenter', function(){
-            var index = _this.$list.index(this);
-            _this.$list.eq(index).find('img').css("-webkit-filter", "grayscale(0)");
-            if(index == 7){
-                _this.$list.eq(7).find('img').attr('src', _this.$list.eq(7).find('img').attr('src').replace('_off', '_on'));
-            }
-            _this.$list.eq(index).find('div').children('.d-hoverTtl__en').stop().fadeOut(600);
-            _this.$list.eq(index).find('div').children('.d-hoverTtl__ja').stop().fadeIn(600);
-        }).on('mouseleave', function(){
-            var index = _this.$list.index(this);
-            _this.$list.eq(index).find('img').css("-webkit-filter", "grayscale(100%)");
-            if(index == 7){
-                _this.$list.eq(7).find('img').attr('src', _this.$list.eq(7).find('img').attr('src').replace('_on', '_off'));
-            }
-            _this.$list.eq(index).find('div').children('.d-hoverTtl__en').stop().fadeIn(600);
-            _this.$list.eq(index).find('div').children('.d-hoverTtl__ja').stop().fadeOut(600);
-        });
-    };
 
 // detail下層ページでのjs
     function Detail(){
@@ -490,11 +498,11 @@ var App = App || {};
     };
 
 
-    App.Leagle = Leagle;
-    App.Top = Top;
-    App.list = list;
-    App.Detail = Detail;
-    App.Gallery = Gallery;
+    App.leagle = Leagle;
+    App.top = Top;
+    App.list = List;
+    App.detail = Detail;
+    App.gallery = Gallery;
 }());
 
 $(function(){
@@ -506,18 +514,18 @@ $(function(){
 
     if(!file[4]){
         console.log('This is leagle');
-        new App.Leagle;
+        new App.leagle;
     }else if(url.match('top.html')){
         console.log('This is top');
-        new App.Top;
+        new App.top;
     }else if(url.match('gallery.html')){
         console.log('This is gallery');
-        new App.Gallery;
+        new App.gallery;
         new App.list;
-        new App.Detail;
+        new App.detail;
     }else{
         console.log('This is contents');
         new App.list;
-        new App.Detail;
+        new App.detail;
     }
 });
