@@ -206,12 +206,12 @@ var App = App || {};
       this.$listHover = $('d-contList__hover');
       this.listHeight = this.$list.height();
       this.listlength = this.$list.length;
-      this.listWholeH = (this.list.length * this.listHeight);
+      this.listWholeH = (this.$list.length * this.listHeight);
     },
     bindEvent: function() {
       this.setPosition();
       this.matchPic();
-      this.$window.on('resize', this.setPosition.bindEvent(this));
+      this.$window.on('resize', this.setPosition.bind(this));
       this.$list.on('mouseover', this.hoverSlider.bind(this));
       this.$list.on('mouseleave',this.leaveSlider.bind(this));
       this.$up.on('click', this.slideUp.bind(this));
@@ -387,7 +387,7 @@ var App = App || {};
       });
       var j = 0;
       this.$gImgs.each(function() {
-        $(this).eq(j).attr({
+        $(this).attr({
           src: '../../img/gallery/photo' + imgBox[j] + '.jpg'
         });
         j++;
@@ -399,10 +399,9 @@ var App = App || {};
       }, 1000);
     },
 
-    showModal: function(){
+    showModal: function(e){
       this.crntScrollTop = this.$window.scrollTop();
-      this.focusPicIndex = this.$gImgs.index(this);
-      this.focusPic = this.$gImgs.eq(this.focusPicIndex).attr('src');
+      this.focusPic = $(e.currentTarget).attr('src');
       this.$gWrap.css({
         position:'fixed',
         top: -1 * this.crntScrollTop
@@ -419,13 +418,13 @@ var App = App || {};
       });
       $('html, body').prop({scrollTop: this.crntScrollTop});
 
-      function removeModal(){
-        this.$gLayImg.empty();
-      }
-      this.$gOverLay.fadeOut(700, removeModal);
+      //function removeModal(){
+      //}
+      this.$gOverLay.fadeOut(700);
+      this.$gLayImg.empty();
     },
     slideModal: function(e) {
-      var index = $(e.currentTarget).index;
+      var index = $(e.currentTarget).index();
       var slideWay = this.$modalBtn.find('img').eq(index).attr('class');
       if(slideWay === 'g-next' && !(this.focusPicIndex === 47)){
         this.focusPicIndex += 1;
