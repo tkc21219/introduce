@@ -42,7 +42,7 @@ var App = App || {};
       case '吉成　敬':
       case 'よしなり　たかし':
       case 'ヨシナリ　タカシ':
-        location.href = '../myprofile/top.html';
+        window.location.href = '../myprofile/top.html';
         break;
       case '':
         break;
@@ -216,18 +216,19 @@ var App = App || {};
       this.$list.on('mouseleave',this.leaveSlider.bind(this));
       this.$up.on('click', this.slideUp.bind(this));
       this.$down.on('click', this.slideDown.bind(this));
+      this.ajaxArtical();
     },
     setPosition: function(){
+      this.winHeight = this.$window.height();
       this.downHeight = this.$down.height();
       this.$down.css({
-        bottom: this.$downHeight + 'px'
+        top: (this.winHeight - this.downHeight) + 'px'
       });
     },
      matchPic: function(){
-      var _this = this;
       var url = window.location.href;
       var focus;
-      for(var i = 0; i < _this.$listlength; i++){
+      for(var i = 0; i < this.$listlength; i++){
         var link = this.$list.eq(i).find('a').attr('href');
         if(url.match(link)){
           focus = i;
@@ -252,7 +253,7 @@ var App = App || {};
       $target.find('div').children('.d-hoverTtl__ja').stop().fadeOut(600);
     },
     slideUp: function(){
-      var fromTop = this.$list.offset().top - this.$window.scrollTop();
+      var fromTop = this.$ul.offset().top - this.$window.scrollTop();
       if(fromTop < 0){
         if(Math.abs(fromTop) > this.listHeight){
           this.$ul.stop().animate({
@@ -267,7 +268,7 @@ var App = App || {};
     },
     slideDown: function() {
       var fromTop = this.$ul.offset().top - this.$window.scrollTop();
-      var withoutUnder = (Math.abs(fromTop)) + this.height;
+      var withoutUnder = (Math.abs(fromTop)) + this.winHeight;
       var leftList = this.listWholeH - withoutUnder;
       if(withoutUnder < this.listWholeH ){
         if(leftList > this.listHeight){
@@ -345,17 +346,13 @@ var App = App || {};
   function Gallery(){
     this.init();
   };
-
   Gallery.prototype = {
     init: function(){
       this.getParameter();
       this.bindEvent();
     },
-
     getParameter: function() {
       this.$window = $(window);
-      this.winWidth = this.$window.width();
-      this.winHeight = this.$window.height();
       this.$gWrap = $('.g-cont__wrapper');
       this.$gImgs = this.$gWrap.find('img');
       this.$gOverLay = $('.g-overlay');
@@ -372,9 +369,7 @@ var App = App || {};
       this.$modalClose.on('click', this.closeModal.bind(this));
       this.$modalBtn.find('img').on('click', this.slideModal.bind(this));
     },
-
     sortPic: function(){
-      var _this = this;
       var imgBox = [];
       for(var i = 0; i < 48; i++){
         var num = i + 1;
@@ -398,17 +393,18 @@ var App = App || {};
         opacity: 1
       }, 1000);
     },
-
     showModal: function(e){
+      this.winHeight = this.$window.height();
       this.crntScrollTop = this.$window.scrollTop();
       this.focusPic = $(e.currentTarget).attr('src');
+      this.focusPicIndex = this.$gImgs.index(e.target);
       this.$gWrap.css({
         position:'fixed',
         top: -1 * this.crntScrollTop
       });
       this.$gOverLay.css({
         width: '100%',
-        height: this.$height
+        height: this.winHeight
       }).fadeIn(1000);
       this.$gLayImg.append('<img class="modal-img" src="' + this.focusPic + '">');
     },
@@ -417,15 +413,11 @@ var App = App || {};
         position:'initial'
       });
       $('html, body').prop({scrollTop: this.crntScrollTop});
-
-      //function removeModal(){
-      //}
       this.$gOverLay.fadeOut(700);
       this.$gLayImg.empty();
     },
     slideModal: function(e) {
-      var index = $(e.currentTarget).index();
-      var slideWay = this.$modalBtn.find('img').eq(index).attr('class');
+      var slideWay = $(e.currentTarget).attr('class');
       if(slideWay === 'g-next' && !(this.focusPicIndex === 47)){
         this.focusPicIndex += 1;
         this.focusPic = this.$gImgs.eq(this.focusPicIndex).attr('src');
@@ -445,21 +437,18 @@ var App = App || {};
       }
     }
   };
-
   App.leagle = Leagle;
   App.top = Top;
   App.list = List;
   App.detail = Detail;
   App.gallery = Gallery;
 }());
-
 $(function(){
   var url = window.location.href;
   var file = url.split('/');
   if(file[4] === 'detail.html'){
-    location.href = '#background';
+    window.location.href = '#background';
   }
-
   if(!file[4]){
     console.log('This is leagle');
     new App.leagle;
