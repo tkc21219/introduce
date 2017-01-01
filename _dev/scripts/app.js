@@ -8,11 +8,9 @@
     this.bind();
   };
   Leagle.prototype = {
-
     bind: function(){
       this.$leagleForm.on('submit', this.changePage.bind(this));
     },
-
     changePage: function(){
       this.val = this.$leagleTxt.val();
       // alert(this.val);
@@ -39,7 +37,7 @@
         case '吉成　敬':
         case 'よしなり　たかし':
         case 'ヨシナリ　タカシ':
-          location.href = '/introduce/docs/myprofile/top.html';
+          location.href = '/myprofile/top.html';
           break;
         case '':
           break;
@@ -67,7 +65,6 @@
       setTimeout(this.secondShow.bind(this), 4500);
       setTimeout(this.hidePro.bind(this), 8000);
     },
-
     prologue: function(){
       this.$pro.contents().each(function(){
         if (this.nodeType === 3) {
@@ -75,26 +72,22 @@
         }
       });
     },
-
     firstShow: function(){
       this.$p1.css({'opacity':1});
-      for (var i = 0; i <= this.$p1.children().size() - 1; i++) {
+      for (var i = 0; i <= this.$p1.children().length - 1; i++) {
           this.$p1.children('span:eq('+i+')').delay(100*i).fadeIn(300);
       };
     },
-
     secondShow: function(){
       this.$p2.css({'opacity':1});
-      for (var i = 0; i <= this.$p2.children().size() - 1; i++) {
+      for (var i = 0; i <= this.$p2.children().length - 1; i++) {
         this.$p2.children('span:eq('+i+')').delay(100*i).fadeIn(300);
       };
     },
-
     hidePro: function(){
       this.$pro.fadeOut(1000);
       this.showLink();
     },
-
     showLink: function(){
       this.$p3.css({
           display: 'block'
@@ -103,7 +96,6 @@
       },1500);
       this.animeLink();
     },
-
     animeLink: function(){
       var _this = this;
       setInterval(function(){
@@ -117,7 +109,8 @@
   };
 
 // list.htmlでのjs
-  function List(){
+function List(){
+  this.$window = $(window);
     this.$hdrWrapper = $('.hdrWrapper');
     this.$contWrapper = $('.d-cont__innerWrap');
     this.$list = $('.d-cont__list li');
@@ -129,12 +122,12 @@
     bind: function(){
       this.setSize();
       this.hoverAction();
-      $(window).on('resize', this.setSize.bind(this));
-      $(window).on('load', this.showList.bind(this));
+      this.$window.on('resize', this.setSize.bind(this));
+      this.$window.on('load', this.showList.bind(this));
     },
     setSize: function(){
-      this.$width = $(window).width();
-      this.$height = $(window).height();
+      this.$width = this.$window.width();
+      this.$height = this.$window.height();
       this.$listHeight = (this.$height / 3);
       this.$hdrWrapper.css('height', this.$height + 'px');
       this.$list.css('height', this.$listHeight + 'px');
@@ -154,7 +147,6 @@
       this.$list.on({
         'mouseenter': function(e){
           var index = _this.$list.index(this);
-          // console.log(index);
           _this.$list.eq(index).find('img').css("-webkit-filter", "grayscale(0)");
           if(index == 7){
             _this.$list.eq(7).find('img').attr('src', _this.$list.eq(7).find('img').attr('src').replace('_off', '_on'));
@@ -209,15 +201,15 @@
     hoverSlide: function(){
       var _this = this;
       this.$list.on({
-        'mouseenter': function(){
-          var target = $(event.target).offsetParent();
+        'mouseenter': function(e){
+          var target = $(e.target).offsetParent();
           var index = _this.$list.index(this);
           _this.$list.eq(index).find('img').css("-webkit-filter", "grayscale(0)");
           _this.$list.eq(index).find('div').children('.d-hoverTtl__en').stop().fadeOut(600);
           _this.$list.eq(index).find('div').children('.d-hoverTtl__ja').stop().fadeIn(600);
         },
-        'mouseleave': function(){
-          var target = $(event.target).offsetParent();
+        'mouseleave': function(e){
+          var target = $(e.target).offsetParent();
           var index = _this.$list.index(this);
           _this.$list.eq(index).find('img').css("-webkit-filter", "grayscale(100%)");
           _this.$list.eq(index).find('div').children('.d-hoverTtl__en').stop().fadeIn(600);
@@ -290,7 +282,7 @@
           $.ajax({
             url: '../json/data.json',
             dataType: 'json',
-            data: {name: 'contents'},
+            data: {name: 'contents'}
           }).done(function(data){
             var dataArray = data.contents;
             $('title').text(dataArray[nowHash].title);
@@ -309,7 +301,7 @@
             $.ajax({
               url: '../json/data.json',
               dataType: 'json',
-              data: {name: 'contents'},
+              data: {name: 'contents'}
             }).done(function(data){
               var dataArray = data.contents;
               $("title").text(dataArray[nowHash].title);
@@ -332,9 +324,9 @@
         _this.$list.eq(nowHash).on('mouseout', function(){
           _this.$list.eq(nowHash).find('img').css("-webkit-filter", "grayscale(0)");
         });
-      }
+      };
     }
-  }
+  };
 
 // gallery.htmlでのjs
   function Gallery(){
@@ -439,7 +431,7 @@
         }
       });
     }
-  }
+  };
 
 
 $(function(){
