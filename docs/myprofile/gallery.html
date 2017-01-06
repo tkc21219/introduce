@@ -1,10 +1,48 @@
-<% var metaTitle = 'Gallery | Introduce1.0'; %>
-<% var metaKeyword = '自己紹介 フロントエンド エンジニア カメラ好き 写真好き カメラ 写真'; %>
-<% var metaDesc = '新人フロントエンドエンジニアの自己紹介のギャラリーページ'; %>
-<% include common/_head.ejs %>
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 9]>
+<html lang="ja" class="no-js lt-ie9" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ja" class="no-js" prefix="og: http://ogp.me/ns#"><!--<![endif]-->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport"
+               content="width=device-width, minimum-scale=1, maximum-scale=10,initial-scale=1.0">
+        <meta name="keyword" content="自己紹介 フロントエンド エンジニア カメラ好き 写真好き カメラ 写真">
+        <meta name="description" content="新人フロントエンドエンジニアの自己紹介のギャラリーページ">
+        <title>Gallery | Introduce1.0</title>
+        <link rel="stylesheet" href="/styles/reset.css">
+        <link rel="stylesheet" href="/styles/style.css">
+    </head>
+
 <body class="g-body">
     <div class="galleryWrapper clearfix">
-<% include common/_header.ejs %>
+        <div class="hdrWrapper">
+            <div class='header'>
+                <h1 class="commonTtl"><a class="commonTtl__link" href="list.html">TKC</a></h1>
+                <p class="commonTtl__copy">TKC introduce myself<br>by my creation</p>
+                <nav class="commonNav">
+                    <h2 class="commonNav__ttl"> - My Work - </h2>
+                    <ul class="commonNav__list">
+                        <li><a href="#">web</a></li>
+                        <li><a href="gallery.html">photos</a></li>
+                    </ul>
+                </nav>
+                <div class="commonHdr__noteWrap">
+                    <p class="commonHdr__note">※まとまりがなく<br>適当なのはご愛嬌</p>
+                    <p class="commonHdr__note">※人名は敬称略</p>
+                </div>
+            </div>
+            <div class='footer'>
+                <p>&copy; TKC</p>
+            </div>
+        </div>
+
         <div class="g-overlay">
             <p class="g-modal-close">×</p>
             <div class="g-overlay__btn nextRight">
@@ -216,7 +254,11 @@
             </div>
         </div>
     </div>
-    <% var addjs = '' %>
-    <% include common/_footer.ejs %>
+    
+    
+    <script src="/scripts/jquery-3.0.0.js"></script>
+    <script src="/scripts/app.js"></script>
+    <script src=""></script>
+
 </body>
 </html>
