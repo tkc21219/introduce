@@ -8,11 +8,14 @@ var pleeease = require('gulp-pleeease');
 var uglify = require('gulp-uglify');
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
+var del = require('del');
 var browserSync = require('browser-sync');
 
 var dirs = {
   'src': './_dev/',
-  'dest': './docs/'
+  'dest': './docs/',
+  'assetsSrc': './_dev/assets/',
+  'assetsDest': './docs/assets/'
 };
 
 var config = {
@@ -21,20 +24,20 @@ var config = {
     'dest': dirs.dest + 'myprofile/'
   },
   'sass': {
-    'src': dirs.src + 'styles/**/!(_)*.scss',
-    'dest': dirs.dest + 'styles/'
+    'src': dirs.assetsSrc + 'styles/**/!(_)*.scss',
+    'dest': dirs.assetsDest + 'styles/'
   },
   'js': {
-    'src': dirs.src + 'scripts/**/*.js',
-    'dest': dirs.dest + 'scripts/'
+    'src': dirs.assetsSrc + 'scripts/**/*.js',
+    'dest': dirs.assetsDest + 'scripts/'
   },
   'json': {
-    'src': dirs.src + 'json/**/*',
-    'dest': dirs.dest + 'json/'
+    'src': dirs.assetsSrc + 'json/**/*',
+    'dest': dirs.assetsDest + 'json/'
   },
   'image': {
-    'src': dirs.src + 'images/**/*',
-    'dest': dirs.dest + 'images/'
+    'src': dirs.assetsSrc + 'images/**/*',
+    'dest': dirs.assetsDest + 'images/'
   }
 };
 
@@ -62,7 +65,9 @@ gulp.task('js', function(){
     .pipe(plumber({
       errorHandler: notify.onError("Error: <%= error.message %>")
     }))
-    .pipe(uglify())
+    .pipe(uglify({
+      preserveComments: 'license' // ライセンスコメントを残しつつminify
+    }))
     .pipe(gulp.dest(config.js.dest))
     .pipe(browserSync.stream());
 });
@@ -80,7 +85,7 @@ gulp.task('jsonCopy', function(){
 });
 
 gulp.task('browserSync', function(){
-  browserSync({
+  return browserSync.int(null, {
     browser: 'Google Chrome',
     server: {
       baseDir: dirs.dest,
@@ -89,8 +94,8 @@ gulp.task('browserSync', function(){
   });
 });
 
-gulp.task('reload', function(){
-  browserSync.reload();
+gulp.task('clean', function(cd) {
+  return del(dirs.dest, cd);
 });
 
 gulp.task('watch', function(){

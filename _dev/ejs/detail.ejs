@@ -1,17 +1,17 @@
-<% var metaTitle = 'Detail | Introduce1.0'; %>
-<% var metaKeyword = 'フロントエンド エンジニア 自己紹介 詳細'; %>
-<% var metaDesc = '新人フロントエンドエンジニアの自己紹介の詳細ページ'; %>
-<% include common/_head.ejs %>
+<% var metaTitle = "Detail | Introduce1.0"; %>
+<% var metaKeyword = "フロントエンド エンジニア 自己紹介 詳細"; %>
+<% var metaDesc = "新人フロントエンドエンジニアの自己紹介の詳細ページ"; %>
+<% include ./common/_head.ejs %>
 <body>
-    <div class="detailWrapper clearfix">
-<% include common/_header.ejs %>
-        <div class="d-contMore__innerWrap">
-            <ul class="d-contMore__list">
-            </ul>
-        </div>
-<% include common/_slide.ejs %>
+  <div class="detailWrapper clearfix">
+    <% include ./common/_header.ejs %>
+    <div class="d-contMore__innerWrap">
+      <ul class="d-contMore__list">
+      </ul>
     </div>
-    <% var addjs = '' %>
-    <% include common/_footer.ejs %>
+    <% include ./common/_slide.ejs %>
+  </div>
+  <% var addjs = '' %>
+  <% include ./common/_footer.ejs %>
 </body>
 </html>
