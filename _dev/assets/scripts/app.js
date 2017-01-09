@@ -37,7 +37,7 @@
         case '吉成　敬':
         case 'よしなり　たかし':
         case 'ヨシナリ　タカシ':
-          location.href = '/myprofile/top.html';
+          window.location.href = '/myprofile/openning/index.html';
           break;
         case '':
           break;
@@ -280,7 +280,7 @@ function List(){
         if(hash == hashArrey[i]){
           var nowHash = i;
           $.ajax({
-            url: '../json/data.json',
+            url: '/assets/json/data.json',
             dataType: 'json',
             data: {name: 'contents'}
           }).done(function(data){
@@ -299,7 +299,7 @@ function List(){
           if(hash == hashArrey[i]){
             nowHash = i;
             $.ajax({
-              url: '../json/data.json',
+              url: '/assets/json/data.json',
               dataType: 'json',
               data: {name: 'contents'}
             }).done(function(data){
@@ -359,8 +359,8 @@ function List(){
       var j = 0;
       this.$gImgs.each(function() {
         _this.$gImgs.eq(j).attr({
-          src: '../img/gallery/photo'+imgBox[j]+'.jpg'
-        })
+          src: '/assets/images/gallery/photo'+imgBox[j]+'.jpg'
+        });
         j++;
       });
       $(window).on('load', function(){
@@ -437,8 +437,8 @@ function List(){
 $(function(){
   var url = window.location.href;
   var file = url.split('/');
-  if(file[4] === 'detail.html'){
-      location.href = '#background';
+  if(file[5] === 'detail'){
+      window.location.href = '#background';
   }
 
   var leagle = new Leagle();

@@ -85,7 +85,7 @@ gulp.task('jsonCopy', function(){
 });
 
 gulp.task('browserSync', function(){
-  return browserSync.int(null, {
+  return browserSync.init(null, {
     browser: 'Google Chrome',
     server: {
       baseDir: dirs.dest,
@@ -99,8 +99,8 @@ gulp.task('clean', function(cd) {
 });
 
 gulp.task('watch', function(){
-  gulp.watch(config.ejs.src, ['ejs']);
-  gulp.watch(config.sass.src, ['sass']);
+  gulp.watch(dirs.src + '**/*.ejs', ['ejs']);
+  gulp.watch(dirs.src + '**/*.scss', ['sass']);
   gulp.watch(config.js.src, ['js']);
   gulp.watch(config.image.src, ['imgCopy']);
   gulp.watch(config.json.src, ['jsonCopy']);
