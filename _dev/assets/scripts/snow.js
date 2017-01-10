@@ -82,7 +82,7 @@ $(function(){
             //オブジェクトの速度
             swing: {max: 25, min: .5, speed: 850},
             //オブジェクトの揺れ幅
-            imgpath: '/assets/images/diamond.png'
+            imgpath: '/myprofile/assets/images/diamond.png'
             //オブジェクトの画像パス
         });
     });
