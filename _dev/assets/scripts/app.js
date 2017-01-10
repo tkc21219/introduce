@@ -280,7 +280,7 @@ function List(){
         if(hash == hashArrey[i]){
           var nowHash = i;
           $.ajax({
-            url: '/myprofile/assets/json/data.json',
+            url: '/introduce/myprofile/assets/json/data.json',
             dataType: 'json',
             data: {name: 'contents'}
           }).done(function(data){
@@ -299,7 +299,7 @@ function List(){
           if(hash == hashArrey[i]){
             nowHash = i;
             $.ajax({
-              url: '/myprofile/assets/json/data.json',
+              url: '/introduce/myprofile/assets/json/data.json',
               dataType: 'json',
               data: {name: 'contents'}
             }).done(function(data){
@@ -359,7 +359,7 @@ function List(){
       var j = 0;
       this.$gImgs.each(function() {
         _this.$gImgs.eq(j).attr({
-          src: '/myprofile/assets/images/gallery/photo'+imgBox[j]+'.jpg'
+          src: '/introduce/myprofile/assets/images/gallery/photo'+imgBox[j]+'.jpg'
         });
         j++;
       });
