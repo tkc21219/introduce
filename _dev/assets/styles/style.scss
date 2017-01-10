@@ -1,5 +1,12 @@
 @charset 'UTF-8';
 
 @import '_reset';
+@import '_variables';
+@import '_layout';
+@import '_utility';
 
-@import '_main';
+@import 'pages/_leagle';
+@import 'pages/_openning';
+@import 'pages/_list';
+@import 'pages/_detail';
+@import 'pages/_gallery';
