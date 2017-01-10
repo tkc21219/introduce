@@ -107,3 +107,7 @@ gulp.task('watch', function(){
 });
 
 gulp.task('default', ['ejs', 'sass', 'js', 'imageCopy', 'jsonCopy', 'browserSync', 'watch']);
+gulp.task('build:task', ['ejs', 'sass', 'js', 'imageCopy', 'jsonCopy']);
+gulp.task('build', ['clean'], function() {
+  gulp.start('build:task');
+});
