@@ -21,7 +21,7 @@ var dirs = {
 var config = {
   'ejs': {
     'src': dirs.src + 'ejs/**/!(_)*.ejs',
-    'dest': dirs.dest + 'myprofile/'
+    'dest': dirs.dest
   },
   'sass': {
     'src': dirs.assetsSrc + 'styles/**/!(_)*.scss',
@@ -89,7 +89,7 @@ gulp.task('browserSync', function(){
     browser: 'Google Chrome',
     server: {
       baseDir: dirs.dest,
-      index: 'myprofile/index.html'
+      index: 'index.html'
     }
   });
 });
@@ -100,10 +100,10 @@ gulp.task('clean', function(cd) {
 
 gulp.task('watch', function(){
   gulp.watch(dirs.src + '**/*.ejs', ['ejs']);
-  gulp.watch(dirs.src + '**/*.scss', ['sass']);
+  gulp.watch(dirs.assetsSrc + '**/*.scss', ['sass']);
   gulp.watch(config.js.src, ['js']);
   gulp.watch(config.image.src, ['imgCopy']);
   gulp.watch(config.json.src, ['jsonCopy']);
 });
 
-gulp.task('default', ['ejs', 'sass', 'imageCopy', 'jsonCopy', 'browserSync', 'watch']);
+gulp.task('default', ['ejs', 'sass', 'js', 'imageCopy', 'jsonCopy', 'browserSync', 'watch']);

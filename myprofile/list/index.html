@@ -1,14 +1,55 @@
-<% var title = "Introduce1.0"; %>
-<% var keyword = "自己紹介 フロントエンド エンジニア"; %>
-<% var descriptiion = "新人フロントエンドエンジニアの自己紹介ページ"; %>
-<% include ../_include/_head.ejs %>
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=10,initial-scale=1.0">
+    <title>Introduce1.0</title>
+    <meta name="keyword" content="自己紹介 フロントエンド エンジニア">
+    <meta name="description" content="introduce">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="Introduce1.0">
+    <meta property="og:title" content="Introduce1.0">
+    <meta property="og:description" content="introduce">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta name='twitter:card', content='summary_large_image'>
+    <meta name='twitter:title', content="Introduce1.0">
+    <meta name='twitter:description', content="introduce">
+    <meta name='twitter:image', content="">
+    <link rel="stylesheet" href="/assets/styles/style.css">
+  </head>
+
 <body class="listBody">
   <div class="detailWrapper clearfix">
-    <% include ../_include/_header.ejs %>
+    <div class="hdrWrapper">
+  <div class="header">
+    <h1 class="commonTtl"><a class="commonTtl__link" href="/myprofile/list/index.html">tkcco21</a></h1>
+    <p class="commonTtl__copy">TKC introduce myself<br>by my creation</p>
+    <nav class="commonNav">
+      <h2 class="commonNav__ttl"> - My Work - </h2>
+      <ul class="commonNav__list">
+        <li><a href="/myprofile/gallery/index.html">photos</a></li>
+      </ul>
+    </nav>
+    <div class="commonHdr__noteWrap">
+      <p class="commonHdr__note">※まとまりがなく<br>適当なのはご愛嬌</p>
+      <p class="commonHdr__note">※人名は敬称略</p>
+    </div>
+  </div>
+  <div class="footer">
+    <p>&copy; tkcco21</p>
+  </div>
+</div>
+
     <div class="d-cont__innerWrap">
       <ul class="d-cont__list clearfix">
         <li>
-          <a href="./detail/index.html#background">
+          <a href="/myprofile/list/detail/index.html#background">
             <img src="/assets/images/detail__list/background.jpg" alt="">
             <div class="d-contList__hover">
               <h3 class="d-hoverTtl__en show">Background</h3>
@@ -17,7 +58,7 @@
           </a>
         </li>
         <li>
-          <a href="./detail/index.html#oversea">
+          <a href="/myprofile/list/detail/index.html#oversea">
             <img src="/assets/images/detail__list/oversea.jpg" alt="">
             <div class="d-contList__hover">
               <h3 class="d-hoverTtl__en show">Oversea</h3>
@@ -26,7 +67,7 @@
           </a>
         </li>
         <li>
-          <a href="./detail/index.html#skill">
+          <a href="/myprofile/list/detail/index.html#skill">
             <img src="/assets/images/detail__list/skill.jpg" alt="">
             <div class="d-contList__hover">
               <h3 class="d-hoverTtl__en show">Skill</h3>
@@ -35,7 +76,7 @@
           </a>
         </li>
         <li>
-          <a href="./detail/index.html#sports">
+          <a href="/myprofile/list/detail/index.html#sports">
             <img src="/assets/images/detail__list/sports.jpg" alt="">
             <div class="d-contList__hover">
               <h3 class="d-hoverTtl__en show">sports</h3>
@@ -44,7 +85,7 @@
           </a>
         </li>
         <li>
-          <a href="./detail/index.html#game">
+          <a href="/myprofile/list/detail/index.html#game">
             <img src="/assets/images/detail__list/game.jpg" alt="">
             <div class="d-contList__hover">
               <h3 class="d-hoverTtl__en show">Game</h3>
@@ -53,7 +94,7 @@
           </a>
         </li>
         <li>
-          <a href="./detail/index.html#tv-movie">
+          <a href="/myprofile/list/detail/index.html#tv-movie">
             <img src="/assets/images/detail__list/movie.jpg" alt="">
             <div class="d-contList__hover">
               <h3 class="d-hoverTtl__en show">TV・Movie</h3>
@@ -62,7 +103,7 @@
           </a>
         </li>
         <li>
-          <a href="./detail/index.html#book">
+          <a href="/myprofile/list/detail/index.html#book">
             <img src="/assets/images/detail__list/book.jpg" alt="">
             <div class="d-contList__hover">
               <h3 class="d-hoverTtl__en show">Book</h3>
@@ -71,7 +112,7 @@
           </a>
         </li>
         <li>
-          <a href="./detail/index.html#mygirl">
+          <a href="/myprofile/list/detail/index.html#mygirl">
             <img src="/assets/images/detail__list/girl_off.jpg" alt="">
             <div class="d-contList__hover">
               <h3 class="d-hoverTtl__en show">My Girl</h3>
@@ -80,7 +121,7 @@
           </a>
         </li>
         <li>
-          <a href="./detail/index.html#future">
+          <a href="/myprofile/list/detail/index.html#future">
             <img src="/assets/images/detail__list/future.jpg" alt="">
             <div class="d-contList__hover">
               <h3 class="d-hoverTtl__en show">Future</h3>
@@ -91,7 +132,11 @@
       </ul>
     </div>
   </div>
-  <% var addjs = '' %>
-  <% include ../_include/_footer.ejs %>
+  
+  
+    <script src="/assets/scripts/jquery-3.0.0.js"></script>
+    <script src="/assets/scripts/app.js"></script>
+    <script src=""></script>
+
 </body>
 </html>
