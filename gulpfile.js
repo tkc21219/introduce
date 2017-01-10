@@ -13,9 +13,9 @@ var browserSync = require('browser-sync');
 
 var dirs = {
   'src': './_dev/',
-  'dest': './docs/',
+  'dest': './myprofile/',
   'assetsSrc': './_dev/assets/',
-  'assetsDest': './docs/assets/'
+  'assetsDest': './myprofile/assets/'
 };
 
 var config = {
@@ -88,8 +88,8 @@ gulp.task('browserSync', function(){
   return browserSync.init(null, {
     browser: 'Google Chrome',
     server: {
-      baseDir: dirs.dest,
-      index: 'index.html'
+      baseDir: './',
+      index: 'myprofile/index.html'
     }
   });
 });

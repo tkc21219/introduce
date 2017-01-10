@@ -37,7 +37,7 @@
         case '吉成　敬':
         case 'よしなり　たかし':
         case 'ヨシナリ　タカシ':
-          window.location.href = './openning/index.html';
+          window.location.href = '/myprofile/openning/index.html';
           break;
         case '':
           break;
@@ -280,7 +280,7 @@ function List(){
         if(hash == hashArrey[i]){
           var nowHash = i;
           $.ajax({
-            url: '/assets/json/data.json',
+            url: '/myprofile/assets/json/data.json',
             dataType: 'json',
             data: {name: 'contents'}
           }).done(function(data){
@@ -299,7 +299,7 @@ function List(){
           if(hash == hashArrey[i]){
             nowHash = i;
             $.ajax({
-              url: '/assets/json/data.json',
+              url: '/myprofile/assets/json/data.json',
               dataType: 'json',
               data: {name: 'contents'}
             }).done(function(data){
@@ -359,7 +359,7 @@ function List(){
       var j = 0;
       this.$gImgs.each(function() {
         _this.$gImgs.eq(j).attr({
-          src: '/assets/images/gallery/photo'+imgBox[j]+'.jpg'
+          src: '/myprofile/assets/images/gallery/photo'+imgBox[j]+'.jpg'
         });
         j++;
       });
