@@ -37,7 +37,7 @@
         case '吉成　敬':
         case 'よしなり　たかし':
         case 'ヨシナリ　タカシ':
-          window.location.href = '/myprofile/openning/index.html';
+          window.location.href = '/introduce/myprofile/openning/index.html';
           break;
         case '':
           break;
