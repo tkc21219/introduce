@@ -88,8 +88,8 @@ gulp.task('browserSync', function(){
   return browserSync.init(null, {
     browser: 'Google Chrome',
     server: {
-      baseDir: './',
-      index: 'myprofile/index.html'
+      baseDir: '../',
+      index: 'introduce/myprofile/index.html'
     }
   });
 });
