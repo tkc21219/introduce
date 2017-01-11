@@ -1,12 +1,16 @@
 @charset 'UTF-8';
 
-@import '_reset';
-@import '_variables';
-@import '_layout';
-@import '_utility';
+@import 'foundation/_reset';
+@import 'foundation/_base';
 
-@import 'pages/_leagle';
-@import 'pages/_openning';
-@import 'pages/_list';
-@import 'pages/_detail';
-@import 'pages/_gallery';
+@import 'object/utility/_variables';
+@import 'object/utility/_utility';
+
+@import 'object/component/_component';
+@import 'layout/_header';
+
+@import 'object/project/_leagle';
+@import 'object/project/_openning';
+@import 'object/project/_list';
+@import 'object/project/_detail';
+@import 'object/project/_gallery';
