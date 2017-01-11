@@ -2,41 +2,6 @@ body {
   font-family: Noto Sans Japanese,Helvetica,Arial,ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,メイリオ,Meiryo,Osaka,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif;
 }
 
-$font-family: "Noto Sans Japanese", Helvetica, Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif
-$font-size-root: 62.5% !default
-$font-size-base: 1.4rem !default
-
-+font-face("Noto Sans Japanese", "/assets/fonts/NotoSansCJKjp/NotoSansCJKjp-ThinSubset", 100)
-+font-face("Noto Sans Japanese", "/assets/fonts/NotoSansCJKjp/NotoSansCJKjp-LightSubset", 200)
-+font-face("Noto Sans Japanese", "/assets/fonts/NotoSansCJKjp/NotoSansCJKjp-DemiLightSubset", 300)
-+font-face("Noto Sans Japanese", "/assets/fonts/NotoSansCJKjp/NotoSansCJKjp-RegularSubset", 400)
-+font-face("Noto Sans Japanese", "/assets/fonts/NotoSansCJKjp/NotoSansCJKjp-MediumSubset", 500)
-+font-face("Noto Sans Japanese", "/assets/fonts/NotoSansCJKjp/NotoSansCJKjp-BoldSubset", 700)
-+font-face("Noto Sans Japanese", "/assets/fonts/NotoSansCJKjp/NotoSansCJKjp-BlackSubset", 900)
-
-// Based on http://codepen.io/javasteve99/pen/hDxpn
-=font-face($font-family, $file-path, $font-weight: normal, $font-style: normal)
-  @font-face
-    font-family: $font-family
-    src: url('#{$file-path}.eot')
-    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype'), url('#{$file-path}.svg##{$font-family}') format('svg')
-    font-weight: $font-weight
-    font-style: $font-style
-
-  // Chrome for Windows rendering fix: http://www.adtrak.co.uk/blog/font-face-chrome-rendering/
-  @media screen and (-webkit-min-device-pixel-ratio: 0)
-    @font-face
-      font-family: $font-family
-      src: url('#{$file-path}.svg##{$font-family}') format('svg')
-
-
-
-
-
-
-
-
-              
 // headerのスタイル
 .hdrWrapper {
   display: none;
