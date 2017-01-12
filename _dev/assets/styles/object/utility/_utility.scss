@@ -1,5 +1,49 @@
-.clearfix:after {
-  display: block;
-  clear: both;
-  content: "";
+.u-clearfix {
+  zoom: 1;
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+.u-hvr-opa {
+  display: block
+  &:hover {
+    opacity: .8
+  }
+}
+
+@each $prefix, $pos in (l: left, r: right, n: none) {
+  .u-fl-#{$prefix} {
+    float: #{$pos} !important
+  }
+}
+
+@for $i from 0 through 20 {
+  .u-m-#{$i} {
+    margin: $i + 0% !important
+  }
+}
+
+@each $prefix, $pos in (mt: top, mb: bottom, ml: left, mr: right) {
+  @for $i from 0 through 20 {
+    .u-#{$prefix}-#{$i} {
+      margin-#{$pos}: $i + 0% !important
+    }
+  }
+}
+
+@for $i from 0 through 20 {
+  .u-p-#{$i} {
+    padding: $i + 0% !important
+  }
+}
+
+@each $prefix, $pos in (pt: top, pb: bottom, pl: left, pr: right) {
+  @for $i from 0 through 20 {
+    .u-#{$prefix}-#{$i} {
+      padding-#{$pos}: $i + 0% !important
+    }
+  }
 }

@@ -40,8 +40,8 @@ var config = {
     'dest': dirs.assetsDest + 'images/'
   },
   'font': {
-    'src': dirs.assetsSrc + 'font/**/*',
-    'dest': dirs.assetsDest + 'font/'
+    'src': dirs.assetsSrc + 'fonts/**/*',
+    'dest': dirs.assetsDest + 'fonts/'
   }
 };
 
@@ -59,7 +59,17 @@ gulp.task('sass', function(){
       errorHandler: notify.onError("Error: <%= error.message %>")
     }))
     .pipe(sass())
-    .pipe(pleeease())
+    .pipe(pleeease({
+      'autoprefixer': {
+        'browsers': [
+          'last 4 version',
+          'ie >=9',
+          'iOS 8',
+          'Android >= 4.4',
+          'last 2 ChromeAndroid versions'
+        ]},
+      minifier: false
+    }))
     .pipe(gulp.dest(config.sass.dest))
     .pipe(browserSync.stream());
 });

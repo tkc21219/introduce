@@ -1,13 +1,17 @@
 @charset 'UTF-8';
 
 @import 'foundation/_reset';
+@import 'foundation/_mixins';
+@import 'foundation/_font';
+@import 'foundation/_variables';
 @import 'foundation/_base';
 
-@import 'object/utility/_variables';
+@import 'layout/_header';
+
 @import 'object/utility/_utility';
 
 @import 'object/component/_component';
-@import 'layout/_header';
+@import 'object/component/_heading';
 
 @import 'object/project/_leagle';
 @import 'object/project/_openning';

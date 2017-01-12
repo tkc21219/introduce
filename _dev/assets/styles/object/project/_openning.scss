@@ -8,6 +8,14 @@
     font-size: 65px;
     color: #fff;
     text-align: center;
+    &:first-child {
+      top: 35%;
+      opacity: 0;
+    }
+    &:last-child {
+      top: 50%;
+      opacity: 0;
+    }
     > span {
       display: none;
     }
@@ -19,31 +27,22 @@
     &:hover {
       z-index: 1;
     }
-  }
-}
-
-.js-p1 {
-  top: 35%;
-  opacity: 0;
-}
-.js-p2 {
-  top: 50%;
-  opacity: 0;
-}
-.js-p3 {
-  display: none;
-  margin: 0 auto;
-  padding: 15px;
-  width: 60%;
-  font-size: 65px;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  background-color: #999;
-  opacity: 0;
-  transition: background-color 1s;
-  &:hover {
-    background-color: $cmngreen;
+    a {
+      display: none;
+      margin: 0 auto;
+      padding: 15px;
+      width: 60%;
+      font-size: 65px;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      background-color: #999;
+      opacity: 0;
+      transition: background-color 1s;
+      &:hover {
+        background-color: $cmngreen;
+      }
+    }
   }
 }

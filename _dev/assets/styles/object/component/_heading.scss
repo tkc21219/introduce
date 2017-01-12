@@ -1,0 +1,30 @@
+h1, .c-heading1 {
+  font-size: 3.4rem;
+  font-weight: lighter;
+  margin-top: 1.9rem;
+  margin-bottom: 1.9rem;
+  &--bold {
+    font-weight: 500;
+  }
+}
+
+h2, .c-heading2 {
+  font-size: 2.6rem;
+  font-weight: lighter;
+  margin-top: 1.9rem;
+  margin-bottom: 1.9rem;
+  &--bold {
+    font-weight: 500;
+  }
+}
+
+h3, .c-heading3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.9rem;
+  margin-top: 1.9rem
+
+  &--bold {
+    font-weight: 500;
+  }
+}

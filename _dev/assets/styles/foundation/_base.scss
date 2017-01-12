@@ -1,29 +1,45 @@
-*,
-*:before,
-*:after {
+*, *:before, *:after {
   box-sizing: border-box;
 }
 
+html {
+  font-size: $font-size-root;
+}
 body {
-  font-size: 62.5%;
-  line-height: 1.4;
-  font-family: Noto Sans Japanese,Helvetica,Arial,ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,メイリオ,Meiryo,Osaka,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif;
+  color: #000;
+  font-size: $font-size-base;
+  font-family: $font-family;
+  font-weight: 300;
+  line-height: 1.7;
 }
 ul {
   list-style: dics;
 }
 a {
+  color: #000;
   text-decoration: none;
+  outline: none;
 }
 img {
   max-width: 100%;
+  height: auto;
   vertical-align: bottom;
 }
 hr {
   display: block;
   padding: 0;
-  margin: 1em 0;
   height: 1px;
   border: 0;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input, select {
+  vertical-align: middle;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+  display: block;
 }
