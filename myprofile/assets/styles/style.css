@@ -206,6 +206,67 @@ footer, header, hgroup, menu, nav, section {
     .header__copyright > p {
       text-align: center; }
 
+.p-detailSlide {
+  float: left;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%; }
+  .p-detailSlide__back {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 27px;
+    background-color: #000;
+    z-index: 1; }
+    .p-detailSlide__back__link {
+      display: block;
+      font-size: 0;
+      text-align: center;
+      transition: all .7s ease-in; }
+      .p-detailSlide__back__link:hover {
+        background-color: #a9e6a4; }
+      .p-detailSlide__back__link > img {
+        display: inline-block;
+        margin-right: 10px;
+        width: 20px;
+        vertical-align: middle; }
+      .p-detailSlide__back__link > p {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        vertical-align: middle; }
+  .p-detailSlide__list {
+    position: absolute;
+    background-color: #000; }
+    .p-detailSlide__list > li {
+      display: block;
+      width: 100%; }
+      .p-detailSlide__list > li > a {
+        display: block;
+        position: relative; }
+        .p-detailSlide__list > li > a > img {
+          width: 100%;
+          vertical-align: bottom;
+          filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /></filter></svg>#filter');
+          -webkit-filter: grayscale(100%);
+                  filter: grayscale(100%); }
+  .p-detailSlide__btn > a {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5); }
+    .p-detailSlide__btn > a.up {
+      top: 27px; }
+    .p-detailSlide__btn > a > img {
+      display: block;
+      padding: 4px 0;
+      margin: 0 auto;
+      width: 60px;
+      height: 22px; }
+
 .u-clearfix {
   zoom: 1; }
   .u-clearfix:after {
@@ -952,7 +1013,7 @@ h3, .c-heading3 {
       top: 35%;
       opacity: 0;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
-    .p-openning__prologue:last-child {
+    .p-openning__prologue:last-of-type {
       top: 50%;
       opacity: 0;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
@@ -981,79 +1042,73 @@ h3, .c-heading3 {
       .p-openning__link a:hover {
         background-color: #a9e6a4; }
 
-.listBody {
-  overflow: hidden; }
-
-.d-cont__innerWrap {
+.p-list {
   margin-left: 20%;
   width: 80%; }
-
-.d-cont__list > li {
-  float: left;
-  display: none;
-  position: relative;
-  top: -40px;
-  width: 33.333333333%;
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /></filter></svg>#filter');
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%); }
-  .d-cont__list > li.background {
-    background: url(/introduce/myprofile/assets/images/list/background.jpg) center center no-repeat;
-    background-size: cover; }
-  .d-cont__list > li.oversea {
-    background: url(/introduce/myprofile/assets/images/list/oversea.jpg) center center no-repeat;
-    background-size: cover; }
-  .d-cont__list > li.skill {
-    background: url(/introduce/myprofile/assets/images/list/skill.jpg) center center no-repeat;
-    background-size: cover; }
-  .d-cont__list > li.sports {
-    background: url(/introduce/myprofile/assets/images/list/sports.jpg) center center no-repeat;
-    background-size: cover; }
-  .d-cont__list > li.game {
-    background: url(/introduce/myprofile/assets/images/list/game.jpg) center center no-repeat;
-    background-size: cover; }
-  .d-cont__list > li.movie {
-    background: url(/introduce/myprofile/assets/images/list/movie.jpg) center center no-repeat;
-    background-size: cover; }
-  .d-cont__list > li.book {
-    background: url(/introduce/myprofile/assets/images/list/book.jpg) center center no-repeat;
-    background-size: cover; }
-  .d-cont__list > li.girl {
-    background: url(/introduce/myprofile/assets/images/list/girl.jpg) center center no-repeat;
-    background-size: cover; }
-  .d-cont__list > li.future {
-    background: url(/introduce/myprofile/assets/images/list/future.jpg) center center no-repeat;
-    background-size: cover; }
-
-.d-contList__hover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 5%;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(50, 50, 50, 0.2);
-  box-sizing: border-box; }
-  .d-contList__hover > h3 {
+  .p-list__wrapper > li {
+    float: left;
+    display: none;
+    position: relative;
+    top: -40px;
+    width: 33.333333333%;
+    list-style: none;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /></filter></svg>#filter');
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%); }
+    .p-list__wrapper > li.background {
+      background: url(/introduce/myprofile/assets/images/list/background.jpg) center center no-repeat;
+      background-size: cover; }
+    .p-list__wrapper > li.oversea {
+      background: url(/introduce/myprofile/assets/images/list/oversea.jpg) center center no-repeat;
+      background-size: cover; }
+    .p-list__wrapper > li.skill {
+      background: url(/introduce/myprofile/assets/images/list/skill.jpg) center center no-repeat;
+      background-size: cover; }
+    .p-list__wrapper > li.sports {
+      background: url(/introduce/myprofile/assets/images/list/sports.jpg) center center no-repeat;
+      background-size: cover; }
+    .p-list__wrapper > li.game {
+      background: url(/introduce/myprofile/assets/images/list/game.jpg) center center no-repeat;
+      background-size: cover; }
+    .p-list__wrapper > li.movie {
+      background: url(/introduce/myprofile/assets/images/list/movie.jpg) center center no-repeat;
+      background-size: cover; }
+    .p-list__wrapper > li.book {
+      background: url(/introduce/myprofile/assets/images/list/book.jpg) center center no-repeat;
+      background-size: cover; }
+    .p-list__wrapper > li.girl {
+      background: url(/introduce/myprofile/assets/images/list/girl.jpg) center center no-repeat;
+      background-size: cover; }
+    .p-list__wrapper > li.future {
+      background: url(/introduce/myprofile/assets/images/list/future.jpg) center center no-repeat;
+      background-size: cover; }
+  .p-list__title {
     position: absolute;
-    top: 45%;
-    margin: 0 0 10px;
-    width: 90%;
-    font-weight: bold;
-    font-size: 22px;
-    color: #fff;
-    text-align: center;
+    top: 0;
+    left: 0;
+    padding: 5%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 50, 50, 0.2);
     box-sizing: border-box; }
+    .p-list__title > h3 {
+      position: absolute;
+      top: 45%;
+      margin: 0 0 10px;
+      width: 90%;
+      font-weight: bold;
+      font-size: 22px;
+      color: #fff;
+      text-align: center;
+      box-sizing: border-box; }
+      .p-list__title > h3.hide {
+        display: none; }
+      .p-list__title > h3.show {
+        display: block; }
 
-.hide {
-  display: none; }
-
-.show {
-  display: block; }
-
-.d-contMore__innerWrap {
+.p-detail {
   float: left;
   width: 50%;
   padding: 10px 10px 30px;
@@ -1088,67 +1143,6 @@ h3, .c-heading3 {
   font-size: 11px;
   color: #999;
   line-height: 0.5; }
-
-.d-contMore__slideWrap {
-  float: left;
-  position: fixed;
-  right: 0;
-  width: 30%; }
-
-.d-contMore-back {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 30%;
-  background-color: rgba(0, 0, 0, 0.4);
-  transition: all .7s ease-in;
-  z-index: 1; }
-  .d-contMore-back:hover {
-    background-color: #a9e6a4; }
-  .d-contMore-back > a {
-    display: block;
-    padding: 10px 0;
-    margin: 0 auto;
-    width: 70%;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-    text-align: center; }
-    .d-contMore-back > a > p > img {
-      width: 16px;
-      height: 16px;
-      vertical-align: bottom; }
-
-.d-contMore__slideList {
-  position: absolute; }
-  .d-contMore__slideList > li {
-    display: block;
-    width: 100%; }
-    .d-contMore__slideList > li > a {
-      display: block;
-      position: relative; }
-      .d-contMore__slideList > li > a > img {
-        width: 100%;
-        vertical-align: bottom;
-        filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /></filter></svg>#filter');
-        -webkit-filter: grayscale(100%);
-                filter: grayscale(100%); }
-
-.d-contMore__slideBtn > div {
-  position: absolute;
-  width: 100%;
-  height: 30px;
-  background-color: rgba(0, 0, 0, 0.3);
-  cursor: pointer; }
-  .d-contMore__slideBtn > div.up {
-    top: 36px; }
-  .d-contMore__slideBtn > div > img {
-    display: block;
-    padding: 4px 0;
-    margin: 0 auto;
-    width: 60px;
-    height: 22px; }
 
 .g-body {
   background-color: #a9e6a4; }
