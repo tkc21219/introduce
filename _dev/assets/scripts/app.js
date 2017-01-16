@@ -323,44 +323,56 @@ Detail.prototype = {
 
 // gallery.htmlでのjs
 function Gallery(){
-  this.$gWrap = $('.g-cont__wrapper');
-  this.$gImgs = this.$gWrap.find('img');
-  this.$gOverLay = $('.g-overlay');
-  this.$gLayImg = $('.g-overlay__img');
-  this.$modalBtn = $('.g-overlay__btn');
-  this.$modalClose = $('.g-modal-close');
-  this.$modalImg = $('.modal-img');
   this.init();
 };
 Gallery.prototype = {
   init: function(){
-    this.sortPic();
-    this.modalPic();
+    this.getParamater();
+    this.bindEvent();
   },
-  sortPic: function(){
-    var _this = this;
-    var imgBox = [];
-    for(var i = 0; i < 48; i++){
-      var num = i + 1;
-      _this.$gImgs.eq(i).each(function(){
-        imgBox.push(num);
+  getParamater: function()  {
+    this.$window = $(window);
+    this.$galleryWrap = $('.p-gallery__wrapper');
+    this.$galleryImages = this.$galleryWrap.find('img');
+
+    this.$gOverLay = $('.g-overlay');
+    this.$gLayImg = $('.g-overlay__img');
+    this.$modalBtn = $('.g-overlay__btn');
+    this.$modalClose = $('.g-modal-close');
+    this.$modalImg = $('.modal-img');
+  },
+  bindEvent: function() {
+    this.sortPhotos();
+    this.$window.on('load', this.showPhotos.bind(this));
+  },
+  sortPhotos: function(){
+    var _this = this,
+        lengthOfImages = this.$galleryImages.length,
+        arrayOfImages = [],
+        i = 0;
+    for(var index = 0; index < lengthOfImages; index++){
+      var num = index + 1;
+      this.$galleryImages.eq(index).each(function(){
+        arrayOfImages.push(num);
       });
     }
-    var sort = imgBox.sort(function() {
-      return Math.random() - Math.random();
-    });
-    var j = 0;
-    this.$gImgs.each(function() {
-      _this.$gImgs.eq(j).attr({
-        src: '/introduce/myprofile/assets/images/gallery/photo'+imgBox[j]+'.jpg'
+    for(var sortIndex = lengthOfImages - 1; sortIndex > 0; sortIndex--) {
+      var sortedIndex = Math.floor(Math.random() * (sortIndex + 1));
+      var tmp = arrayOfImages[sortIndex];
+      arrayOfImages[sortIndex] = arrayOfImages[sortedIndex];
+      arrayOfImages[sortedIndex] = tmp;
+    }
+    this.$galleryImages.each(function() {
+      _this.$galleryImages.eq(i).attr({
+        src: '/introduce/myprofile/assets/images/gallery/photo' + arrayOfImages[i] + '.jpg'
       });
-      j++;
+      i++;
     });
-    $(window).on('load', function(){
-      _this.$gImgs.animate({
+  },
+  showPhotos: function() {
+    this.$galleryImages.animate({
         opacity: 1
       }, 1000);
-    });
   },
 
   modalPic: function(){

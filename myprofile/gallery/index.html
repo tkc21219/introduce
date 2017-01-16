@@ -26,8 +26,21 @@
     <link rel="stylesheet" href="/introduce/myprofile/assets/styles/style.css">
   </head>
 
-<body class="g-body">
-  <div class="galleryWrapper clearfix">
+<body>
+  <!-- modal -->
+  <div class="p-modal">
+    <a class="p-modal__close" href="">×</a>
+    <div class="p-modal__btn is-left">
+      <img src="/introduce/myprofile/assets/images/g-next.png">
+    </div>
+    <div class="p-modal__btn is-right">
+      <img src="/introduce/myprofile/assets/images/g-prev.png">
+    </div>
+    <div class="p-modal__image"></div>
+  </div>
+  <!-- /modal -->
+
+  <div class="clearfix">
     <div class="header">
   <div class="header__body">
     <h1 class="header__title"><a class="header__title--link" href="/introduce/myprofile/list/index.html">tkcco21</a></h1>
@@ -48,27 +61,17 @@
   </div>
 </div>
 
-    <div class="g-overlay">
-      <p class="g-modal-close">×</p>
-      <div class="g-overlay__btn nextRight">
-        <img class="g-next" src="/introduce/myprofile/assets/images/g-next.png" alt="">
-      </div>
-      <div class="g-overlay__btn prevLeft">
-        <img class="g-prev" src="/introduce/myprofile/assets/images/g-prev.png" alt="">
-      </div>
-      <div class="g-overlay__img"></div>
-    </div>
-    <div class="g-cont__wrapper">
-      <div class="g-cont__innerWrap">
-        <div class="g-cont__list1st clearfix">
-          <div class="g-contList1st__l">
+    <div class="p-gallery">
+      <div class="p-gallery__wrapper">
+        <div class="p-gallery__list-1st clearfix">
+          <div class="p-gallery__list-1st is-left">
             <img src="" alt="">
           </div>
-          <div class="g-contList1st__r">
-            <div class="g-contList1st__rTop">
+          <div class="p-gallery__list-1st is-right">
+            <div>
               <img src="" alt="">
             </div>
-            <div class="g-contList1st__rBottom">
+            <div>
               <img src="" alt="">
             </div>
           </div>

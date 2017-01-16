@@ -1,12 +1,41 @@
-// gallery.htmlのスタイル
-.g-body {
-  background-color: $cmngreen;
-}
-.g-overlay {
+/* modal */
+.p-modal {
   display: none;
   position: fixed;
   background-color: rgba(0,0,0,.7);
-  &__img {
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0 8px 5px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #000;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    z-index: 10;
+  }
+  &__btn {
+    position: absolute;
+    top: 48%;
+    width: 5%;
+    cursor: pointer;
+    z-index: 10;
+    &.is-left {
+      left: 30px;
+    }
+    &.is-right {
+      right: 30px;
+    }
+    > img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__image {
     position: relative;
     width: 100%;
     height: 100%;
@@ -22,84 +51,40 @@
       box-shadow: 0 0 200px 40px;
     }
   }
-  &__btn {
-    position: absolute;
-    top: 48%;
-    width: 5%;
-    cursor: pointer;
-    z-index: 10;
-    > img {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-  }
-  > p {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 0 8px 5px;
-    font-size: 40px;
-    font-weight: bold;
-    color: #000;
-    border: 5px solid #fff;
-    border-radius: 50%;
-    background-color: #fff;
-    cursor: pointer;
-    z-index: 10;
-  }
 }
-.nextRight {
-  right: 30px;
-}
-.prevLeft {
-  left: 30px;
-}
-.g-cont__wrapper {
-  float: left;
+
+/* gallery */
+.p-gallery {
   margin-left: 20%;
   width: 80%;
   z-index: -1;
-}
-.g-cont__innerWrap {
-  padding: 30px;
-  margin: 0 auto;
-  width: 900px;
-  box-sizing: border-box;
-  & img {
-    opacity: 0;
-  }
-}
-.g-cont__list1st {
-  margin-bottom: 3px;
-}
-.g-contList1st__l {
-  float: left;
-  margin-right: 4px;
-  width: 560px;
-  > img {
-    display: block;
-    width: 100%;
-  }
-}
-.g-contList1st__r {
-  float: left;
-  &Top {
-    margin-bottom: 4px;
-    width: 276px;
-    > img {
-      display: block;
-      width: 100%;
+  &__wrapper {
+    margin: 0 auto;
+    width: 96%;
+    box-sizing: border-box;
+    & img {
+      opacity: 0;
     }
   }
-  &Bottom {
-    width: 276px;
-    > img {
-      display: block;
-      width: 100%;
+  &__list-1st {
+    margin-bottom: 3px;
+    font-size: 0;
+    &.is-left {
+      display: inline-block;
+      margin-right: 2%;
+      width: 60%;
+    }
+    &.is-right {
+      display: inline-block;
+      width: 38%;
+      &:first-child {
+        margin-bottom: 2%;
+      }
     }
   }
 }
+
+
 .g-cont__list2nd {
   margin-bottom: 3px;
 }
