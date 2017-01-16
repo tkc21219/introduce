@@ -38,6 +38,10 @@ var config = {
   'image': {
     'src': dirs.assetsSrc + 'images/**/*',
     'dest': dirs.assetsDest + 'images/'
+  },
+  'font': {
+    'src': dirs.assetsSrc + 'fonts/**/*',
+    'dest': dirs.assetsDest + 'fonts/'
   }
 };
 
@@ -55,7 +59,17 @@ gulp.task('sass', function(){
       errorHandler: notify.onError("Error: <%= error.message %>")
     }))
     .pipe(sass())
-    .pipe(pleeease())
+    .pipe(pleeease({
+      'autoprefixer': {
+        'browsers': [
+          'last 4 version',
+          'ie >=9',
+          'iOS 8',
+          'Android >= 4.4',
+          'last 2 ChromeAndroid versions'
+        ]},
+      minifier: false
+    }))
     .pipe(gulp.dest(config.sass.dest))
     .pipe(browserSync.stream());
 });
@@ -84,6 +98,12 @@ gulp.task('jsonCopy', function(){
     .pipe(browserSync.stream());
 });
 
+gulp.task('fontCopy', function(){
+  return gulp.src(config.font.src)
+    .pipe(gulp.dest(config.font.dest))
+    .pipe(browserSync.stream());
+});
+
 gulp.task('browserSync', function(){
   return browserSync.init(null, {
     browser: 'Google Chrome',
@@ -104,10 +124,11 @@ gulp.task('watch', function(){
   gulp.watch(config.js.src, ['js']);
   gulp.watch(config.image.src, ['imgCopy']);
   gulp.watch(config.json.src, ['jsonCopy']);
+  gulp.watch(config.font.src, ['fontCopy']);
 });
 
-gulp.task('default', ['ejs', 'sass', 'js', 'imageCopy', 'jsonCopy', 'browserSync', 'watch']);
-gulp.task('build:task', ['ejs', 'sass', 'js', 'imageCopy', 'jsonCopy']);
+gulp.task('default', ['ejs', 'sass', 'js', 'imageCopy', 'jsonCopy','fontCopy', 'browserSync', 'watch']);
+gulp.task('build:task', ['ejs', 'sass', 'js', 'imageCopy', 'jsonCopy', 'fontCopy']);
 gulp.task('build', ['clean'], function() {
   gulp.start('build:task');
 });

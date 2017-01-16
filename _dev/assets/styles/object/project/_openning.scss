@@ -1,0 +1,48 @@
+.p-openning {
+  position: relative;
+  background-color: #ccc;
+  &__prologue {
+    position: absolute;
+    width: 100%;
+    font-weight: bold;
+    font-size: 65px;
+    color: #fff;
+    text-align: center;
+    &:first-child {
+      top: 35%;
+      opacity: 0;
+    }
+    &:last-of-type {
+      top: 50%;
+      opacity: 0;
+    }
+    > span {
+      display: none;
+    }
+  }
+  &__link {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    &:hover {
+      z-index: 1;
+    }
+    a {
+      display: none;
+      margin: 0 auto;
+      padding: 15px;
+      width: 60%;
+      font-size: 65px;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      background-color: #999;
+      opacity: 0;
+      transition: background-color 1s;
+      &:hover {
+        background-color: $cmngreen;
+      }
+    }
+  }
+}

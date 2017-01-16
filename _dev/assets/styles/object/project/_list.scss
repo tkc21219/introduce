@@ -1,0 +1,79 @@
+.p-list {
+  margin-left: 20%;
+  width: 80%;
+  &__wrapper {
+    > li {
+      float: left;
+      display: none;
+      position: relative;
+      top: -40px;
+      width: 33.333333333%;
+      list-style: none;
+      opacity: 0;
+      filter: grayscale(100%);
+      &.background {
+        background: url(/introduce/myprofile/assets/images/list/background.jpg) center center no-repeat;
+        background-size: cover;
+      }
+      &.oversea {
+        background: url(/introduce/myprofile/assets/images/list/oversea.jpg) center center no-repeat;
+        background-size: cover;
+      }
+      &.skill {
+        background: url(/introduce/myprofile/assets/images/list/skill.jpg) center center no-repeat;
+        background-size: cover;
+      }
+      &.sports {
+        background: url(/introduce/myprofile/assets/images/list/sports.jpg) center center no-repeat;
+        background-size: cover;
+      }
+      &.game {
+        background: url(/introduce/myprofile/assets/images/list/game.jpg) center center no-repeat;
+        background-size: cover;
+      }
+      &.movie {
+        background: url(/introduce/myprofile/assets/images/list/movie.jpg) center center no-repeat;
+        background-size: cover;
+      }
+      &.book {
+        background: url(/introduce/myprofile/assets/images/list/book.jpg) center center no-repeat;
+        background-size: cover;
+      }
+      &.girl {
+        background: url(/introduce/myprofile/assets/images/list/girl.jpg) center center no-repeat;
+        background-size: cover;
+      }
+      &.future {
+        background: url(/introduce/myprofile/assets/images/list/future.jpg) center center no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+  &__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 50, 50, .2);
+    box-sizing: border-box;
+    > h3 {
+      position: absolute;
+      top: 45%;
+      margin: 0 0 10px;
+      width: 90%;
+      font-weight: bold;
+      font-size: 22px;
+      color: #fff;
+      text-align: center;
+      box-sizing: border-box;
+      &.hide {
+        display: none;
+      }
+      &.show {
+        display: block;
+      }
+    }
+  }
+}

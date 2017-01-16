@@ -1,0 +1,60 @@
+.p-leagle {
+  margin: 0 auto;
+  max-width: 860px;
+  &__mainVisual  {
+    margin-bottom: 20px;
+    &--image {
+      display: block;
+      padding-top: 180px;
+      margin: 0 auto;
+      width: 40%;
+      height: auto;
+      text-align: center;
+    }
+    &--note {
+      margin: 2%;
+      font-size: 14px;
+      text-align: center;
+      a {
+        color: #00f;
+        font-weight: bold;
+      }
+    }
+  }
+  &__search{
+    margin-bottom: 30px;
+    text-align: center;
+    &--form {
+      height: 40px;
+      > input {
+        padding: 10px;
+        width: 55%;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        &:hover {
+          border: 1px solid #aaa;
+        }
+        &:focus {
+          border: 1px solid #006eff;
+          outline: none;
+        }
+      }
+    }
+  }
+  &__boxes {
+    text-align: center;
+    > li {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #777;
+      text-align: center;
+      background-color: #eee;
+      &:first-child {
+        margin-right: 5px;
+      }
+    }
+  }
+}
