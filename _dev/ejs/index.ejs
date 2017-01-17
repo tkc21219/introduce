@@ -3,7 +3,11 @@
 <% var descriptiion = "engineerのtkcco21の自己紹介サイト。導入はgoogleさんにインスパイアされデザインで"; %>
 <% var url = "http://tkcco.github.io/introduce/myprofile/index.html" %>
 <% var image = "http://tkcco.github.io/introduce/myprofile/assets/images/og/og.jpg"%>
-<% include ./_include/_head.ejs %>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <% include ./_include/_head %>
+  </head>
 <body>
   <div class="p-leagle">
     <div class="p-leagle__mainVisual">
@@ -20,7 +24,6 @@
       <li>I'm Feeling Lucky</li>
     </ul>
   </div>
-  <% var addjs = '' %>
-  <% include ./_include/_footer.ejs %>
+  <% include ./_include/_footer %>
 </body>
 </html>
