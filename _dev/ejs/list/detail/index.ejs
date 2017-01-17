@@ -3,17 +3,20 @@
 <% var descriptiion = "engineerのtkcco21の自己紹介サイト"; %>
 <% var url = "http://tkcco.github.io/introduce/myprofile/list/detail/index.html" %>
 <% var image = "http://tkcco.github.io/introduce/myprofile/assets/images/og/og.jpg"%>
-<% include ../../_include/_head.ejs %>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <% include ../../_include/_head %>
+  </head>
 <body>
   <div class="clearfix">
-    <% include ../../_include/_header.ejs %>
+    <% include ../../_include/_header %>
     <div class="p-detail">
       <div class="p-detail__wrapper">
       </div>
     </div>
-    <% include ../../_include/_slide.ejs %>
+    <% include ../../_include/_slide %>
   </div>
-  <% var addjs = '' %>
-  <% include ../../_include/_footer.ejs %>
+  <% include ../../_include/_footer %>
 </body>
 </html>

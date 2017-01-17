@@ -1,8 +1,14 @@
 /* modal */
+body.modal-open {
+  overflow: hidden;
+}
 .p-modal {
   display: none;
   position: fixed;
-  background-color: rgba(0,0,0,.7);
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.8);
+  z-index: 10;
   &__close {
     position: absolute;
     top: 20px;
@@ -23,11 +29,11 @@
     width: 5%;
     cursor: pointer;
     z-index: 10;
-    &.is-left {
-      left: 30px;
-    }
     &.is-right {
       right: 30px;
+    }
+    &.is-left {
+      left: 30px;
     }
     > img {
       display: block;

@@ -1,18 +1,22 @@
-<% var title = "Openning | introduce2.0"; %>
-<% var keyword = "openning front-end engineer introduce profile japan"; %>
-<% var descriptiion = "engineerのtkcco21の自己紹介サイト。"; %>
-<% var url = "http://tkcco.github.io/introduce/myprofile/openning/index.html" %>
-<% var image = "http://tkcco.github.io/introduce/myprofile/assets/images/og/og.jpg"%>
-<% include ../_include/_head.ejs %>
-<body>
-  <div class="p-openning js-openning">
-    <p class="p-openning__prologue js-p1 js-openning-prologue">What's up, guys!</p>
-    <p class="p-openning__prologue js-p2 js-openning-prologue">Let's get started!</p>
-    <div class="p-openning__link js-openning-link">
-      <a class="js-p3" href="/introduce/myprofile/list/index.html">introduce2.0</a>
+<!DOCTYPE html>
+<html lang="ja">
+  <% var title = "Openning | introduce2.0"; %>
+  <% var keyword = "openning front-end engineer introduce profile japan"; %>
+  <% var descriptiion = "engineerのtkcco21の自己紹介サイト。"; %>
+  <% var url = "http://tkcco.github.io/introduce/myprofile/openning/index.html" %>
+  <% var image = "http://tkcco.github.io/introduce/myprofile/assets/images/og/og.jpg"%>
+  <head>
+    <% include ../_include/_head %>
+  </head>
+  <body>
+    <div class="p-openning js-openning">
+      <p class="p-openning__prologue js-p1 js-openning-prologue">What's up, guys!</p>
+      <p class="p-openning__prologue js-p2 js-openning-prologue">Let's get started!</p>
+      <div class="p-openning__link js-openning-link">
+        <a class="js-p3" href="/introduce/myprofile/list/index.html">introduce2.0</a>
+      </div>
     </div>
-  </div>
-  <% var addjs = "/introduce/myprofile/assets/scripts/snow.js" %>
-  <% include ../_include/_footer.ejs %>
-</body>
+    <% include ../_include/_footer %>
+    <script src="/introduce/myprofile/assets/scripts/snow.js"></script>
+  </body>
 </html>

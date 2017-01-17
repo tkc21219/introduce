@@ -1147,10 +1147,16 @@ h3, .c-heading3 {
   line-height: 0.5; }
 
 /* modal */
+body.modal-open {
+  overflow: hidden; }
+
 .p-modal {
   display: none;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.7); }
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10; }
   .p-modal__close {
     position: absolute;
     top: 20px;
@@ -1170,10 +1176,10 @@ h3, .c-heading3 {
     width: 5%;
     cursor: pointer;
     z-index: 10; }
-    .p-modal__btn.is-left {
-      left: 30px; }
     .p-modal__btn.is-right {
       right: 30px; }
+    .p-modal__btn.is-left {
+      left: 30px; }
     .p-modal__btn > img {
       display: block;
       width: 100%;

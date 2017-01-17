@@ -332,18 +332,21 @@ Gallery.prototype = {
   },
   getParamater: function()  {
     this.$window = $(window);
+    this.$body = $('body');
     this.$galleryWrap = $('.p-gallery__wrapper');
     this.$galleryImages = this.$galleryWrap.find('img');
-
-    this.$gOverLay = $('.g-overlay');
-    this.$gLayImg = $('.g-overlay__img');
-    this.$modalBtn = $('.g-overlay__btn');
-    this.$modalClose = $('.g-modal-close');
-    this.$modalImg = $('.modal-img');
+    this.$galleryImageLink = this.$galleryWrap.find('a');
+    this.$modalWrap = $('.p-modal');
+    this.$modalImage = $('.p-modal__image');
+    this.$modalBtn = $('.p-modal__btn');
+    this.$modalClose = $('.p-modal__close');
   },
   bindEvent: function() {
     this.sortPhotos();
     this.$window.on('load', this.showPhotos.bind(this));
+    this.$galleryImageLink.on('click', this.showModal.bind(this));
+    this.$modalClose.on('click', this.closeModal.bind(this));
+    this.$modalBtn.on('click', this.slideModal.bind(this));
   },
   sortPhotos: function(){
     var _this = this,
@@ -374,67 +377,48 @@ Gallery.prototype = {
         opacity: 1
       }, 1000);
   },
-
-  modalPic: function(){
-    var _this = this;
-    var focusPicIndex;
-    var focusPic;
-    var crntScrollTop;
-    this.$height = $(window).height();
-    _this.$gImgs.on('click', function(){
-      crntScrollTop = $(window).scrollTop();
-      focusPicIndex = _this.$gImgs.index(this);
-      focusPic = _this.$gImgs.eq(focusPicIndex).attr('src');
-      _this.$gWrap.css({
-        position:'fixed',
-        top: -1 * crntScrollTop
-      });
-      _this.$gOverLay.css({
-        width: '100%',
-        height: _this.$height
-      }).fadeIn(1000);
-      _this.$gLayImg.append('<img class="modal-img" src="'+focusPic+'">');
+  showModal: function(e){
+    e.preventDefault();
+    var $target = $(e.currentTarget),
+        src = $target.find('img').attr('src');
+    this.$body.addClass('modal-open');
+    this.$modalWrap.css({ width: '100%', height: '100%' }).fadeIn(1000);
+    this.$modalImage.append('<img class="modal-img" src="' + src + '">');
+  },
+  closeModal: function(e) {
+    e.preventDefault();
+    var _this = this,
+        currentScrollTop = this.$window.scrollTop();
+    this.$modalWrap.fadeOut(1000, function() {
+      _this.$modalImage.empty();
     });
-    $(window).on('resize', function(){
-      this.$height = $(window).height();
-      _this.$gOverLay.css({
-        width: '100%',
-        height: this.$height
-      });
-    });
-    _this.$modalClose.on('click', function(){
-      _this.$gWrap.css({
-        position:'initial'
-      });
-      $('html, body').prop({scrollTop:crntScrollTop});
-
-      function removeModal(){
-        _this.$gLayImg.empty();
-      }
-      _this.$gOverLay.fadeOut(700, removeModal);
-    });
-
-    _this.$modalBtn.find('img').on('click', function(){
-      var index = _this.$modalBtn.find('img').index(this);
-      var className = _this.$modalBtn.find('img').eq(index).attr('class');
-      if(className === 'g-next' && !(focusPicIndex === 47)){
-        focusPicIndex += 1;
-        focusPic =_this.$gImgs.eq(focusPicIndex).attr('src');
-        _this.$gLayImg.empty().append('<img class="modal-img" src="'+focusPic+'">');
-      } else if (className === 'g-prev' && !(focusPicIndex === 0)) {
-        focusPicIndex -= 1;
-        focusPic =_this.$gImgs.eq(focusPicIndex).attr('src');
-        _this.$gLayImg.empty().append('<img class="modal-img" src="'+focusPic+'">');
-      } else if(className === 'g-next' && focusPicIndex === 47){
-        focusPicIndex = 0;
-        focusPic =_this.$gImgs.eq(focusPicIndex).attr('src');
-        _this.$gLayImg.empty().append('<img class="modal-img" src="'+focusPic+'">');
-      } else if(className === 'g-prev' && focusPicIndex === 0){
-        focusPicIndex = 47;
-        focusPic =_this.$gImgs.eq(focusPicIndex).attr('src');
-        _this.$gLayImg.empty().append('<img class="modal-img" src="'+focusPic+'">');
-      }
-    });
+    this.$body.removeClass('modal-open');
+    $('html, body').prop({ scrollTop: currentScrollTop });
+  },
+  slideModal: function(e) {
+    e.preventDefault();
+    var $target = $(e.currentTarget),
+        direction = $target.data('direction');
+    console.log(direction);
+    //   var index = _this.$modalBtn.find('img').index(this);
+    //   var className = _this.$modalBtn.find('img').eq(index).attr('class');
+    //   if(className === 'g-next' && !(focusPicIndex === 47)){
+    //     focusPicIndex += 1;
+    //     focusPic =_this.$gImgs.eq(focusPicIndex).attr('src');
+    //     _this.$gLayImg.empty().append('<img class="modal-img" src="'+focusPic+'">');
+    //   } else if (className === 'g-prev' && !(focusPicIndex === 0)) {
+    //     focusPicIndex -= 1;
+    //     focusPic =_this.$gImgs.eq(focusPicIndex).attr('src');
+    //     _this.$gLayImg.empty().append('<img class="modal-img" src="'+focusPic+'">');
+    //   } else if(className === 'g-next' && focusPicIndex === 47){
+    //     focusPicIndex = 0;
+    //     focusPic =_this.$gImgs.eq(focusPicIndex).attr('src');
+    //     _this.$gLayImg.empty().append('<img class="modal-img" src="'+focusPic+'">');
+    //   } else if(className === 'g-prev' && focusPicIndex === 0){
+    //     focusPicIndex = 47;
+    //     focusPic =_this.$gImgs.eq(focusPicIndex).attr('src');
+    //     _this.$gLayImg.empty().append('<img class="modal-img" src="'+focusPic+'">');
+    //   }
   }
 };
 
