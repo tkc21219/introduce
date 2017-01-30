@@ -268,6 +268,8 @@ Detail.prototype = {
     var hashArrey = ["#background", "#oversea", "#skill", "#sports", "#game", "#tv-movie", "#book" ,"#mygirl", "#future"];
     var url = window.location.href.split("/");
     var crntFile = url[url.length - 1];
+    var template = '<div>' +
+          '</div>';
     this.$moreList = $('.p-detail__wrapper');
     for(var i = 0; i < hashArrey.length; i++){
       if(hash == hashArrey[i]){
@@ -400,8 +402,6 @@ Gallery.prototype = {
     var $target = $(e.currentTarget),
         direction = $target.data('direction');
     console.log(direction);
-    //   var index = _this.$modalBtn.find('img').index(this);
-    //   var className = _this.$modalBtn.find('img').eq(index).attr('class');
     //   if(className === 'g-next' && !(focusPicIndex === 47)){
     //     focusPicIndex += 1;
     //     focusPic =_this.$gImgs.eq(focusPicIndex).attr('src');
