@@ -1,63 +1,20 @@
 [
-  "<div>",
-  "<h2 class='d-MoreList__ttl'></h2>",
-  "<p class='d-MoreList__txt'></p>",
-  "</div>",
   {
     "id": "background",
     "page_title": "Background | introduce 2.0",
-    "contents_title01": "基本的な情報",
-    "contents_text01_1": "栃木の自然溢れるところ<br>" +
-      "1992年生まれ B型<br>" +
-      "昔から農家の両親",
-    "contents_text01_2": "スポーツ一家<br>" +
-      "父親は野球とか体操とか綱引きとか<br>" +
-      "母親はソフトボール<br>" +
-      "高校時代には年に3回ある全国大会に2回優勝<br>" +
-      "<span class='note'>（※優勝して当たり前だったらしいw）</span>",
-    "contents_text01_3": "兄2人（2人は年後）<br>" +
-      "一番上の兄は、小・中・高・大までずっと野球。就職も野球" +
-      "二番目のの兄は、大学まで野球。こっちの兄は多分そこそこ勉強してた",
-    "contents_title02": "幼少期（〜小学校卒業まで）",
-    "contents_text02_1": "あんまり覚えてない。。。<br>" +
-      "ゲームも大好き。外で遊ぶのも大好き<br>" +
-      "よくわからず水泳とそろばんに通わされる<br>" +
-      "家族の影響もあり、小３から野球部に入る<br>" +
-      "<span class='note'>（※クソ田舎で野球部しかなかった）</span>",
-    "contents_title03": "青年期（中学校入学〜高校卒業）",
-    "contents_text03_1": "中学のときも野球を続ける<br>" +
-      "勉強はそこそこ、勉強しなくても授業を聞けばなんとなくできた<br>" +
-      "U字工事が出た、県内でそこそこの進学校に入学<br>" +
-      "高校入学後の最初の数学の授業で、進むのが速すぎて勉強は無理だと諦める<br>" +
-      "授業はほぼ寝てた<br>" +
-      "成績表は常にクラスで下から2番目<br>" +
-      "高校3年の夏の甲子園予選では優勝候補を2校に勝っちゃってベスト8<br>" +
-      "高校野球も終わり、勉強モードに切り替え<br>" +
-      "<span class='note'>（※この時期は2週に1回ぐらい模試があった）</span><br>" +
-      "受験勉強は途中で燃え尽きた<br>" +
-      "ボーダーフリーの体育系の私立大に入学",
-    "contents_title04": "大学生以降",
-    "contents_text04_1": "前から興味があったブレイクダンスを始める<br>" +
-      "大学が田舎で、みんな部活に入っていて、友達ができず1年経過<br>" +
-      "夏休みにSCOA（Sports Camp Of America）という企画のボランティアに参加<br>" +
-      "<span class='note'>（※この企画には大学3年まで参加）</span><br>" +
-      "これがきっかけで海外に興味を持ち始める<br>" +
-      "2年のときに軟式野球部を作って、野球を再開<br>" +
-      "3年のとき、スケートボードを始める<br>" +
-      "就活の波に乗れず、就職しないでいいやってなる<br>" +
-      "人生初海外、インドネシア・バリ島に旅行<br>" +
-      "卒業したら海外に行くことを決める<br>" +
-      "4年の12月から3月までスキー場にこもってでスノーボードをしながらお金を貯める<br>" +
-      "<span class='note'>（※この時スノーボード初挑戦。スケートボードと違って足にくっついてるのと、派手に転んでも痛くないことに感動w）</span><br>" +
-      "実家で海外に行くまでの間、ちょっと農業を手伝う",
-    "contents_title05": "海外へ",
-    "contents_text05_1": "2014年6月からフィジーで2ヶ月生活<br>" +
-      "オーストラリアでMacを購入し、いつの間にかhtmlとかcssの勉強を始める<br>" +
-      "<span class='note'>（※海外について詳しくは海外のページで）</span><br>" +
-      "2015年7月帰国<br>" +
-      "11月まで、実家で農業<br>" +
-      "ついに東京進出！！就職活動して一番印象の良かった今の会社に入社<br>",
-    "contents_text05_2": "今に至る。"
+    "contents_title01": "",
+    "contents_text01_1": "",
+    "contents_text01_2": "",
+    "contents_text01_3": "",
+    "contents_title02": "",
+    "contents_text02_1": "",
+    "contents_title03": "",
+    "contents_text03_1": "",
+    "contents_title04": "",
+    "contents_text04_1": "",
+    "contents_title05": "",
+    "contents_text05_1": "<br>",
+    "contents_text05_2": ""
   },
   {
     "id": "oversea",
@@ -206,47 +163,195 @@
       "クロアチア<br>" +
       "モナコ<br>" +
       "ノルウェー<br>" +
-      "スウェーデン<br>" +
-      "マダガスカル<br>"
+      "スウェーデン<br>"
   },
   {
     "id": "skill",
     "title": "Skill | introduce 2.0",
+    "contents_title": "使える技術",
+    "contents_text": "HTML、CSS、JavaScript<br>" +
+      "テンプレートエンジン・EJS、jade<br>" +
+      "CSSメタ言語・Sass<br>" +
+      "その他・Gulp、Git<br>",
+    "contents_title": "勉強したいこと",
+    "contents_text": "ES6、React、Flux/Redux、<br>" +
+      "Angular、TypeScript<br>" +
+      "Node.js、Python、Ruby<br>" +
+      "Vagrant、Virtualbox",
+    "contents_title": "作りたいもの",
+    "contents_text": "外部APIを使ったアプリケーション<rb>" +
+      "JSで三角関数を使ったやつ<br>" +
+      "ポートフォリオサイト<br>" +
+      "スクレイピングのAPI<br>" +
+      "自作 or Wordpressでブログサイト"
+  },
+  {
+    "id": "sports",
+    "title": "Sports | introduce 2.0",
+    "contents_title": "水泳",
+    "contents_text": "保育所の年長から小4までスイミングスクールに通ってた<br>" +
+      "泳ぐのは速くないけど、水の中は好き。",
+    "contents_title": "野球",
+    "contents_text": "小3から今も<br>" +
+      "家族の影響で物心ついたときにはやってた<br>" +
+      "ポジションはサード、ショート、キャッチャー",
+    "contents_title": "バスケ",
+    "contents_text": "大学2年のとき<br>" +
+      "バスケは昔からずっと好き<br>" +
+      "NBAが好きだったけど、最近見てない",
+    "contents_title": "スケート",
+    "contents_text": "大学２年からオーストラリア滞在途中まで<br>" +
+      "トリックができなすぎて挫折",
+    "contents_title": "スノーボード",
+    "contents_text": "大学4年の12月から3月の3ヶ月<br>" +
+      "このときに初めてスノーボードに挑戦<br>" +
+      "ボックスとかのジブトリックが好き",
+    "contents_title": "スキューバ",
+    "contents_text": "フィジー滞在中<br>" +
+      "1ヶ月で20回ぐらい潜った<br>" +
+      "あの感覚がたまらない<br>" +
+      "またやりたい！"
+  },
+  {
+    "id": "game",
+    "title": "Game | introduce 2.0",
+    "contents_title": "GAME BOY",
+    "contents_text": "ポケモン 赤・青・緑<br>" +
+      "ゼルダの伝説 夢を見る島<br>" +
+      "メダロット<br>" +
+      "ドラクエ テリーのワンダーランド",
+    "contents_title": "GAME BOY COLOR",
+    "contents_text": "ポケモン ピカチュウ版・金・銀<br>" +
+      "ドラゴンクエスト 1・2・3<br>" +
+      "メダロット<br>" +
+      "ゼルダの伝説ふしぎな木の実 時空の書・天空の書<br>" +
+      "ワリオランド<br>" +
+      "ロボットポンコツ<br>" +
+      "ドラクエ イル・ルカ",
+    "contents_title": "GAME BOY ADVANCE",
+    "contents_text": "トマトアドベンチャー<br>" +
+      "テニスの王子様<br>" +
+      "ロックマンエグゼ<br>" +
+      "黄金の太陽<br>" +
+      "パワプロ君ポケット<br>" +
+      "モンスターファーム 1・2<br>" +
+      "サモンナイトクラフト<br>" +
+      "ドラクエ キャラバンハート<br>" +
+      "FF タクティクスアドバンス",
+    "contents_title": "PSP",
+    "contents_text": "モンスターハンター3rd",
+    "contents_title": "Play Station",
+    "contents_text": "モンスターファーム 1・2<br>" +
+      "FF 7・8・9<br>" +
+      "鉄拳 2・3<br>" +
+      "トバル2<br>" +
+      "バストアムーブ" +
+      "パワプロ<br>" +
+      "ロックマン<br>" +
+      "クラッシュバンディクー 1・2・3<br>" +
+      "私立ジャスティス学園<br>" +
+      "トマランナー<br>" +
+      "トマラルク",
+    "contents_title": "PS2",
+    "contents_text": "鉄拳5<br>" +
+      "FF 10・10-2<br>" +
+      "テイルズオブリバース<br>" +
+      "三国無双<br>" +
+      "戦国無双",
+    "contents_title": "PS3",
+    "contents_text": "FF13" +
+      "COD",
+    "contents_title": "DS",
+    "contents_text": "ドラクエ 4・5・6・7"
+  },
+  {
+    "id": "tv-movie",
+    "title": "TV・Movie | introduce 2.0",
+    "contents_title": "好きな映画",
+    "contents_text": "ロンゲストヤード<br>" +
+      "守護神<br>" +
+      "幸せの隠れ場所<br>" +
+      "最強の2人<br>" +
+      "ソーシャルネットワーク<br>" +
+      "今度は愛妻家<br>" +
+      "フルートベール駅で<br>" +
+      "イミテーションゲーム<br>" +
+      "コーチ・カーター<br>" +
+      "デイブは宇宙船<br>" +
+      "ラッシュアワー<br>" +
+      "インターンシップ<br>" +
+      "シャッターアイランド<br>" +
+      "ものすごくうるさくて ありえないほど近い<br>" +
+      "特攻野郎Aチーム<br>",
+    "contents_title": "ドラマ",
+    "contents_text": "Big Bang Theory<br>" +
+      "SUITS<br>" +
+      "トリック<br>" +
+      "タイガーアンドドラゴン<br>" +
+      "ウシジマくん<br>" +
+      "釣りバカ日誌<br>" +
+      "男はつらいよ<br>" +
+      "IWGP",
+    "contents_title": "アニメ",
+    "contents_text": "もののけ姫<br>" +
+      "千と千尋の神隠し<br>" +
+      "東京ゴッドファザーズ<br>" +
+      "akira<br>" +
+      "攻殻機動隊<br>" +
+      "イノセンス<br>" +
+      "カーズ<br>" +
+      "シュガーラッシュ<br>" +
+      "ライオンキング<br>" +
+      "ベイマックス<br>" +
+      "101匹ワンちゃん<br>" +
+      "インクレディブル<br>" +
+      "ソードアートオンライン<br>" +
+      "ドラゴンボール<br>" +
+      "秒速5センチメートル<br>" +
+      "シュタインズゲート<br>" +
+      "あの日見た花の名前を僕達はまだ知らない<br>"
+  },
+  {
+    "id": "book",
+    "title": "Book | introduce 2.0",
+    "contents_title": "好きな本",
+    "contents_text": "",
+    "contents_title": "読みたい本",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": ""
+  },
+  {
+    "id": "my girl",
+    "title": "My Girl | introduce 2.0",
+    "contents_title": "",
+    "contents_text": ""
+  },
+  {
+    "id": "future",
+    "title": "Future | introduce 2.0",
+    "contents_title": "将来",
+    "contents_text": "オーストラリア滞在中に勉強し始めて<br>" +
+      "気付いたらエンジニアとして働いている<br>" +
+      "正直ここまでハマるとは思ってなかった<br>" +
+      "ハマることって何よりも大事だな<br>" +
+      "そんな仕事に巡り合えたことに感謝<br>" +
+      "まだまだ、技術的に発展途上だけど、常にアンテナを張って<br>" +
+      "知識・技術を詰め込んで、1日でも早く一人前のエンジニアになる！！<br>" +
+      "日本国内でも海外でも通用する技術だから<br>" +
+      "英語も身につけつつ日本人として国際人として活躍できる人間になる！<br>" +
+      "また、オーストラリアにも行きたい<br>" +
+      "今後写真もいろいろ撮っていきたいな",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": ""
   }
 ]
-{
-  
-  "body": "<li><div><h2 class='d-MoreList__ttl'>html</h2><p class='d-MoreList__txt'>基本的なことは難なくこなせるし、バリバリ書ける。<br>ただ、命名規則は結構苦手。iframeは使ったことない。<br>ejsとかのテンプレートエンジンは少し使える。jadeも業務で少し使った。<br>あとはスピード。<br></p></div></li><li><div><h2 class='d-MoreList__ttl'>css</h2><p class='d-MoreList__txt'>こちらもだいたいオッケー。<br>tableレイアウトやz-index、positionの<br>細かい特性・レイアウト方法をもっと知る必要があるかな。<br>アニメーションは触ったことないから、やってみたい。<br>scssみたいな記法は少し使える。stylusも業務で少し使った。<br>あとはやっぱりスピード。<br></p></div></li><li><div><h2 class='d-MoreList__ttl'>JavaScript</h2><p class='d-MoreList__txt'>これはまだまだ。。。<br>だけど、jQueryはまぁまぁ使えるかな。1月に入社してからはかなり成長した！<br>今はオブジェクト指向の勉強。<br>API、ajax、Deffered、配列、オブジェクト、効率的なデバッグも要勉強。<br>まだまだ成長過程！<br>MVCとかBackbone、react、node.jsとかに興味あり。</p></div></li><li><div><h2 class='d-MoreList__ttl'>その他、開発に使ってるもの</h2><p class='d-MoreList__txt'>sourcetree<br>gulp<br>gitlab<br>github<br>photoshop<br>illustrator<br>wordpress（個人でブログサイト作った:tkc-co.com）</p></div></li><li><div><h2 class='d-MoreList__ttl'>興味のある言語・技術</h2><p class='d-MoreList__txt'>jsをもっともっと知りたい！<br>ライブラリ・フレームワークとかも含めて、もっと爆速で書けるようになりたい。<br>spaとかも作りたい。<br>php、Rubyにも興味があるけど、今はjsにゾッコン。<br>最近、コンピュータ・ひいてはITに関しての知識欲に襲われてる。<br>ハードに近いものから、目には見えないデータの通信、インターネットなどの仕組みなど</p></div></li>"
-},
-{
-  "id": 4,
-  "title": "Sports | introduce",
-  "body": "<li><div><h2 class='d-MoreList__ttl'>水泳</h2><p class='d-MoreList__txt'>保育所の年長から小４<br>泳ぐのは速くないけど、水の中は好き。<br>水の中で遊ぶ時は足がつかないところにずっといたい。<br></p></div></li><li><div><h2 class='d-MoreList__ttl'>野球</h2><p class='d-MoreList__txt'>小３から今まで<br>家族の影響で物心ついたときにはバット振ってた。<br>ポジションはサード、キャッチャー。</p></div></li><li><div><h2 class='d-MoreList__ttl'>バスケ</h2><p class='d-MoreList__txt'>大学２年のとき<br>バスケは小学校の時から好き。<br>NBAがとりあえず好きで草バスケに混ぜてもらってた。</p></div></li><li><div><h2 class='d-MoreList__ttl'>スケート</h2><p class='d-MoreList__txt'>大学２年からオーストラリア滞在途中まで<br>保育所からの親友に勧められハマった。キックフリップで挫折。</p></div></li><li><div><h2 class='d-MoreList__ttl'>スキューバ</h2><p class='d-MoreList__txt'>フィジー滞在中<br>1ヶ月で20回くらい潜った。やっぱ水の中好き。<br></p></div></li><li><div><h2 class='d-MoreList__ttl'>スノーボード</h2><p class='d-MoreList__txt'>大学4年の12月から3月<br>このときに初めてスノーボードに挑戦。<br>初めて3ヶ月でボックスやレールのジブトリック、キッカーをバシバシこなす。<span class='note'>少し自慢気</span></p></div></li><li><div><h2 class='d-MoreList__ttl'>興味のあるスポーツ</h2><p class='d-MoreList__txt'>アメリカンフットボールはNFLのおかげで結構好き。<br>ゴルフも最近興味出てきた。<br>でもやっぱ、見るよりも常にやる側でいたい。</p></div></li>"
-},
-{
-  "id": 5,
-  "title": "Game | introduce",
-  "body": "<li><div><p class='d-MoreList__ex-txt'>単純に今までやったものを、ただ羅列しています。最近のゲームはグラフィックがすごすぎて、情報量が多すぎて好きじゃない。</p></div></li><li><div><h2 class='d-MoreList__ttl'>GAME BOY</h2><p class='d-MoreList__txt'>ポケモン 赤・青・緑<br>ゼルダの伝説 夢を見る島<br>メダロット<br>ドラクエ テリーのワンダーランド<br></p></div></li><li><div><h2 class='d-MoreList__ttl'>GAME BOY COLOR</h2><p class='d-MoreList__txt'>ポケモン ピカチュウ版・金・銀<br>ドラゴンクエスト １・２・３<br>メダロット<br>ゼルダの伝説ふしぎな木の実 時空の書・天空の書<br>ワリオランド<br>ロボットポンコツ<br>ドラクエ イル・ルカ<br></p></div></li><li><div><h2 class='d-MoreList__ttl'>GAME BOY ADVANCE</h2><p class='d-MoreList__txt'>トマトアドベンチャー<br>テニスの王子様<br>ロックマンエグゼ<br>黄金の太陽<br>パワプロ君ポケット<br>モンスターファーム １・２<br>サモンナイトクラフト<br>ドラクエ キャラバンハート<br>FF タクティクスアドバンス<br></p></div></li><li><div><h2 class='d-MoreList__ttl'>PSP</h2><p class='d-MoreList__txt'>モンスターハンター３rd</p></div></li><li><div><h2 class='d-MoreList__ttl'>Play Station</h2><p class='d-MoreList__txt'>モンスターファーム １・２<br>FF ７・８・９<br>鉄拳 ２・３<br>トバル２<br>パワプロ<br>ロックマン<br>クラッシュバンディクー １・２・３<br>私立ジャスティス学園<br>トマランナー<br>トマラルク<br></p></div></li><li><div><h2 class='d-MoreList__ttl'>PS2</h2><p class='d-MoreList__txt'>鉄拳５<br>FF １０・１０-２<br>テイルズオブリバース<br>三国無双<br>戦国無双<br></p></div></li><li><div><h2 class='d-MoreList__ttl'>PS3</h2><p class='d-MoreList__txt'>FF13</p></div></li><li><div><h2 class='d-MoreList__ttl'>DS</h2><p class='d-MoreList__txt'>ドラクエ ４・５・６・７</p></div></li><li><div><h2 class='d-MoreList__ttl'>友達の家でやったものとか</h2><p class='d-MoreList__txt'>デジモン<br>スマブラ（GC,64）<br>カスタムロボ<br>COD<br>バストアムーブ<br></p></div></li>"
-},
-{
-  "id": 6,
-  "title": "TV・Movie | introduce",
-  "body": "<li><div><p class='d-MoreList__ex-txt'>メジャーなものしかないけど好きな映画・ドラマ・アニメのトップ５。</p></div></li><li><div><h2 class='d-MoreList__ttl'>映画</h2><p class='d-MoreList__txt'>１位 ロンゲストヤード<br>２位 守護神<br>３位 幸せの隠れ場所<br>４位 最強の2人<br>５位 ソーシャルネットワーク<br></p><p class='d-MoreList__ex-txt'>今度は愛妻家、フルートベール駅で、イミテーションゲームなんかも好き。</p></div></li><li><div><h2 class='d-MoreList__ttl'>ドラマ</h2><p class='d-MoreList__txt'>１位 ビッグバンセオリー<br>２位 タイガーアンドドラゴン<br>３位 釣りバカ日誌<br>４位 男はつらいよ<br>５位 IWGP<br></p><p class='d-MoreList__ex-txt'>ドラマは今までほとんど見たこともなかったし、特別好きでもなかった。今でも自分から好んで見ることはないけど、彼女の影響でたまに見るようになった。<br>アメリカのギークなオタクのコメディドラマのThe Big Bang Theoryはマジで面白い。<br>アメリカンドラマのプリズンブレイク、スーツ、ゴシップガールもいい感じ。ゴシップガールはドロドロすぎてエピソード１でお腹いっぱい。<br>仲間由紀恵と阿部寛のトリックも最近見て、ハマった。</p></div></li><li><div><h2 class='d-MoreList__ttl'>アニメ</h2><p class='d-MoreList__txt'>１位 もののけ姫<br>２位 千と千尋の神隠し<br>３位 カーズ<br>４位 東京ゴッドファザーズ<br>５位 akira<br></p><p class='d-MoreList__ex-txt'>やっぱ日本でアニメといったら、ジブリでしょ。兄がジブリ好きで、小さい時から親しんでいたこともありジブリが好き。鈴木敏夫が好き、宮崎駿、高畑勲が好き。<br>僕の彼女が好きな監督・今敏の東京ゴッドファーザーズや漫画原作のAKIRA、同じく漫画原作で押井守監督の攻殻機動隊/GHOST IN THE SHELL、またその続編のイノセンスとかも好き。<br>海外のものでは、カーズとシュガーラッシュ、ライオンキングがお気に入り。<br></p></div></li>"
-},
-{
-  "id": 7,
-  "title": "Book | introduce",
-  "body": "<li><div><h2 class='d-MoreList__ttl'>読書</h2><p class='d-MoreList__ex-txt'>今までそんなに本を読んだ経験がなく、読みたいと思うこと自体少なかったが、読書好きの彼女に勧められ読書の楽しさを知ってしまった。現在では自分の興味の赴くままに、小説・数学や科学、経済、歴史などの知識本・伝記・エッセイなど幅広く読んでいる。まだまだ読みたい本が多い。<br>今まで読んだ本の中でのトップ５とこれから早く読みたい本トップ５。</p></div></li><li><div><h2 class='d-MoreList__ttl'>読んだ本</h2><p class='d-MoreList__txt'>１位 スロウハイツの神様（辻村深月）<br>２位 ○に近い△を生きる（鎌田實）<br>３位 アニメと虫眼（宮崎駿・養老孟司）<br>４位 フェルマーの最終定理（サイモン・シン）<br>５位 ゼロ（堀江貴文）</p><p class='d-MoreList__ex-txt'>スロウハイツの神様（辻村深月）は一度読んで本当に大好きになった小説。鎌田實やホリエモンのことは前から好きなこともあり、本も何冊か読んでいるけど、この２冊が好き。ホリエモンの『君がオヤジになる前に』もおすすめ。<br>斎藤孝の本も好き。</p></div></li><li><div><h2 class='d-MoreList__ttl'>読みたい本</h2><p class='d-MoreList__txt'>１位 E=mc2 世界一有名な方程式の『伝記』（ボダニス・デイビット）<br>２位 暗号解読（サイモン・シン）<br>３位 わが闘争（アドルフ・ヒトラー）<br>４位 努力論（幸田露伴）<br>５位 ゴッホの手紙（フィンセント・ファン・ゴッホ）</p><p class='d-MoreList__ex-txt'>読みたい本がありすぎて困る。<br>本て読めば読むほど、次に読みたい本がどんどん出てくるってことを初めて体感した。<br>金融史や古代遺跡・古代技術、科学関連に最近興味がある。</p></div></li>"
-},
-{
-  "id": 8,
-  "title": "My Girl | introduce",
-  "body": "<li><div><h2 class='d-MoreList__ttl'>出会いは2014年6月</h2><p class='d-MoreList__txt'>フィジー滞在中に出会った。<br>フィジーに入国して１週間くらい。<br>夜は基本的に外にいた僕。彼女もよく外に来てた。<br>そこで初めて話した。<br>とかではなく誰かと電話をするために。<br><span class='note'>（※外しかWi-Fiに繋がらなかった）</span><br>彼女には彼氏がいることは、友達伝いで聞いていた。<br>いつもふてくされてるような顔をしていた彼女。<br>Wi-Fiが弱く、思うように電話ができないせいで、<br>そんな顔をしてるのかと思っていたけど、<br>それが彼女の普通の時の顔だった。<br>そんな彼女をかわいいと思い、好意を持ち始めていた。</p></div></li><li><div><h2 class='d-MoreList__ttl'>フィジーで</h2><p class='d-MoreList__txt'>初めて話したのは、<br>フィジーで通っていた語学学校の人たちが毎週木・金曜日に行ってるバーでだった。<br>話してからは、直感的にますます好きになった。<br>しかも、嬉しいことに僕と同じく２ヶ月間の滞在で、<br>その後はオーストラリアに行くことが決まっていた。<br><span class='note'>（※日本に帰るまでずっと一緒に行動をしていた）</span><br>それから、僕は始めてのデートに誘った。<br>特にすることもないフィジー。<br>一緒に夕日が綺麗に見えるというビーチに行った。<br>着いた時には、もう真っ暗。。。<br>再挑戦することを誓って、初デートは終了した。<br><span class='note'>（※再挑戦した時は逆に早すぎたし、雲があって見れなかった）</span><br>彼女の誕生日にはフィジーの離島へ旅行。<br>最低限のリゾート開発しかされておらず、<br>ようやく見つけたコンビニ的なところで買った<br>ぱっさぱさのマフィンに内緒で買っておいた<br>「Happy Birthday」のろうそくを飾ってお祝いした。<br>僕がオーストラリアに行く２週間前に、<br>彼女はオーストラリア・シドニーへ飛び立った。</p></div></li><li><div><h2 class='d-MoreList__ttl'>オーストラリアで</h2><p class='d-MoreList__txt'>フィジーでの生活を終え、僕もオーストラリアのシドニーへ。<br>シドニーではお互い、ほぼ無一文だったので毎日めっちゃ働いた。<br>どこかに行ったり、特別なことをした思い出はそんなにない。<br>ただ、到着してすぐ案内してもらったオペラハウスの見える広い公園で<br>よくのんびりしてたこと、<br>毎週どこかしらでやってるマーケットに行ったことは<br>すごく楽しかった思い出として残ってる。<br>パース近くの田舎町にいた時には、<br>クリスマスの旅行、<br>誕生日をサプライズで祝ってもらったことなど<br>とても感慨深い。<br>それだけでなく、プールに通ったこと、<br>写真を撮るために歩き回ったこと、<br>毎晩ビッグバンセオリーを見たこと、<br>挙げたらきりがないほど楽かった。<br>なんでもない日常も、いつもと少し違う日も今思うと全部特別。<br>田舎でのりんごやプラム、アボカドと戯れる仕事も終わり、<br>ついに洒落た街・メルボルンへ。<br>田舎で貯めた貯金で遊びまわった。<br>（※そのせいでまたお金なくなって家賃待ってもらったことも）<br>その分いろんな友達もできたし、<br>行きたいところにも行けた。<br>こういうつながりが人生を豊かにする気がする。<br>もし自分一人だったら、メルボルンなんて行く気なかったし、<br>いくらお金があっても頑張って仕事してたと思う。<br>彼女がいてくれてよかったって思う。<br>ファストファッションからハイブランド、デザイナーについてまで<br>ファッションに精通している彼女はかなり刺激を受けていたみたい。<br>ぼくが印象に残ってることといえば、<br>彼女がアップルストアの店員に泣かされたこと。<br>あれは助けたかった。<br><span class='note'>（※でも、あの人の英語聞き取れなかったんだもん）</span><br>まぁとりあえず、いろんなとこ行った。<br>メルボルン滞在は濃すぎたし、言葉でまとめるのはつらいので、<br>ギャラリーにある写真から感じとっていただきたいです。</p></div></li><li><div><h2 class='d-MoreList__ttl'>日本で</h2><p class='d-MoreList__txt'>フィジーで出会い、出会ってからずっと行動を共にしてきた彼女。<br>１年数ヶ月を経て、二人で日本に帰ってきた。<br>帰国前の誕生日。<br>準備等でばたばたしててろくに祝ってあげられなかったから、<br>サプライズで箱根に連れて行くことに。<br>東京の人の多さにはうんざりしたけど、<br>日本食、温泉に二人でめっちゃ感動。<br>日本食と風呂文化が一番の魅力だと思った。<br><br>僕は地元で、彼女は東京で。<br>結構離れていたけどそれはそれで楽しかった。<br>久しぶりに会うことがこんなに嬉しいのかと。<br>お互いの実家にも行き来して家族とも仲良くなって。<br>彼女との素敵な出会いに感謝。<br>今は二人で東京で暮らしてる。<br>都会の暮らし、人混みの多さにも慣れたしいい感じ。<br>僕はITのエンジニアとして、<br>彼女はファッション系のライターとして、<br>お互いやりたいことやれてる。<br>人生は一度きり。<br>大好きな彼女との時間も大切にして、<br>やりたいこともやりまくるために、お互いもっともっと成長する。</p></div></li>"
-},
-{
-  "id": 9,
-  "title": "Future | introduce",
-  "body": "<li><div><h2 class='d-MoreList__ttl'>社会人として</h2><p class='d-MoreList__txt'>社会人経験がまだ半年にも満たない若輩者。<br>時間の管理、やるべきことやったほうがいいことやりたいこと、報告・連絡・相談など未熟なことはたくさんあるけれど、まだまだこれから。<br>至らないところは常に意識して改善して、社会人としてかっこいい大人になる。<br>彼女や将来できるであろう子供を養える人間になる。</p></div></li><li><div><h2 class='d-MoreList__ttl'>エンジニアとして</h2><p class='d-MoreList__txt'>オーストラリア滞在中に勉強をし始め、気付いたらエンジニアとして働いている。<br>正直ここまでハマるとは思ってなかった。ハマることって何よりも大事。そんな仕事に巡り合えたことに感謝。<br>まだまだ、技術的に発展途上だけど、常にアンテナを張って、知識・技術を詰め込んで、1日でも早く一人前のエンジニアになる。<br>大学の時から目指している雇われない生き方も視野に入れて、今後仕事をしていきたい。<br>また、エンジニアとしてだけでなく写真を撮ることも自分の技術の一つなので、仕事としてならないまでも、今後写真を個人で撮っていく。<br></p></div></li><li><div><h2 class='d-MoreList__ttl'>日本人として</h2><p class='d-MoreList__txt'>日本国内でも海外でも通用する技術なので、英語も身につけつつ日本人として国際人として活躍できる人間になる。<br>日本は海外から見ても、すごい素敵なところだし、発展途上国の人の中には、日本に来て仕事したいという人たちも多くいる。これからグローバル化がさらに進み、国と国との垣根がますますなくなっていくこの時代に、日本人全体として今のままではバイタリティ溢れる海外からの労働者に負けてしまうと思う。そのくらい日本などの先進国を目指してる人たちのやる気はものすごい。<br>オーストラリア並に日本が移民に対して寛容になったとしたら、日本人は隅に追いやられてしまう。<br>そんな中でも、日本でもバリバリ働ける、いつでも海外に行って働ける日本人になる。</p></div></li>"
-}
-]
-}
+
