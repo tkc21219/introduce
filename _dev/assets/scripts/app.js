@@ -173,6 +173,7 @@ Detail.prototype = {
     this.$slideBtn = $('.p-detailSlide__btn');
     this.$up = this.$slideBtn.find('.up');
     this.$down = this.$slideBtn.find('.down');
+    this.data = '';
   },
   bindEvent: function(){
     this.setPositionDownBtn();
@@ -181,7 +182,7 @@ Detail.prototype = {
     this.$up.on('click', this.slideUp.bind(this));
     this.$down.on('click', this.slideDown.bind(this));
     this.matchSlide();
-    this.ajaxEach();
+    this.getData();
   },
   setPositionDownBtn: function(){
     this.$height = $(window).height();
@@ -262,64 +263,25 @@ Detail.prototype = {
       _this.$list.eq(focus).find('img').css("-webkit-filter", "grayscale(0)");
     });
   },
-  ajaxEach: function(){
+  getData: function(){
     var _this = this;
     var hash = window.location.hash;
     var hashArrey = ["#background", "#oversea", "#skill", "#sports", "#game", "#tv-movie", "#book" ,"#mygirl", "#future"];
-    var url = window.location.href.split("/");
-    var crntFile = url[url.length - 1];
-    var template = '<div>' +
-          '</div>';
-    this.$moreList = $('.p-detail__wrapper');
-    for(var i = 0; i < hashArrey.length; i++){
-      if(hash == hashArrey[i]){
-        var nowHash = i;
-        $.ajax({
-          url: '/introduce/myprofile/assets/json/data.json',
-          dataType: 'json',
-          data: {name: 'contents'}
-        }).done(function(data){
-          var dataArray = data.contents;
-          $('title').text(dataArray[nowHash].title);
-          _this.$moreList.prepend(dataArray[nowHash].body);
-        }).fail(function(data){
-          console.log(nowHash);
-        });
-      }
-    }
-    window.onhashchange = function(){
-      var hash = window.location.hash;
-      var nowHash;
-      for(var i = 0; i < hashArrey.length; i++){
-        if(hash == hashArrey[i]){
-          nowHash = i;
-          $.ajax({
-            url: '/introduce/myprofile/assets/json/data.json',
-            dataType: 'json',
-            data: {name: 'contents'}
-          }).done(function(data){
-            var dataArray = data.contents;
-            $("title").text(dataArray[nowHash].title);
-            _this.$moreList.empty().animate({ scrollTop: 0 }).prepend(dataArray[nowHash].body);
-            _this.$list.find('img').css({
-              'cssText': '-webkit-filter: grayscale(100%);'
-            });
-            _this.$list.eq(nowHash).find('img').css({
-              'cssText': '-webkit-filter: grayscale(0);'
-            });
-          }).fail(function(data){
-            console.log(nowHash);
-          });
-        }
-      }
-      _this.$list.on('mouseout', function(){
-        _this.$list.find('img').css("-webkit-filter", "grayscale(100%)");
-        _this.$list.eq(nowHash).find('img').css("-webkit-filter", "grayscale(0)");
-      });
-      _this.$list.eq(nowHash).on('mouseout', function(){
-        _this.$list.eq(nowHash).find('img').css("-webkit-filter", "grayscale(0)");
-      });
-    };
+    $.ajax({
+      url: '/introduce/myprofile/assets/json/data.json',
+      type: 'GET',
+      dataType: 'JSON'
+    }).done(function(data){
+      _this.data = data;
+      _this.showContents(_this.data);
+    }).fail(function(data){
+      console.log('fail!!');
+    });
+  },
+  showContents: function(data) {
+    $.each(data, function() {
+      console.log(this);
+    });
   }
 };
 
