@@ -1,16 +1,21 @@
 'use strict';
 
-// index.htmlでのjs
+/**
+ *     /myprofile/index.htmlでのjs   (Leagle)
+ **/
 function Leagle(){
-  this.$leagleForm = $('.js-leagle-form');
-  this.$leagleTxt = this.$leagleForm.find('input');
-  this.bind();
+  this.getParamater();
+  this.bindEvent();
 };
 Leagle.prototype = {
-  bind: function(){
+  getParamater: function() {
+    this.$leagleForm = $('.js-leagle-form');
+    this.$leagleTxt = this.$leagleForm.find('input');
+  },
+  bindEvent: function() {
     this.$leagleForm.on('submit', this.changePage.bind(this));
   },
-  changePage: function(){
+  changePage: function() {
     this.val = this.$leagleTxt.val();
     // alert(this.val);
     // console.log(this.val);
@@ -48,46 +53,51 @@ Leagle.prototype = {
   }
 };
 
-// top.htmlでのjs
-function Top(){
-  this.$p1 = $('.js-p1');
-  this.$p2 = $('.js-p2');
-  this.$p3 = $('.js-p3');
-  this.$pro = $('.js-openning-prologue');
-  this.$link = $('.js-openning-link');
-  this.bind();
+/**
+ *     /myprofile/openning/index.htmlでのjs
+ **/
+function Openning(){
+  this.getParamater();
+  this.bindEvent();
 };
-Top.prototype = {
-  bind: function(){
+Openning.prototype = {
+  getParamater: function() {
+    this.$p1 = $('.js-p1');
+    this.$p2 = $('.js-p2');
+    this.$p3 = $('.js-p3');
+    this.$pro = $('.js-openning-prologue');
+    this.$link = $('.js-openning-link');
+  },
+  bindEvent: function() {
     $(window).on('load', this.prologue.bind(this));
     setTimeout(this.firstShow.bind(this), 2000);
     setTimeout(this.secondShow.bind(this), 4500);
     setTimeout(this.hidePro.bind(this), 8000);
   },
-  prologue: function(){
+  prologue: function() {
     this.$pro.contents().each(function(){
       if (this.nodeType === 3) {
         $(this).replaceWith($(this).text().replace(/(\S)/g, '<span>$1</span>'));
       }
     });
   },
-  firstShow: function(){
+  firstShow: function() {
     this.$p1.css({'opacity':1});
     for (var i = 0; i <= this.$p1.children().length - 1; i++) {
       this.$p1.children('span:eq('+i+')').delay(100*i).fadeIn(300);
     };
   },
-  secondShow: function(){
+  secondShow: function() {
     this.$p2.css({'opacity':1});
     for (var i = 0; i <= this.$p2.children().length - 1; i++) {
       this.$p2.children('span:eq('+i+')').delay(100*i).fadeIn(300);
     };
   },
-  hidePro: function(){
+  hidePro: function() {
     this.$pro.fadeOut(1000);
     this.showLink();
   },
-  showLink: function(){
+  showLink: function() {
     this.$p3.css({
       display: 'block'
     }).animate({
@@ -95,7 +105,7 @@ Top.prototype = {
     },1500);
     this.animeLink();
   },
-  animeLink: function(){
+  animeLink: function() {
     var _this = this;
     setInterval(function(){
       _this.$p3.animate({
@@ -107,28 +117,34 @@ Top.prototype = {
   }
 };
 
-// list.htmlでのjs
+/**
+ *     /myprofile/list/index.htmlでのjs
+ **/
 function List(){
-  this.$window = $(window);
-  this.$header = $('.header');
-  this.$eachList = $('.js-list li');
-  this.bind();
+  this.getParamater();
+  this.bindEvent();
 };
 List.prototype = {
-  bind: function(){
+  getParamater: function() {
+    this.$window = $(window);
+    this.$header = $('.js-header');
+    this.$eachList = $('.js-list li');
+  },
+  bindEvent: function() {
     this.setSize();
     this.hoverAction();
     this.$window.on('resize', this.setSize.bind(this));
     this.$window.on('load', this.showList.bind(this));
+    this.$eachList.hover(this.hoverAction.bind(this, true), this.hoverAction.bind(this, false));
   },
-  setSize: function(){
+  setSize: function() {
     this.$width = this.$window.width();
     this.$height = this.$window.height();
     this.$listHeight = (this.$height / 3);
     this.$header.css('height', this.$height + 'px');
     this.$eachList.css('height', this.$listHeight + 'px');
   },
-  showList: function(){
+  showList: function() {
     this.$header.fadeIn(700);
     for(var i = 0; i < this.$eachList.length; i++){
       this.$eachList.delay(100).fadeIn();
@@ -138,26 +154,23 @@ List.prototype = {
       },1000);
     }
   },
-  hoverAction: function(){
-    var _this = this;
-    this.$eachList.on({
-      'mouseenter': function(){
-        var index = _this.$eachList.index(this);
-        _this.$eachList.eq(index).css("-webkit-filter", "grayscale(0)");
-        _this.$eachList.eq(index).find('.js-list-en').stop().fadeOut(600);
-        _this.$eachList.eq(index).find('.js-list-ja').stop().fadeIn(600);
-      },
-      'mouseleave': function(){
-        var index = _this.$eachList.index(this);
-        _this.$eachList.eq(index).css("-webkit-filter", "grayscale(100%)");
-        _this.$eachList.eq(index).find('.js-list-en').stop().fadeIn(600);
-        _this.$eachList.eq(index).find('.js-list-ja').stop().fadeOut(600);
-      }
-    });
+  hoverAction: function(isEnter, e){
+    if(isEnter) {
+      var $target = $(e.currentTarget);
+      $target.css("-webkit-filter", "grayscale(0)");
+      $target.find('.js-list-en').stop().fadeOut(600);
+      $target.find('.js-list-ja').stop().fadeIn(600);
+    } else {
+      // $target.css("-webkit-filter", "grayscale(100%)");
+      // $target.find('.js-list-en').stop().fadeIn(600);
+      // $target.find('.js-list-ja').stop().fadeOut(600);
+    }
   }
 };
 
-// detail下層ページでのjs
+/**
+ *     /myprofile/list/detail/index.htmlでのjs
+ **/
 function Detail(){
   this.init();
 };
@@ -173,6 +186,7 @@ Detail.prototype = {
     this.$slideBtn = $('.p-detailSlide__btn');
     this.$up = this.$slideBtn.find('.up');
     this.$down = this.$slideBtn.find('.down');
+    this.$detailContent = $('.js-detail');
     this.data = '';
   },
   bindEvent: function(){
@@ -183,6 +197,7 @@ Detail.prototype = {
     this.$down.on('click', this.slideDown.bind(this));
     this.matchSlide();
     this.getData();
+    $(window).on('hashchange', this.getData.bind(this));
   },
   setPositionDownBtn: function(){
     this.$height = $(window).height();
@@ -265,27 +280,23 @@ Detail.prototype = {
   },
   getData: function(){
     var _this = this;
-    var hash = window.location.hash;
+    var hash = window.location.hash.substr(1);
     var hashArrey = ["#background", "#oversea", "#skill", "#sports", "#game", "#tv-movie", "#book" ,"#mygirl", "#future"];
     $.ajax({
-      url: '/introduce/myprofile/assets/json/data.json',
+      url: '/introduce/myprofile/list/detail/data/' + hash + '.html',
       type: 'GET',
-      dataType: 'JSON'
+      dataType: 'HTML'
     }).done(function(data){
-      _this.data = data;
-      _this.showContents(_this.data);
+      _this.$detailContent.empty().append(data);
     }).fail(function(data){
-      console.log('fail!!');
-    });
-  },
-  showContents: function(data) {
-    $.each(data, function() {
-      console.log(this);
+      console.log('cannot get html data...');
     });
   }
 };
 
-// gallery.htmlでのjs
+/**
+ *     /myprofile/gallery/index.htmlでのjs
+ **/
 function Gallery(){
   this.init();
 };
@@ -385,6 +396,60 @@ Gallery.prototype = {
 };
 
 
+/**
+ *     共通のjs
+ **/
+// function List(){
+//   this.$window = $(window);
+//   this.$header = $('.js-header');
+//   this.$eachList = $('.js-list li');
+//   this.bind();
+// };
+// List.prototype = {
+//   bind: function(){
+//     this.setSize();
+//     this.hoverAction();
+//     this.$window.on('resize', this.setSize.bind(this));
+//     this.$window.on('load', this.showList.bind(this));
+//   },
+//   setSize: function(){
+//     this.$width = this.$window.width();
+//     this.$height = this.$window.height();
+//     this.$listHeight = (this.$height / 3);
+//     this.$header.css('height', this.$height + 'px');
+//     this.$eachList.css('height', this.$listHeight + 'px');
+//   },
+//   showList: function(){
+//     this.$header.fadeIn(700);
+//     for(var i = 0; i < this.$eachList.length; i++){
+//       this.$eachList.delay(100).fadeIn();
+//       this.$eachList.eq(i).animate({
+//         'opacity': 1,
+//         'top': 0
+//       },1000);
+//     }
+//   },
+//   hoverAction: function(){
+//     var _this = this;
+//     this.$eachList.on({
+//       'mouseenter': function(){
+//         var index = _this.$eachList.index(this);
+//         _this.$eachList.eq(index).css("-webkit-filter", "grayscale(0)");
+//         _this.$eachList.eq(index).find('.js-list-en').stop().fadeOut(600);
+//         _this.$eachList.eq(index).find('.js-list-ja').stop().fadeIn(600);
+//       },
+//       'mouseleave': function(){
+//         var index = _this.$eachList.index(this);
+//         _this.$eachList.eq(index).css("-webkit-filter", "grayscale(100%)");
+//         _this.$eachList.eq(index).find('.js-list-en').stop().fadeIn(600);
+//         _this.$eachList.eq(index).find('.js-list-ja').stop().fadeOut(600);
+//       }
+//     });
+//   }
+// };
+
+
+
 $(function(){
   var url = window.location.href;
   var file = url.split('/');
@@ -393,7 +458,7 @@ $(function(){
   }
 
   var leagle = new Leagle();
-  var top = new Top();
+  var openning = new Openning();
   var list = new List();
   var detail = new Detail();
   var gallery = new Gallery();
