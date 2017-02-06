@@ -1,322 +1,95 @@
 [
   {
     "id": "background",
-    "page_title": "Background | introduce 2.0",
-    "contents_title01": "",
-    "contents_text01_1": "",
-    "contents_text01_2": "",
-    "contents_text01_3": "",
-    "contents_title02": "",
-    "contents_text02_1": "",
-    "contents_title03": "",
-    "contents_text03_1": "",
-    "contents_title04": "",
-    "contents_text04_1": "",
-    "contents_title05": "",
-    "contents_text05_1": "<br>",
-    "contents_text05_2": ""
+    "page_title": "Background | introduce 2.0"
   },
   {
     "id": "oversea",
     "page_title": "Oversea | introduce 2.0",
-    "contents_title": "きっかけ",
-    "contents_text": "経歴で少し触れた、大学時代に参加したボランティアがきっかけだと思う。<br>" +
-      "少しそのボランティアの説明をすると、<br>" +
-      "アメリカの大学生ぐらいの年齢のアスリートが１０人くらい日本に来て、<br>" +
-      "日本の小、中学生に対しスポーツを通して英語に触れさせるという企画<br>" +
-      "そのアスリートたちは本当に凄い人たちで、<br>" +
-      "ダンスで全米優勝とか、<br>" +
-      "フットボールで全米何位とか、<br>" +
-      "オリンピック選考会で北島康介選手と張り合ったとかとか。",
-    "contents_text": "ただ、海外への興味は中学の時から芽生え始めていた。<br>" +
-      "それは、洋楽だったり、アメリカのスポーツだったり<span class='note'>（※NBA,MLB,NFL）</span>。<br>" +
-      "僕自身、そんなに海外に行った経験が多いわけではないが、僕の紹介ということで、<br>" +
-      "オーストラリアに１年間いたこともあり一応感じたことなどを簡単に紹介。",
-    "contents_title": "インドネシア・バリ",
-    "contents_text": "まず、人生の初海外<br>" +
-      "バリ島に何度も行ってる人と行って、<br>" +
-      "その人の友人である現地の人にいろいろ案内してもらって、<br>" +
-      "いいところに泊まって、日本人がほとんどいないビーチに行ったりした。<br>" +
-      "まぁそれはそれで楽しいんだけど、<br>" +
-      "別に海外旅行ってそんなこと望んでなくて、<br>" +
-      "初めて行く土地を迷いながら覚えたり、<br>" +
-      "気分で選んだレストランが美味しかったり不味かったり、<br>" +
-      "そういう過程がいいんだよな〜って今では思う。",
-    "contents_text": "案内されていいところに泊まっても、<br>" +
-      "連れてかれるままにいいビーチに行っても<br>" +
-      "時間が経ってみたらただの自慢話にしかならないしね。<br>" +
-      "でも、凄い感じることはあった。格差とか、物価とか、人間性とか。<br>" +
-      "これはこれでいい経験。",
-    "contents_title": "フィジー<span class='note'>（2014.06〜08）</span>",
-    "contents_text": "ワーホリでオーストラリアに行くって決めてたけど、<br>" +
-      "調べてるうちになぜかフィジーが候補に。<br>" +
-      "フィジーでは語学学校が想像よりも安く<br>" +
-      "2ヶ月ほど滞在することに。<br>" +
-      "いやー。めっちゃよかったです。",
-    "contents_text": "語学学校なんてオーストラリアで行こうが、<br>" +
-      "フィジーで行こうが変わりはないと思う。<br>" +
-      "出来るようになる人は出来るようになるし、<br>" +
-      "成長しない人は成長しないと思う。<br>" +
-      "オーストラリアの語学学校でも自分が話せないと、<br>" +
-      "それなりのレベルの人たちが集まったクラスになるだろうし、<br>" +
-      "オーストラリアとかカナダとかだとめっちゃ高いし。<br>" +
-      "フィジーに行った決め手は特になかったけど<br>" +
-      "行ってよかったって思う。本当にいいところ。<br>" +
-      "フィジーにいると仕事なんて自分のペースでいいじゃんとか、<br>" +
-      "ネットもなく外でぼーっとしてる時に時間を忘れて自分と向き合えたり<br>" +
-      "大切なことが体験できた気がする",
-    "contents_text": "生活水準はもちろん高くはない。<br>" +
-      "毎日水のシャワーを浴びたり、<br>" +
-      "ベッドバグの多く潜むベッドで寝たり、<br>" +
-      "フィジーの人たちの風習である<br>" +
-      "ケレケレ<span class='note'>（放置してあるものはみんなのもの的な）</span>を味わったり、<br>" +
-      "カヴァとかいう木の根っこから作る不味い物を<br>" +
-      "現地に習って祝い事の時に飲んだり、とか。<br>" +
-      "それがいい思い出、経験。",
-    "contents_text": "離島への旅行や砂丘的なところ、<br>" +
-      "夕日を見た近くのビーチ。<br>" +
-      "本当にいい！好き！<br>" +
-      "あと、スキューバダイビングの資格取った。<br>" +
-      "まとまりがないけどこの辺で、<br>" +
-      "気になる人は直接聞いてください。<br>" +
-      "写真も是非見てくださいね。",
-    "contents_title": "オーストラリア<span class='note'>（2014.08〜2015.07）</span>",
-    "contents_text": "ついに来ましたオーストラリア。<br>" +
-      "オーストラリアでは、<br>" +
-      "シドニー２ヶ月、パース付近の田舎町５ヶ月、メルボルン４ヶ月<br>" +
-      "っていう過ごし方。<br>" +
-      "ただ、住んで思ったけど<br>" +
-      "日本での生活もオーストラリアでの生活も特に変わらない。<br>" +
-      "言葉が違うくらい。<br>" +
-      "あとは２キロのヨーグルトをいつも買ったり、<br>" +
-      "賃金が日本と比べて少し高かったり、<br>" +
-      "500mlのコーラが300円ぐらいしたり、<br>" +
-      "家賃がかなり高かったり。",
-    "contents_text": "フィジーから直接行ったオーストラリア。<br>" +
-      "お金も結構持ってたんだが、<br>" +
-      "フィジーで遊びすぎて、ほぼ無一文。<br>" +
-      "入国して１週間ほどで、<br>" +
-      "現地でも人気のあるラーメン屋でバイト。<br>" +
-      "めっちゃ忙しいし、週５〜６日平均１３時間の肉体労働。",
-    "contents_text": "休みの日にマーケット行ったり、<br>" +
-      "公園でのんびりしたりしたのがめっちゃ幸せだった。<br>" +
-      "オーストラリアは公園とか広場が多くて、好き。",
-    "contents_text": "そんな感じで１ヶ月働いて、Mac Book購入。<br>" +
-      "ここで買ってなかったら今頃何してたことか。。。",
-    "contents_text": "シドニー滞在の最後の１週間はバイトも辞め<br>" +
-      "彼女と一緒にシドニーでの思い出の場所を巡った。",
-    "contents_text": "次に滞在したのは、<br>" +
-      "西オーストラリアのパースから電車とバスで約３時間の超田舎町、Donnybrook<br>" +
-      "何でこんな田舎に滞在したかというと、<br>" +
-      "オーストラリアのワーホリでは、<br>" +
-      "田舎で季節労働に一定期間従事すると2年目のワーホリのビザが取れるから。<br>" +
-      "到着したはいいが、ここでもお金なくて。。。<br>" +
-      "オーナーに家賃を待ってもらってた始末。<br>" +
-      "２週間ぐらいで仕事が見つかって、<br>" +
-      "そこからは毎週８・９万入って来る生活。<br>" +
-      "だから結構貯金はできた。<br>" +
-      "オーストラリアでは週払い・２週払いが多い。<br>" +
-      "家賃も週払いとか、２週間に１回とか。<br>" +
-      "クリスマスには、一緒に住んでた仲間と旅行。<br>" +
-      "車で片道８時間。めっちゃいいとこ。<br>" +
-      "写真見てください。<br>" +
-      "年も越した。<br>" +
-      "同じ国のシドニーが３時間前に年越しのカウントダウンをしてて不思議だった。",
-    "contents_text": "最後に滞在したのは、メルボルン。<br>" +
-      "まず驚いたのは、栄えてるシティ内はトラムと呼ばれる路面電車が無料。<br>" +
-      "<span class='note'>（※気付かぬうちにシティから出ていて、たまたま検問的なことをしており、英語で罰金払えとまくし立てられビビった）</span><br>" +
-      "前回住んでいたところで貯めたお金があり、<br>" +
-      "仕事するつもりも全くなく、遊んでばかり。<br>" +
-      "世界で５番目にオシャレと言われている<br>" +
-      "アーティストが多く住むグラフィティだらけの街「フィッツロイ」<br>" +
-      "少し外れにある、ビンテージで有名な「チャペルストリート」<br>" +
-      "小さな小屋が並ぶビーチ「ブライトンビーチ」<br>" +
-      "メルボルンのシティにもグラフィティが多くて、<br>" +
-      "グラフィティだらけの通りがあったり、<br>" +
-      "路上でライブする人たちも多かったり<span class='note'>（※しかも彼女曰く、上手いらしい）</span>、<br>" +
-      "南半球で一番でかいマーケットのビクトリアマーッケトで、<br>" +
-      "夏も冬も毎週ナイトマーケットをやってたりと<br>" +
-      "一言でまとめると、すごいワクワクする街だった。",
-    "contents_text": "途中でお金が尽きて、またラーメン屋でバイト。<br>" +
-      "一応オープニングスタッフで、調理場のメインで働かせてもらった。<br>" +
-      "お客さんにアピールするためにもカッコよく作業してみたり、<br>" +
-      "常連のお客さんと仲良くなったり、楽しかった。<br>" +
-      "毎日ラーメン食べられたのは幸せ。",
-    "contents_title": "行ってみたいところ",
-    "contents_text": "アメリカ<br>" +
-      "カナダ<br>" +
-      "メキシコ<br>" +
-      "ペルー<br>" +
-      "カンボジア<br>" +
-      "ブータン<br>" +
-      "台湾<br>" +
-      "パラオ<br>" +
-      "ドバイ<br>" +
-      "トルコ<br>" +
-      "スペイン<br>" +
-      "ドイツ<br>" +
-      "ギリシャ<br>" +
-      "イギリス<br>" +
-      "イタリア<br>" +
-      "フランス<br>" +
-      "ハンガリー<br>" +
-      "クロアチア<br>" +
-      "モナコ<br>" +
-      "ノルウェー<br>" +
-      "スウェーデン<br>"
+    "contents_title": "",
+    "contents_text": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_text": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_text": "",
+    "contents_text": "",
+    "contents_text": "",
+    "contents_text": "",
+    "contents_text": "",
+    "contents_text": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": ""
   },
   {
     "id": "skill",
     "title": "Skill | introduce 2.0",
-    "contents_title": "使える技術",
-    "contents_text": "HTML、CSS、JavaScript<br>" +
-      "テンプレートエンジン・EJS、jade<br>" +
-      "CSSメタ言語・Sass<br>" +
-      "その他・Gulp、Git<br>",
-    "contents_title": "勉強したいこと",
-    "contents_text": "ES6、React、Flux/Redux、<br>" +
-      "Angular、TypeScript<br>" +
-      "Node.js、Python、Ruby<br>" +
-      "Vagrant、Virtualbox",
-    "contents_title": "作りたいもの",
-    "contents_text": "外部APIを使ったアプリケーション<rb>" +
-      "JSで三角関数を使ったやつ<br>" +
-      "ポートフォリオサイト<br>" +
-      "スクレイピングのAPI<br>" +
-      "自作 or Wordpressでブログサイト"
+    "contents_title": "",
+    "contents_text": "<br>",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": ""
   },
   {
     "id": "sports",
     "title": "Sports | introduce 2.0",
-    "contents_title": "水泳",
-    "contents_text": "保育所の年長から小4までスイミングスクールに通ってた<br>" +
-      "泳ぐのは速くないけど、水の中は好き。",
-    "contents_title": "野球",
-    "contents_text": "小3から今も<br>" +
-      "家族の影響で物心ついたときにはやってた<br>" +
-      "ポジションはサード、ショート、キャッチャー",
-    "contents_title": "バスケ",
-    "contents_text": "大学2年のとき<br>" +
-      "バスケは昔からずっと好き<br>" +
-      "NBAが好きだったけど、最近見てない",
-    "contents_title": "スケート",
-    "contents_text": "大学２年からオーストラリア滞在途中まで<br>" +
-      "トリックができなすぎて挫折",
-    "contents_title": "スノーボード",
-    "contents_text": "大学4年の12月から3月の3ヶ月<br>" +
-      "このときに初めてスノーボードに挑戦<br>" +
-      "ボックスとかのジブトリックが好き",
-    "contents_title": "スキューバ",
-    "contents_text": "フィジー滞在中<br>" +
-      "1ヶ月で20回ぐらい潜った<br>" +
-      "あの感覚がたまらない<br>" +
-      "またやりたい！"
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": ""
   },
   {
     "id": "game",
     "title": "Game | introduce 2.0",
-    "contents_title": "GAME BOY",
-    "contents_text": "ポケモン 赤・青・緑<br>" +
-      "ゼルダの伝説 夢を見る島<br>" +
-      "メダロット<br>" +
-      "ドラクエ テリーのワンダーランド",
-    "contents_title": "GAME BOY COLOR",
-    "contents_text": "ポケモン ピカチュウ版・金・銀<br>" +
-      "ドラゴンクエスト 1・2・3<br>" +
-      "メダロット<br>" +
-      "ゼルダの伝説ふしぎな木の実 時空の書・天空の書<br>" +
-      "ワリオランド<br>" +
-      "ロボットポンコツ<br>" +
-      "ドラクエ イル・ルカ",
-    "contents_title": "GAME BOY ADVANCE",
-    "contents_text": "トマトアドベンチャー<br>" +
-      "テニスの王子様<br>" +
-      "ロックマンエグゼ<br>" +
-      "黄金の太陽<br>" +
-      "パワプロ君ポケット<br>" +
-      "モンスターファーム 1・2<br>" +
-      "サモンナイトクラフト<br>" +
-      "ドラクエ キャラバンハート<br>" +
-      "FF タクティクスアドバンス",
-    "contents_title": "PSP",
-    "contents_text": "モンスターハンター3rd",
-    "contents_title": "Play Station",
-    "contents_text": "モンスターファーム 1・2<br>" +
-      "FF 7・8・9<br>" +
-      "鉄拳 2・3<br>" +
-      "トバル2<br>" +
-      "バストアムーブ" +
-      "パワプロ<br>" +
-      "ロックマン<br>" +
-      "クラッシュバンディクー 1・2・3<br>" +
-      "私立ジャスティス学園<br>" +
-      "トマランナー<br>" +
-      "トマラルク",
-    "contents_title": "PS2",
-    "contents_text": "鉄拳5<br>" +
-      "FF 10・10-2<br>" +
-      "テイルズオブリバース<br>" +
-      "三国無双<br>" +
-      "戦国無双",
-    "contents_title": "PS3",
-    "contents_text": "FF13" +
-      "COD",
-    "contents_title": "DS",
-    "contents_text": "ドラクエ 4・5・6・7"
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": ""
   },
   {
     "id": "tv-movie",
     "title": "TV・Movie | introduce 2.0",
-    "contents_title": "好きな映画",
-    "contents_text": "ロンゲストヤード<br>" +
-      "守護神<br>" +
-      "幸せの隠れ場所<br>" +
-      "最強の2人<br>" +
-      "ソーシャルネットワーク<br>" +
-      "今度は愛妻家<br>" +
-      "フルートベール駅で<br>" +
-      "イミテーションゲーム<br>" +
-      "コーチ・カーター<br>" +
-      "デイブは宇宙船<br>" +
-      "ラッシュアワー<br>" +
-      "インターンシップ<br>" +
-      "シャッターアイランド<br>" +
-      "ものすごくうるさくて ありえないほど近い<br>" +
-      "特攻野郎Aチーム<br>",
-    "contents_title": "ドラマ",
-    "contents_text": "Big Bang Theory<br>" +
-      "SUITS<br>" +
-      "トリック<br>" +
-      "タイガーアンドドラゴン<br>" +
-      "ウシジマくん<br>" +
-      "釣りバカ日誌<br>" +
-      "男はつらいよ<br>" +
-      "IWGP",
-    "contents_title": "アニメ",
-    "contents_text": "もののけ姫<br>" +
-      "千と千尋の神隠し<br>" +
-      "東京ゴッドファザーズ<br>" +
-      "akira<br>" +
-      "攻殻機動隊<br>" +
-      "イノセンス<br>" +
-      "カーズ<br>" +
-      "シュガーラッシュ<br>" +
-      "ライオンキング<br>" +
-      "ベイマックス<br>" +
-      "101匹ワンちゃん<br>" +
-      "インクレディブル<br>" +
-      "ソードアートオンライン<br>" +
-      "ドラゴンボール<br>" +
-      "秒速5センチメートル<br>" +
-      "シュタインズゲート<br>" +
-      "あの日見た花の名前を僕達はまだ知らない<br>"
+    "contents_title": "",
+    "contents_text": "<br>",
+    "contents_title": "",
+    "contents_text": "",
+    "contents_title": "",
+    "contents_text": "<br>"
   },
   {
     "id": "book",
     "title": "Book | introduce 2.0",
-    "contents_title": "好きな本",
+    "contents_title": "",
     "contents_text": "",
-    "contents_title": "読みたい本",
+    "contents_title": "",
     "contents_text": "",
     "contents_title": "",
     "contents_text": "",
@@ -337,17 +110,7 @@
     "id": "future",
     "title": "Future | introduce 2.0",
     "contents_title": "将来",
-    "contents_text": "オーストラリア滞在中に勉強し始めて<br>" +
-      "気付いたらエンジニアとして働いている<br>" +
-      "正直ここまでハマるとは思ってなかった<br>" +
-      "ハマることって何よりも大事だな<br>" +
-      "そんな仕事に巡り合えたことに感謝<br>" +
-      "まだまだ、技術的に発展途上だけど、常にアンテナを張って<br>" +
-      "知識・技術を詰め込んで、1日でも早く一人前のエンジニアになる！！<br>" +
-      "日本国内でも海外でも通用する技術だから<br>" +
-      "英語も身につけつつ日本人として国際人として活躍できる人間になる！<br>" +
-      "また、オーストラリアにも行きたい<br>" +
-      "今後写真もいろいろ撮っていきたいな",
+    "contents_text": "",
     "contents_title": "",
     "contents_text": "",
     "contents_title": "",
