@@ -4,10 +4,13 @@
  *     /myprofile/index.htmlでのjs   (Leagle)
  **/
 function Leagle(){
-  this.getParamater();
-  this.bindEvent();
+  this.init();
 };
 Leagle.prototype = {
+  init: function(){
+    this.getParamater();
+    this.bindEvent();
+  },
   getParamater: function() {
     this.$leagleForm = $('.js-leagle-form');
     this.$leagleTxt = this.$leagleForm.find('input');
@@ -17,8 +20,6 @@ Leagle.prototype = {
   },
   changePage: function() {
     this.val = this.$leagleTxt.val();
-    // alert(this.val);
-    // console.log(this.val);
     switch(this.val){
     case 'yoshinari takashi':
     case 'Yoshinari Takashi':
@@ -57,10 +58,13 @@ Leagle.prototype = {
  *     /myprofile/openning/index.htmlでのjs
  **/
 function Openning(){
-  this.getParamater();
-  this.bindEvent();
+  this.init();
 };
 Openning.prototype = {
+  init: function(){
+    this.getParamater();
+    this.bindEvent();
+  },
   getParamater: function() {
     this.$p1 = $('.js-p1');
     this.$p2 = $('.js-p2');
@@ -121,49 +125,34 @@ Openning.prototype = {
  *     /myprofile/list/index.htmlでのjs
  **/
 function List(){
-  this.getParamater();
-  this.bindEvent();
+  this.init();
 };
 List.prototype = {
+  init: function() {
+    this.getParamater();
+    this.bindEvent();
+  },
   getParamater: function() {
     this.$window = $(window);
-    this.$header = $('.js-header');
     this.$eachList = $('.js-list li');
   },
   bindEvent: function() {
     this.setSize();
-    this.hoverAction();
     this.$window.on('resize', this.setSize.bind(this));
     this.$window.on('load', this.showList.bind(this));
-    this.$eachList.hover(this.hoverAction.bind(this, true), this.hoverAction.bind(this, false));
   },
   setSize: function() {
-    this.$width = this.$window.width();
-    this.$height = this.$window.height();
-    this.$listHeight = (this.$height / 3);
-    this.$header.css('height', this.$height + 'px');
-    this.$eachList.css('height', this.$listHeight + 'px');
+    var height = this.$window.height();
+    var listHeight = (height / 3);
+    this.$eachList.css('height', listHeight + 'px');
   },
   showList: function() {
-    this.$header.fadeIn(700);
     for(var i = 0; i < this.$eachList.length; i++){
       this.$eachList.delay(100).fadeIn();
       this.$eachList.eq(i).animate({
         'opacity': 1,
         'top': 0
       },1000);
-    }
-  },
-  hoverAction: function(isEnter, e){
-    if(isEnter) {
-      var $target = $(e.currentTarget);
-      $target.css("-webkit-filter", "grayscale(0)");
-      $target.find('.js-list-en').stop().fadeOut(600);
-      $target.find('.js-list-ja').stop().fadeIn(600);
-    } else {
-      // $target.css("-webkit-filter", "grayscale(100%)");
-      // $target.find('.js-list-en').stop().fadeIn(600);
-      // $target.find('.js-list-ja').stop().fadeOut(600);
     }
   }
 };
@@ -192,7 +181,6 @@ Detail.prototype = {
   bindEvent: function(){
     this.setPositionDownBtn();
     $(window).on('resize', this.setPositionDownBtn.bind(this));
-    this.hoverSlide();
     this.$up.on('click', this.slideUp.bind(this));
     this.$down.on('click', this.slideDown.bind(this));
     this.matchSlide();
@@ -205,23 +193,6 @@ Detail.prototype = {
     this.$downHeight = this.$down.height();
     this.$down.css({
       top: (this.$height - this.$downHeight) + 'px'
-    });
-  },
-  hoverSlide: function(){
-    var _this = this;
-    this.$list.on({
-      'mouseenter': function(e){
-        var $target = $(e.currentTarget);
-        $target.find('img').css("-webkit-filter", "grayscale(0)");
-        $target.find('.js-list-en').stop().fadeOut(600);
-        $target.find('.js-list-ja').stop().fadeIn(600);
-      },
-      'mouseleave': function(e){
-        var $target = $(e.currentTarget);
-        $target.find('img').css("-webkit-filter", "grayscale(100%)");
-        $target.find('.js-list-en').stop().fadeIn(600);
-        $target.find('.js-list-ja').stop().fadeOut(600);
-      }
     });
   },
   slideUp: function(e){
@@ -399,54 +370,40 @@ Gallery.prototype = {
 /**
  *     共通のjs
  **/
-// function List(){
-//   this.$window = $(window);
-//   this.$header = $('.js-header');
-//   this.$eachList = $('.js-list li');
-//   this.bind();
-// };
-// List.prototype = {
-//   bind: function(){
-//     this.setSize();
-//     this.hoverAction();
-//     this.$window.on('resize', this.setSize.bind(this));
-//     this.$window.on('load', this.showList.bind(this));
-//   },
-//   setSize: function(){
-//     this.$width = this.$window.width();
-//     this.$height = this.$window.height();
-//     this.$listHeight = (this.$height / 3);
-//     this.$header.css('height', this.$height + 'px');
-//     this.$eachList.css('height', this.$listHeight + 'px');
-//   },
-//   showList: function(){
-//     this.$header.fadeIn(700);
-//     for(var i = 0; i < this.$eachList.length; i++){
-//       this.$eachList.delay(100).fadeIn();
-//       this.$eachList.eq(i).animate({
-//         'opacity': 1,
-//         'top': 0
-//       },1000);
-//     }
-//   },
-//   hoverAction: function(){
-//     var _this = this;
-//     this.$eachList.on({
-//       'mouseenter': function(){
-//         var index = _this.$eachList.index(this);
-//         _this.$eachList.eq(index).css("-webkit-filter", "grayscale(0)");
-//         _this.$eachList.eq(index).find('.js-list-en').stop().fadeOut(600);
-//         _this.$eachList.eq(index).find('.js-list-ja').stop().fadeIn(600);
-//       },
-//       'mouseleave': function(){
-//         var index = _this.$eachList.index(this);
-//         _this.$eachList.eq(index).css("-webkit-filter", "grayscale(100%)");
-//         _this.$eachList.eq(index).find('.js-list-en').stop().fadeIn(600);
-//         _this.$eachList.eq(index).find('.js-list-ja').stop().fadeOut(600);
-//       }
-//     });
-//   }
-// };
+function Common(){
+  this.getParamater();
+  this.bindEvent();
+};
+Common.prototype = {
+  getParamater: function() {
+    this.$window = $(window);
+    this.$header = $('.js-header');
+    this.$eachList = $('.js-list li');
+  },
+  bindEvent: function() {
+    this.setHeader();
+    this.$eachList.hover(this.hoverAction.bind(this, true), this.hoverAction.bind(this, false));
+    this.$window.on('resize', this.setHeader.bind(this));
+  },
+  setHeader: function() {
+    this.$width = this.$window.width();
+    this.$height = this.$window.height();
+    this.$header.css('height', this.$height + 'px').fadeIn(700);
+  },
+  hoverAction: function(isEnter, e){
+    if(isEnter) {
+      var $target = $(e.currentTarget);
+      $target.css("-webkit-filter", "grayscale(0)");
+      $target.find('.js-list-en').stop().fadeOut(600);
+      $target.find('.js-list-ja').stop().fadeIn(600);
+    } else {
+      $target = $(e.currentTarget);
+      $target.css("-webkit-filter", "grayscale(100%)");
+      $target.find('.js-list-en').stop().fadeIn(600);
+      $target.find('.js-list-ja').stop().fadeOut(600);
+    }
+  }
+};
 
 
 
@@ -462,4 +419,5 @@ $(function(){
   var list = new List();
   var detail = new Detail();
   var gallery = new Gallery();
+  var common = new Common();
 });
