@@ -169,96 +169,95 @@ Detail.prototype = {
     this.bindEvent();
   },
   getParamater: function() {
-    this.$ul = $('.p-detailSlide__list');
-    this.$list = $('.p-detailSlide__list li');
-    this.$listlength = this.$list.length;
-    this.$slideBtn = $('.p-detailSlide__btn');
-    this.$up = this.$slideBtn.find('.up');
-    this.$down = this.$slideBtn.find('.down');
+    this.$window = $(window);
+    this.$sidebarList = $('.js-list');
+    this.$sidebarListItem = this.$sidebarList.find('li');
+    this.$listlength = this.$sidebarListItem.length;
+    this.$slideBtn = $('.js-slide-btn a');
+    this.$downBtn = $('.js-slide-btn .down');
     this.$detailContent = $('.js-detail');
-    this.data = '';
   },
   bindEvent: function(){
-    this.setPositionDownBtn();
-    $(window).on('resize', this.setPositionDownBtn.bind(this));
-    this.$up.on('click', this.slideUp.bind(this));
-    this.$down.on('click', this.slideDown.bind(this));
-    this.matchSlide();
     this.getData();
-    $(window).on('hashchange', this.getData.bind(this));
+    this.setPositionDownBtn();
+    this.$window.on('resize', this.setPositionDownBtn.bind(this));
+    this.$slideBtn.on('click', this.slideSidebar.bind(this));
+    this.$window.on('hashchange', this.getData.bind(this));
   },
   setPositionDownBtn: function(){
-    this.$height = $(window).height();
-    this.$listHeight = this.$list.height();
-    this.$downHeight = this.$down.height();
-    this.$down.css({
+    this.$height = this.$window.height();
+    this.$listHeight = this.$sidebarList.height();
+    this.$downHeight = this.$downBtn.height();
+    this.$downBtn.css({
       top: (this.$height - this.$downHeight) + 'px'
     });
   },
-  slideUp: function(e){
+  slideSidebar: function(e){
     e.preventDefault();
-    this.$height = $(window).height();
-    this.$listHeight = this.$list.height();
-    var fromTop = this.$list.offset().top - $(window).scrollTop();
-    if(fromTop < 0){
-      if(Math.abs(fromTop) > this.$listHeight){
-        this.$ul.stop().animate({
-          top: '+=' + this.$listHeight + 'px'
+    var $target = $(e.currentTarget),
+        flg = $target.attr('class'),
+        fromTop = this.$sidebarListItem.offset().top - this.$window.scrollTop();
+    this.$height = this.$window.height();
+    this.$listItemHeight = this.$sidebarListItem.height();
+    if (flg === 'up' && fromTop < 0) {
+      if(Math.abs(fromTop) > this.$listItemHeight){
+        this.$sidebarList.stop().animate({
+          top: '+=' + this.$listItemHeight + 'px'
         });
       } else {
-        this.$ul.stop().animate({
+        this.$sidebarList.stop().animate({
           top: '+=' + Math.abs(fromTop) + 'px'
         });
       }
-    }
-  },
-  slideDown: function(e){
-    e.preventDefault();
-    this.$height = $(window).height();
-    this.$listHeight = this.$list.height();
-    this.$listWholeH = (this.$list.length * this.$listHeight);
-    var fromTop = this.$ul.offset().top - $(window).scrollTop();
-    var withoutUnder = (Math.abs(fromTop)) + this.$height;
-    var leftList = this.$listWholeH - withoutUnder;
-    if(withoutUnder < this.$listWholeH ){
-      if(leftList > this.$listHeight){
-        this.$ul.stop().animate({
-          top: '-=' + this.$listHeight + 'px'
-        });
-      } else {
-        this.$ul.stop().animate({
-          top: '-=' + leftList + 'px'
-        });
+    } else {
+      this.$listWholeHeight = (this.$sidebarListItem.length * this.$listItemHeight);
+      var withoutUnder = (Math.abs(fromTop)) + this.$height;
+      var leftList = this.$listWholeHeight - withoutUnder;
+      if(withoutUnder < this.$listWholeHeight){
+        if(leftList > this.$listItemHeight){
+          this.$sidebarList.stop().animate({
+            top: '-=' + this.$listItemHeight + 'px'
+          });
+        } else {
+          this.$sidebarList.stop().animate({
+            top: '-=' + leftList + 'px'
+          });
+        }
       }
     }
   },
   matchSlide: function(){
-    var _this = this;
-    var url = window.location.href;
-    var focus;
+    var _this = this,
+        hash = window.location.hash,
+        $active = $('.is-active');
+    $active.removeClass('is-active');
     for(var i = 0; i < this.$listlength; i++){
-      var link = _this.$list.eq(i).find('a').attr('href');
-      if(url.match(link)){
-        _this.$list.eq(i).find('img').css({
+      var link = _this.$sidebarListItem.eq(i).find('a').attr('href');
+      if(hash === link){
+        _this.$sidebarListItem.eq(i).css({
           'cssText': '-webkit-filter: grayscale(0);'
+        }).addClass('is-active');
+        _this.$sidebarListItem.eq(i).find('.js-list-en').hide();
+        _this.$sidebarListItem.eq(i).find('.js-list-ja').show();
+      } else {
+        _this.$sidebarListItem.eq(i).css({
+          'cssText': '-webkit-filter: grayscale(100%);'
         });
-        focus = i;
+        _this.$sidebarListItem.eq(i).find('.js-list-en').show();
+        _this.$sidebarListItem.eq(i).find('.js-list-ja').hide();
       }
     }
-    this.$list.on('mouseout', function(){
-      _this.$list.eq(focus).find('img').css("-webkit-filter", "grayscale(0)");
-    });
   },
   getData: function(){
-    var _this = this;
-    var hash = window.location.hash.substr(1);
-    var hashArrey = ["#background", "#oversea", "#skill", "#sports", "#game", "#tv-movie", "#book" ,"#mygirl", "#future"];
+    var _this = this,
+        hash = window.location.hash.substr(1);
     $.ajax({
       url: '/introduce/myprofile/list/detail/data/' + hash + '.html',
       type: 'GET',
       dataType: 'HTML'
     }).done(function(data){
       _this.$detailContent.empty().append(data);
+      _this.matchSlide();
     }).fail(function(data){
       console.log('cannot get html data...');
     });
@@ -382,8 +381,8 @@ Common.prototype = {
   },
   bindEvent: function() {
     this.setHeader();
-    this.$eachList.hover(this.hoverAction.bind(this, true), this.hoverAction.bind(this, false));
     this.$window.on('resize', this.setHeader.bind(this));
+    this.$eachList.hover(this.hoverAction.bind(this, true), this.hoverAction.bind(this, false));
   },
   setHeader: function() {
     this.$width = this.$window.width();
@@ -392,12 +391,12 @@ Common.prototype = {
   },
   hoverAction: function(isEnter, e){
     if(isEnter) {
-      var $target = $(e.currentTarget);
+      var $target = $(e.currentTarget).not('.is-active');
       $target.css("-webkit-filter", "grayscale(0)");
       $target.find('.js-list-en').stop().fadeOut(600);
       $target.find('.js-list-ja').stop().fadeIn(600);
     } else {
-      $target = $(e.currentTarget);
+      $target = $(e.currentTarget).not('.is-active');
       $target.css("-webkit-filter", "grayscale(100%)");
       $target.find('.js-list-en').stop().fadeIn(600);
       $target.find('.js-list-ja').stop().fadeOut(600);
@@ -408,16 +407,28 @@ Common.prototype = {
 
 
 $(function(){
-  var url = window.location.href;
-  var file = url.split('/');
-  if(file[6] === 'detail'){
+  var url = window.location.href,
+      hash = window.location.hash,
+      file = url.split('/');
+  if(file[6] === 'detail' && hash === ''){
     window.location.href = '#background';
   }
+  var flgLeagle = !file.includes('openning') && !file.includes('list') && !file.includes('gallery'),
+      flgOpenning = file.includes('openning'),
+      flgList = file.includes('list') && !file.includes('detail'),
+      flgDetail = file.includes('list') && file.includes('detail'),
+      flgGallery = file.includes('gallery');
 
-  var leagle = new Leagle();
-  var openning = new Openning();
-  var list = new List();
-  var detail = new Detail();
-  var gallery = new Gallery();
+  if (flgLeagle) {
+    var leagle = new Leagle();
+  } else if (flgOpenning) {
+    var openning = new Openning();
+  } else if (flgList) {
+    var list = new List();
+  } else if (flgDetail) {
+    var detail = new Detail();
+  } else if (flgGallery) {
+    var gallery = new Gallery();
+  }
   var common = new Common();
 });

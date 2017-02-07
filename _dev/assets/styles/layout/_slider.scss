@@ -42,13 +42,13 @@
     > li {
       display: block;
       width: 100%;
+      filter: grayscale(100%);
       > a {
         display: block;
         position: relative;
         > img {
           width: 100%;
           vertical-align: bottom;
-          filter: grayscale(100%);
         }
       }
     }
