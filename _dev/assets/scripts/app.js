@@ -18,7 +18,8 @@ Leagle.prototype = {
   bindEvent: function() {
     this.$leagleForm.on('submit', this.changePage.bind(this));
   },
-  changePage: function() {
+  changePage: function(e) {
+    e.preventDefault();
     this.val = this.$leagleTxt.val();
     switch(this.val){
     case 'yoshinari takashi':
@@ -75,8 +76,8 @@ Openning.prototype = {
   bindEvent: function() {
     $(window).on('load', this.prologue.bind(this));
     setTimeout(this.firstShow.bind(this), 2000);
-    setTimeout(this.secondShow.bind(this), 4500);
-    setTimeout(this.hidePro.bind(this), 8000);
+    setTimeout(this.secondShow.bind(this), 4000);
+    setTimeout(this.hidePro.bind(this), 7500);
   },
   prologue: function() {
     this.$pro.contents().each(function(){
@@ -170,6 +171,7 @@ Detail.prototype = {
   },
   getParamater: function() {
     this.$window = $(window);
+    this.$body = $('html, body');
     this.$sidebarList = $('.js-list');
     this.$sidebarListItem = this.$sidebarList.find('li');
     this.$listlength = this.$sidebarListItem.length;
@@ -197,10 +199,9 @@ Detail.prototype = {
     var $target = $(e.currentTarget),
         flg = $target.attr('class'),
         fromTop = this.$sidebarListItem.offset().top - this.$window.scrollTop();
-    this.$height = this.$window.height();
     this.$listItemHeight = this.$sidebarListItem.height();
-    if (flg === 'up' && fromTop < 0) {
-      if(Math.abs(fromTop) > this.$listItemHeight){
+    if (flg === 'up' && fromTop <= 0) {
+      if (Math.abs(fromTop) > this.$listItemHeight){
         this.$sidebarList.stop().animate({
           top: '+=' + this.$listItemHeight + 'px'
         });
@@ -213,8 +214,8 @@ Detail.prototype = {
       this.$listWholeHeight = (this.$sidebarListItem.length * this.$listItemHeight);
       var withoutUnder = (Math.abs(fromTop)) + this.$height;
       var leftList = this.$listWholeHeight - withoutUnder;
-      if(withoutUnder < this.$listWholeHeight){
-        if(leftList > this.$listItemHeight){
+      if (withoutUnder < this.$listWholeHeight){
+        if (leftList > this.$listItemHeight){
           this.$sidebarList.stop().animate({
             top: '-=' + this.$listItemHeight + 'px'
           });
@@ -233,7 +234,7 @@ Detail.prototype = {
     $active.removeClass('is-active');
     for(var i = 0; i < this.$listlength; i++){
       var link = _this.$sidebarListItem.eq(i).find('a').attr('href');
-      if(hash === link){
+      if (hash === link){
         _this.$sidebarListItem.eq(i).css({
           'cssText': '-webkit-filter: grayscale(0);'
         }).addClass('is-active');
@@ -258,6 +259,7 @@ Detail.prototype = {
     }).done(function(data){
       _this.$detailContent.empty().append(data);
       _this.matchSlide();
+      _this.$body.scrollTop(0);
     }).fail(function(data){
       console.log('cannot get html data...');
     });
@@ -285,34 +287,33 @@ Gallery.prototype = {
     this.$modalImage = $('.p-modal__image');
     this.$modalBtn = $('.p-modal__btn');
     this.$modalClose = $('.p-modal__close');
+    this.arrayOfImages = [];
+    this.focusPicIndex = 0;
   },
   bindEvent: function() {
-    this.sortPhotos();
+    this.randomPhotos();
     this.$window.on('load', this.showPhotos.bind(this));
     this.$galleryImageLink.on('click', this.showModal.bind(this));
     this.$modalClose.on('click', this.closeModal.bind(this));
     this.$modalBtn.on('click', this.slideModal.bind(this));
   },
-  sortPhotos: function(){
+  randomPhotos: function(){
     var _this = this,
         lengthOfImages = this.$galleryImages.length,
-        arrayOfImages = [],
         i = 0;
     for(var index = 0; index < lengthOfImages; index++){
-      var num = index + 1;
-      this.$galleryImages.eq(index).each(function(){
-        arrayOfImages.push(num);
-      });
+      var src = this.$galleryImages.eq(index).attr('src');
+      this.arrayOfImages.push(src);
     }
     for(var sortIndex = lengthOfImages - 1; sortIndex > 0; sortIndex--) {
       var sortedIndex = Math.floor(Math.random() * (sortIndex + 1));
-      var tmp = arrayOfImages[sortIndex];
-      arrayOfImages[sortIndex] = arrayOfImages[sortedIndex];
-      arrayOfImages[sortedIndex] = tmp;
+      var sortedImage = this.arrayOfImages[sortIndex];
+      this.arrayOfImages[sortIndex] = this.arrayOfImages[sortedIndex];
+      this.arrayOfImages[sortedIndex] = sortedImage;
     }
     this.$galleryImages.each(function() {
       _this.$galleryImages.eq(i).attr({
-        src: '/introduce/myprofile/assets/images/gallery/photo' + arrayOfImages[i] + '.jpg'
+        src: _this.arrayOfImages[i]
       });
       i++;
     });
@@ -327,8 +328,9 @@ Gallery.prototype = {
     var $target = $(e.currentTarget),
         src = $target.find('img').attr('src');
     this.$body.addClass('modal-open');
-    this.$modalWrap.css({ width: '100%', height: '100%' }).fadeIn(1000);
-    this.$modalImage.append('<img class="modal-img" src="' + src + '">');
+    this.$modalWrap.css({ width: '100%', height: '100%' }).fadeIn(700);
+    this.$modalImage.append('<img alt="" src="' + src + '">');
+    this.focusPicIndex = this.arrayOfImages.indexOf(src);
   },
   closeModal: function(e) {
     e.preventDefault();
@@ -344,24 +346,16 @@ Gallery.prototype = {
     e.preventDefault();
     var $target = $(e.currentTarget),
         direction = $target.data('direction');
-    console.log(direction);
-    //   if(className === 'g-next' && !(focusPicIndex === 47)){
-    //     focusPicIndex += 1;
-    //     focusPic =_this.$gImgs.eq(focusPicIndex).attr('src');
-    //     _this.$gLayImg.empty().append('<img class="modal-img" src="'+focusPic+'">');
-    //   } else if (className === 'g-prev' && !(focusPicIndex === 0)) {
-    //     focusPicIndex -= 1;
-    //     focusPic =_this.$gImgs.eq(focusPicIndex).attr('src');
-    //     _this.$gLayImg.empty().append('<img class="modal-img" src="'+focusPic+'">');
-    //   } else if(className === 'g-next' && focusPicIndex === 47){
-    //     focusPicIndex = 0;
-    //     focusPic =_this.$gImgs.eq(focusPicIndex).attr('src');
-    //     _this.$gLayImg.empty().append('<img class="modal-img" src="'+focusPic+'">');
-    //   } else if(className === 'g-prev' && focusPicIndex === 0){
-    //     focusPicIndex = 47;
-    //     focusPic =_this.$gImgs.eq(focusPicIndex).attr('src');
-    //     _this.$gLayImg.empty().append('<img class="modal-img" src="'+focusPic+'">');
-    //   }
+    if (direction === 'next' && !(this.focusPicIndex === 47)){
+      this.focusPicIndex += 1;
+    } else if (direction === 'prev' && !(this.focusPicIndex === 0)) {
+      this.focusPicIndex -= 1;
+    } else if (direction === 'next' && this.focusPicIndex === 47){
+      this.focusPicIndex = 0;
+    } else if (direction === 'prev' && this.focusPicIndex === 0){
+      this.focusPicIndex = 47;
+    }
+    this.$modalImage.empty().append('<img class="modal-img" src="' + this.arrayOfImages[this.focusPicIndex] + '">').hide().fadeIn();
   }
 };
 
@@ -390,7 +384,7 @@ Common.prototype = {
     this.$header.css('height', this.$height + 'px').fadeIn(700);
   },
   hoverAction: function(isEnter, e){
-    if(isEnter) {
+    if (isEnter) {
       var $target = $(e.currentTarget).not('.is-active');
       $target.css("-webkit-filter", "grayscale(0)");
       $target.find('.js-list-en').stop().fadeOut(600);
@@ -410,7 +404,7 @@ $(function(){
   var url = window.location.href,
       hash = window.location.hash,
       file = url.split('/');
-  if(file[6] === 'detail' && hash === ''){
+  if (file[6] === 'detail' && hash === ''){
     window.location.href = '#background';
   }
   var flgLeagle = !file.includes('openning') && !file.includes('list') && !file.includes('gallery'),

@@ -1,5 +1,21 @@
+/* font */
 $font-family: "Noto Sans Japanese", Helvetica, Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 $font-size-root: 62.5% !default;
 $font-size-base: 1.4rem !default;
 
-$cmngreen: #a9e6a4;
+/* 幅 */
+$pc-max-width: 1500px;
+$pc-wide-with: 1200px;
+$pc-middle-width: 960px;
+$pc-small-width: 860px;
+
+
+/* このサイトの共通の色 */
+$common-green: #a9e6a4;
+
+/* detailの文字色 */
+$detail-text: #555;
+$detail-note: #aaa;
+
+/* リンクの文字色 */
+$link-blue: #0050fa;

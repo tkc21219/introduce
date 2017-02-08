@@ -19,7 +19,7 @@
       text-align: center;
       transition: all .7s ease-in;
       &:hover {
-        background-color: $cmngreen;
+        background-color: $common-green;
       }
       > img {
         display: inline-block;
@@ -38,6 +38,9 @@
   }
   &__list {
     position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
     background-color: #000;
     > li {
       display: block;
