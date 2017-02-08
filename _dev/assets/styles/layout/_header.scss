@@ -4,44 +4,47 @@
   top: 0;
   left: 0;
   width: 20%;
-  background-color: $cmngreen;
+  background-color: $common-green;
   &__body {
-    padding-top: 50%;
+    padding: 50% 5% 0;
   }
   &__title {
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 32px;
+    margin-bottom: 10%;
+    font-weight: 900;
+    font-size: 30px;
     text-align: center;
     &--link {
       color: #000;
     }
     &--lead {
-      font-size: 12px;
+      font-size: 14px;
       color: #fff;
       text-align: center;
     }
   }
   &__nav {
     padding-top: 60px;
-    &--title {
-      font-size: 16px;
-      font-weight: bold;
-      text-align: center;
-    }
+    margin: 0 auto;
+    width: 100%;
+    list-style: none;
     &--list {
       text-align: center;
+      list-style: none;
       > li {
-        margin-top: 20px;
         > a {
-          padding: 0 20px 5px;
+          display: inline-block;
+          padding: 3px 20px;
+          width: 100%;
+          font-weight: 600;
           font-size: 17px;
-          color: #fff;
+          color: $common-green;
           text-decoration: none;
-          border-bottom: 2px solid #fff;
+          border: 3px solid #fff;
+          background-color: #fff;
+          transition: all .7s;
           &:hover {
-            color: #aaa;
-            border-bottom: 2px solid #aaa;
+            color: #fff;
+            background-color: $common-green;
           }
         }
       }
@@ -50,23 +53,27 @@
   &__note {
     position: absolute;
     top: 70%;
-    width: 100%;
+    left: 5%;
+    padding: 5%;
+    width: 90%;
+    background-color: #fff;
     > p {
       display: block;
-      padding: 20px 0;
-      margin: 0 auto;
-      width: 70%;
+      margin: 30px auto 0;
+      width: 100%;
       font-size: 12px;
       color: #888;
       text-decoration: underline;
       text-align: center;
       line-height: 20px;
-      background-color: #fff;
+      &:first-child {
+        margin-top: 0;
+      }
     }
   }
   &__copyright {
     position: absolute;
-    bottom: 20px;
+    bottom: 5%;
     width: 100%;
     > p {
       text-align: center;

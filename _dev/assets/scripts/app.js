@@ -171,6 +171,7 @@ Detail.prototype = {
   },
   getParamater: function() {
     this.$window = $(window);
+    this.$body = $('html, body');
     this.$sidebarList = $('.js-list');
     this.$sidebarListItem = this.$sidebarList.find('li');
     this.$listlength = this.$sidebarListItem.length;
@@ -258,6 +259,7 @@ Detail.prototype = {
     }).done(function(data){
       _this.$detailContent.empty().append(data);
       _this.matchSlide();
+      _this.$body.scrollTop(0);
     }).fail(function(data){
       console.log('cannot get html data...');
     });

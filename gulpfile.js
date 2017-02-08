@@ -12,10 +12,10 @@ var del = require('del');
 var browserSync = require('browser-sync');
 
 var dirs = {
-  'src': './_dev/',
-  'dest': './myprofile/',
-  'assetsSrc': './_dev/assets/',
-  'assetsDest': './myprofile/assets/'
+  'src': '_dev/',
+  'dest': 'myprofile/',
+  'assetsSrc': '_dev/assets/',
+  'assetsDest': 'myprofile/assets/'
 };
 
 var config = {
@@ -122,7 +122,7 @@ gulp.task('watch', function(){
   gulp.watch(dirs.src + '**/*.ejs', ['ejs']);
   gulp.watch(dirs.assetsSrc + '**/*.scss', ['sass']);
   gulp.watch(config.js.src, ['js']);
-  gulp.watch(config.image.src, ['imgCopy']);
+  gulp.watch(config.image.src, ['imageCopy']);
   gulp.watch(config.json.src, ['jsonCopy']);
   gulp.watch(config.font.src, ['fontCopy']);
 });
