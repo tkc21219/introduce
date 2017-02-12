@@ -1,3 +1,16 @@
+.u-pc {
+  display: display;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+.u-sp {
+  display: none;
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
+}
+
 .u-clearfix {
   zoom: 1;
   &:after {
