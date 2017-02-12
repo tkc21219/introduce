@@ -138,9 +138,12 @@ List.prototype = {
     this.$eachList = $('.js-list li');
   },
   bindEvent: function() {
-    this.setSize();
-    this.$window.on('resize', this.setSize.bind(this));
-    this.$window.on('load', this.showList.bind(this));
+    var width = window.matchMedia('(max-width: 767px)').matches;
+    if (!width) {
+      this.setSize();
+      this.$window.on('resize', this.setSize.bind(this));
+      this.$window.on('load', this.showList.bind(this));
+    }
   },
   setSize: function() {
     var height = this.$window.height();
@@ -374,8 +377,11 @@ Common.prototype = {
     this.$eachList = $('.js-list li');
   },
   bindEvent: function() {
-    this.setHeader();
-    this.$window.on('resize', this.setHeader.bind(this));
+    var width = window.matchMedia('(max-width: 767px)').matches;
+    if (!width) {
+      this.setHeader();
+      this.$window.on('resize', this.setHeader.bind(this));
+    }
     this.$eachList.hover(this.hoverAction.bind(this, true), this.hoverAction.bind(this, false));
   },
   setHeader: function() {
