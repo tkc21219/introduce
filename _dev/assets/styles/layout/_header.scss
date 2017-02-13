@@ -8,11 +8,13 @@
   @media screen and (max-width: 767px) {
     display: block;
     width: 100%;
+    height: 60px;
     z-index: 20;
   }
   &__body {
     padding: 50% 5% 0;
     @media screen and (max-width: 767px) {
+      display: table;
       padding: 0;
       margin: 0 auto;
       width: 95%;
@@ -26,9 +28,9 @@
     font-size: 30px;
     text-align: center;
     @media screen and (max-width: 767px) {
-      display: inline-block;
+      display: table-cell;
       margin: 0 5% 0 0;
-      width: auto;
+      width: 10%;
       font-size: 18px;
       vertical-align: middle;
     }
@@ -37,7 +39,7 @@
       color: #fff;
       text-align: center;
       @media screen and (max-width: 767px) {
-        display: inline-block;
+        display: table-cell;
         margin-right: 20%;
         font-size: 11px;
         vertical-align: middle;
@@ -50,7 +52,7 @@
     width: 100%;
     list-style: none;
     @media screen and (max-width: 767px) {
-      display: inline-block;
+      display: table-cell;
       padding: 0;
       width: auto;
       vertical-align: middle;
@@ -90,7 +92,7 @@
     @media screen and (max-width: 767px) {
       top: 105%;
       bottom: auto;
-      right: 0;
+      left: 0;
       padding: 1%;
       width: auto;
       background-color: $common-green;

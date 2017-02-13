@@ -191,17 +191,16 @@ Detail.prototype = {
   },
   setPositionDownBtn: function(){
     this.$height = this.$window.height();
-    this.$listHeight = this.$sidebarList.height();
     this.$downHeight = this.$downBtn.height();
     this.$downBtn.css({
-      top: (this.$height - this.$downHeight) + 'px'
+      top: (this.$height - this.$downHeight - 0) + 'px'
     });
   },
   slideSidebar: function(e){
     e.preventDefault();
     var $target = $(e.currentTarget),
         flg = $target.attr('class'),
-        fromTop = this.$sidebarListItem.offset().top - this.$window.scrollTop();
+        fromTop = this.$sidebarList.offset().top - this.$window.scrollTop();
     this.$listItemHeight = this.$sidebarListItem.height();
     if (flg === 'up' && fromTop <= 0) {
       if (Math.abs(fromTop) > this.$listItemHeight){
