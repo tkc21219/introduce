@@ -380,8 +380,8 @@ Common.prototype = {
     if (!width) {
       this.setHeader();
       this.$window.on('resize', this.setHeader.bind(this));
+      this.$eachList.hover(this.hoverAction.bind(this, true), this.hoverAction.bind(this, false));
     }
-    this.$eachList.hover(this.hoverAction.bind(this, true), this.hoverAction.bind(this, false));
   },
   setHeader: function() {
     this.$width = this.$window.width();
