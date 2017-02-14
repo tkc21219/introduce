@@ -382,6 +382,7 @@ Common.prototype = {
       this.$window.on('resize', this.setHeader.bind(this));
     }
     this.$eachList.hover(this.hoverAction.bind(this, true), this.hoverAction.bind(this, false));
+    if (width) this.$eachList.unbind();
   },
   setHeader: function() {
     this.$width = this.$window.width();
