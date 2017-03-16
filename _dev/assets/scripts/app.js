@@ -191,9 +191,9 @@ Detail.prototype = {
   },
   setPositionDownBtn: function(){
     this.$height = this.$window.height();
-    this.$downHeight = this.$downBtn.height();
+    this.$downHeight = this.$downBtn.outerHeight();
     this.$downBtn.css({
-      top: (this.$height - this.$downHeight - 0) + 'px'
+      top: (this.$height - this.$downHeight) + 'px'
     });
   },
   slideSidebar: function(e){
