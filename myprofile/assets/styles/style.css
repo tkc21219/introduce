@@ -1203,12 +1203,13 @@ footer, header, hgroup, menu, nav, section {
 
 .p-detail {
   float: left;
-  padding: 9% 2% 5%;
+  padding: 2% 2% 5%;
   margin-left: 20%;
   width: 50%;
   background-color: #fff; }
   @media screen and (max-width: 767px) {
     .p-detail {
+      padding-top: 9%;
       margin: 60px 0 0;
       width: 70%; } }
   .p-detail__each {
@@ -1245,6 +1246,11 @@ footer, header, hgroup, menu, nav, section {
       .p-detail__txt {
         width: 90%;
         font-size: 12px; } }
+    .p-detail__txt > p + p {
+      margin-top: 20px; }
+      @media screen and (max-width: 767px) {
+        .p-detail__txt > p + p {
+          margin-top: 5%; } }
     .p-detail__txt > ul {
       padding-left: 30px; }
       @media screen and (max-width: 767px) {
