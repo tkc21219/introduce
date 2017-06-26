@@ -142,13 +142,13 @@ List.prototype = {
     if (!width) {
       this.setSize();
       this.$window.on('resize', this.setSize.bind(this));
-      this.$window.on('load', this.showList.bind(this));
     }
   },
   setSize: function() {
     var height = this.$window.height();
     var listHeight = (height / 3);
     this.$eachList.css('height', listHeight + 'px');
+    this.showList();
   },
   showList: function() {
     for(var i = 0; i < this.$eachList.length; i++){
