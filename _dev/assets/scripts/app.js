@@ -74,7 +74,7 @@ Openning.prototype = {
     this.$link = $('.js-openning-link');
   },
   bindEvent: function() {
-    $(window).on('load', this.prologue.bind(this));
+    this.prologue();
     setTimeout(this.firstShow.bind(this), 2000);
     setTimeout(this.secondShow.bind(this), 4000);
     setTimeout(this.hidePro.bind(this), 7500);
@@ -294,7 +294,7 @@ Gallery.prototype = {
   },
   bindEvent: function() {
     this.randomPhotos();
-    this.$window.on('load', this.showPhotos.bind(this));
+    this.showPhotos();
     this.$galleryImageLink.on('click', this.showModal.bind(this));
     this.$modalClose.on('click', this.closeModal.bind(this));
     this.$modalBtn.on('click', this.slideModal.bind(this));
