@@ -74,7 +74,7 @@ Openning.prototype = {
     this.$link = $('.js-openning-link');
   },
   bindEvent: function() {
-    $(window).on('load', this.prologue.bind(this));
+    this.prologue();
     setTimeout(this.firstShow.bind(this), 2000);
     setTimeout(this.secondShow.bind(this), 4000);
     setTimeout(this.hidePro.bind(this), 7500);
@@ -142,13 +142,13 @@ List.prototype = {
     if (!width) {
       this.setSize();
       this.$window.on('resize', this.setSize.bind(this));
-      this.$window.on('load', this.showList.bind(this));
     }
   },
   setSize: function() {
     var height = this.$window.height();
     var listHeight = (height / 3);
     this.$eachList.css('height', listHeight + 'px');
+    this.showList();
   },
   showList: function() {
     for(var i = 0; i < this.$eachList.length; i++){
@@ -191,9 +191,9 @@ Detail.prototype = {
   },
   setPositionDownBtn: function(){
     this.$height = this.$window.height();
-    this.$downHeight = this.$downBtn.height();
+    this.$downHeight = this.$downBtn.outerHeight();
     this.$downBtn.css({
-      top: (this.$height - this.$downHeight - 0) + 'px'
+      top: (this.$height - this.$downHeight) + 'px'
     });
   },
   slideSidebar: function(e){
@@ -294,7 +294,7 @@ Gallery.prototype = {
   },
   bindEvent: function() {
     this.randomPhotos();
-    this.$window.on('load', this.showPhotos.bind(this));
+    this.showPhotos();
     this.$galleryImageLink.on('click', this.showModal.bind(this));
     this.$modalClose.on('click', this.closeModal.bind(this));
     this.$modalBtn.on('click', this.slideModal.bind(this));
@@ -380,8 +380,8 @@ Common.prototype = {
     if (!width) {
       this.setHeader();
       this.$window.on('resize', this.setHeader.bind(this));
+      this.$eachList.hover(this.hoverAction.bind(this, true), this.hoverAction.bind(this, false));
     }
-    this.$eachList.hover(this.hoverAction.bind(this, true), this.hoverAction.bind(this, false));
   },
   setHeader: function() {
     this.$width = this.$window.width();
