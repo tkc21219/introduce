@@ -1,29 +1,22 @@
-<% var title = "leagle inspired by Google | introduce2.0";
-var keyword = "leagle,front-end,engineer,introduce,profile,japan";
-var description = "engineerのtkcco21の自己紹介サイト。導入はgoogleさんにインスパイアされデザインで";
-var url = "http://tkcco.github.io/introduce/myprofile/index.html"
+<% var title = "Openning | introduce2.0";
+var keyword = "openning,front-end,engineer,introduce,profile,japan";
+var descriptiion = "エンジニアtkcco21の自己紹介サイト";
+var url = "http://tkcco.github.io/introduce/myprofile/openning/index.html"
 var image = "http://tkcco.github.io/introduce/myprofile/assets/images/og/og.jpg"
 %><!DOCTYPE html>
 <html lang="ja">
   <head>
     <% include ./_include/_head %>
   </head>
-<body>
-  <div class="p-leagle">
-    <div class="p-leagle__mainVisual">
-      <img class="p-leagle__mainVisual--image" src="/introduce/myprofile/assets/images/leagle_logo.png" alt="" />
-      <p class="p-leagle__mainVisual--note">inspired by <a href="https://www.google.co.jp/">Google</a></p>
+  <body>
+    <div class="p-openning js-openning">
+      <p class="p-openning__prologue js-p1 js-openning-prologue">What's up, guys!</p>
+      <p class="p-openning__prologue js-p2 js-openning-prologue">Let's get started!</p>
+      <div class="p-openning__link js-openning-link">
+        <a class="js-p3" href="/introduce/myprofile/list/index.html">introduce2.0</a>
+      </div>
     </div>
-    <div class="p-leagle__search">
-      <form class="p-leagle__search--form js-leagle-form" action="" method="">
-        <input name='name' type="text" value="">
-      </form>
-    </div>
-    <ul class="p-leagle__boxes u-pc">
-      <li>leagle 検索</li>
-      <li>I'm Feeling Lucky</li>
-    </ul>
-  </div>
-  <% include ./_include/_footer %>
-</body>
+    <% include ./_include/_footer %>
+    <script src="/introduce/myprofile/assets/scripts/snow.js"></script>
+  </body>
 </html>

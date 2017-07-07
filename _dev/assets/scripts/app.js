@@ -1,62 +1,7 @@
 'use strict';
 
 /**
- *     /myprofile/index.htmlでのjs   (Leagle)
- **/
-function Leagle(){
-  this.init();
-};
-Leagle.prototype = {
-  init: function(){
-    this.getParamater();
-    this.bindEvent();
-  },
-  getParamater: function() {
-    this.$leagleForm = $('.js-leagle-form');
-    this.$leagleTxt = this.$leagleForm.find('input');
-  },
-  bindEvent: function() {
-    this.$leagleForm.on('submit', this.changePage.bind(this));
-  },
-  changePage: function(e) {
-    e.preventDefault();
-    this.val = this.$leagleTxt.val();
-    switch(this.val){
-    case 'yoshinari takashi':
-    case 'Yoshinari Takashi':
-    case 'YOSHINARI TAKASHI':
-    case 'yoshinaritakashi':
-    case 'YoshinariTakashi':
-    case 'YOSHINARITAKASHI':
-    case 'takashi yoshinari':
-    case 'Takashi Yoshinari':
-    case 'TAKASHI YOSHINARI':
-    case 'takashiyoshinari':
-    case 'TakashiYoshinari':
-    case 'TAKASHIYOSHINARI':
-    case '吉成敬':
-    case 'よしなりたかし':
-    case 'ヨシナリタカシ':
-    case '吉成 敬':
-    case 'よしなり たかし':
-    case 'ヨシナリ タカシ':
-    case '吉成　敬':
-    case 'よしなり　たかし':
-    case 'ヨシナリ　タカシ':
-      window.location.href = '/introduce/myprofile/openning/index.html';
-      break;
-    case '':
-      break;
-    default:
-      window.location.href = 'https://www.google.co.jp/#q=' + this.val;
-      break;
-    }
-    return false;
-  }
-};
-
-/**
- *     /myprofile/openning/index.htmlでのjs
+ *     /myprofile/index.htmlでのjs
  **/
 function Openning(){
   this.init();
@@ -412,15 +357,12 @@ $(function(){
   if (file[6] === 'detail' && hash === ''){
     window.location.href = '#background';
   }
-  var flgLeagle = !file.includes('openning') && !file.includes('list') && !file.includes('gallery'),
-      flgOpenning = file.includes('openning'),
+  var flgOpenning = !file.includes('list') && !file.includes('gallery'),
       flgList = file.includes('list') && !file.includes('detail'),
       flgDetail = file.includes('list') && file.includes('detail'),
       flgGallery = file.includes('gallery');
 
-  if (flgLeagle) {
-    var leagle = new Leagle();
-  } else if (flgOpenning) {
+  if (flgOpenning) {
     var openning = new Openning();
   } else if (flgList) {
     var list = new List();
